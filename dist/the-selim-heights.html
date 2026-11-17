@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Selim Heights | Wahi Properties Ltd</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;display=swap">
+<style>
+sc-if{display:contents}
+
+body{margin:0;font-family:"Onest",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:#5D5A54;background:#FFFFFF}
+*{box-sizing:border-box}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:14px 32px;border-radius:999px;font-family:inherit;font-size:16px;line-height:1.4;font-weight:500;text-decoration:none;border:1px solid #3E3223;cursor:pointer}
+.btn-primary{background:#E6BF62;color:#3E3223;border-color:#E6BF62}
+.btn-primary:hover{background:#D4AD60;border-color:#D4AD60}
+.btn-secondary{background:#F4F6F8;color:#242221;border-color:#242221}
+.btn-secondary:hover{background:#E8ECF0}
+header .btn{min-height:44px;padding:8px 24px}
+header .btn.call{background:#FFFFFF;border:2px solid #D4AD60;color:#242221}
+header .btn.call:hover{background:#F6EEDB;border-color:#D4AD60}
+a:focus-visible,button:focus-visible{outline:3px solid #242221;outline-offset:3px}
+a.nav{color:#242221;text-decoration:none;font-size:16px;font-weight:500;line-height:1.4;padding:8px 0;border-bottom:2px solid transparent;position:relative}
+a.nav::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:#D4AD60;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+a.nav:hover::after{transform:scaleX(1)}
+a.nav-on{color:#D4AD60}
+a.fl{color:#242221;text-decoration:none}
+a.fl:hover{text-decoration:underline;text-underline-offset:3px}
+@media (min-width:1000px){footer .wrap > div:first-child{grid-template-columns:1fr .8fr .9fr 1.5fr!important}}
+footer .wrap > div:first-child > div:last-child ul{color:#242221!important}
+footer .vall{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:#242221;text-decoration:none;font-size:16px;margin-top:4px}
+footer .vall:hover{color:#D4AD60}
+footer .vall:hover svg{transform:translateX(3px)}
+footer .vall svg{transition:transform .2s}
+footer{padding-top:48px!important}
+footer .wrap{gap:48px!important}
+footer .wrap > div:first-child > div:first-child > a{padding:0 12px 0 0!important}
+@media (min-width:700px){footer{padding-top:64px!important}footer .wrap{gap:64px!important}}
+@media (min-width:1100px){footer{padding-top:80px!important}footer .wrap{gap:80px!important}}
+.lang{display:flex;align-items:center;gap:2px;height:44px;padding:4px;border:1px solid #E6E0D5;border-radius:999px;background:#FFFFFF;box-sizing:border-box}
+.lang button{all:unset;box-sizing:border-box;cursor:pointer;height:34px;min-width:44px;padding:0 12px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;line-height:1;color:#5D5A54;font-family:inherit}
+.lang button:nth-child(2){font-size:15px}
+.lang button:hover{color:#242221;background:#F3F0E9}
+.lang button.on,.lang button.on:hover{background:#E6BF62;color:#3E3223}
+.hdr-r{display:flex;align-items:center;gap:16px}
+.hd-nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px}
+.lang-m,.hd-tgl .i-c{display:none}
+.hd-tgl{all:unset;box-sizing:border-box;display:none;width:44px;height:44px;border:1px solid #E6E0D5;border-radius:999px;background:#FFFFFF;align-items:center;justify-content:center;cursor:pointer}
+.hd-tgl:hover{background:#F6EEDB}
+.hd-tgl:focus-visible{outline:3px solid #242221;outline-offset:3px}
+@media (max-width:1359px){
+ .hd-nav{gap:8px 28px}
+}
+@media (max-width:1199px){
+ .hd-nav{gap:8px 24px}
+ header .btn.call{width:44px;padding:0;gap:0}
+ header .btn.call .ct{display:none}
+}
+@media (max-width:1099px){
+ header .btn.call{width:auto;padding:8px 24px;gap:10px}
+ header .btn.call .ct{display:inline}
+ header .hd-tgl{display:flex}
+ header.hd-open .hd-tgl .i-o{display:none}
+ header.hd-open .hd-tgl .i-c{display:block}
+ .lang-d{display:none}
+ .hd-nav{display:none;order:3;flex-basis:100%;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;padding:0 0 20px}
+ header.hd-open .hd-nav{display:flex}
+ .hd-nav a.nav{padding:14px 0;font-size:18px;border-bottom:1px solid #EDE8DD}
+ .hd-nav a.nav::after{display:none}
+ .lang-m{display:flex;align-self:flex-start;margin-top:20px}
+}
+@media (max-width:599px){
+ header .btn.call{width:44px;padding:0;gap:0}
+ header .btn.call .ct{display:none}
+ header>.wrap:first-child{gap:16px 12px!important}
+ header a[aria-label] img{width:140px!important}
+ .hdr-r{gap:12px}
+}
+
+
+h2{text-wrap:balance}
+body{container-type:inline-size}
+.ab-sec{padding-top:clamp(60px,7cqw,100px);padding-bottom:clamp(60px,7cqw,100px)}
+.ab-h1{margin:0;font-size:clamp(44px,5cqw,72px);line-height:1.05;letter-spacing:-0.025em;font-weight:600;color:#242221}
+.ab-h2{margin:0;font-size:clamp(32px,3.4cqw,48px);line-height:1.12;letter-spacing:-0.02em;font-weight:600;color:#242221}
+.ab-lead{margin:0;font-size:clamp(17px,1.4cqw,20px);line-height:1.65;color:#242221}
+.ab-hero-bg{-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent 100%),linear-gradient(to right,transparent 42%,#000 58%);mask-image:linear-gradient(to bottom,#000 55%,transparent 100%),linear-gradient(to right,transparent 42%,#000 58%)}
+@media (max-width:899px){.ab-hero-bg{-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent 100%);mask-image:linear-gradient(to bottom,#000 55%,transparent 100%)}.ab-hero-bg img{object-position:0% 50%!important}}
+.pj-hero-bg{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 32%),linear-gradient(to bottom,#000 90%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 32%),linear-gradient(to bottom,#000 90%,transparent 100%);mask-composite:intersect}
+@media (max-width:899px){.pj-hero-t{max-width:none!important}.pj-hero-bg{opacity:.35;-webkit-mask-image:none;mask-image:none}.pj-hero-bg img{object-position:78% 50%!important}}
+.pj-card{position:relative;background:#FFFFFF;border:1px solid #EDE6D6;border-radius:12px;top:0;transition:top .25s ease,border-color .25s ease;display:flex;flex-direction:column}
+.pj-card:hover{top:-6px;border-color:#E6BF62}
+.pj-card::after{content:"";position:absolute;left:0;right:0;top:100%;height:8px}
+.pj-card a.pj{color:#242221;text-decoration:none}
+.pj-card a.pj:focus-visible{outline:none}
+.pj-card:has(a.pj:focus-visible){outline:3px solid #242221;outline-offset:3px}
+.pj-card a.pj::after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;z-index:1}
+.pj-card .im{position:relative;aspect-ratio:4/3;border-radius:11px 11px 0 0;overflow:hidden;background:#F4F6F8}
+.pj-card .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.pj-badge{position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;gap:8px;background:#FFFFFF;color:#242221;border:1px solid #E6E0D5;border-radius:999px;padding:6px 14px 6px 12px;font-size:14px;line-height:1.5;font-weight:600}
+.pj-badge i{width:8px;height:8px;border-radius:50%;display:block}
+.pj-card .tx{padding:24px 24px 28px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pj-card h3{margin:0;font-size:24px;line-height:1.3;font-weight:600;color:#242221}
+.pj-card .loc{display:flex;align-items:center;gap:8px;font-size:16px;line-height:1.5;color:#5D5A54}
+.pj-card .loc svg{flex:none}
+.pj-card p{margin:0;font-size:16px;line-height:1.65;color:#5D5A54}
+.pj-more{margin-top:auto;padding-top:8px;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;color:#242221}
+.pj-more svg{transition:transform .2s}
+.pj-card:hover .pj-more svg{transform:translateX(3px)}
+
+.ab-sec{padding-top:clamp(48px,6.1cqw,88px);padding-bottom:clamp(48px,6.1cqw,88px)}
+.sp-hero{background:#FFFFFF;padding:24px 0 clamp(32px,3cqw,44px)}
+.sp-hero .ab-h1{font-size:clamp(40px,4.2cqw,60px)}
+.sp-back{display:none}
+.sp-crumb{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-size:14px;line-height:1.5;color:#5D5A54;margin:0 0 clamp(12px,1.4cqw,20px);padding:0;list-style:none}
+.sp-crumb a{color:#5D5A54;text-decoration:none;padding:6px 0}
+.sp-crumb a:hover{color:#242221;text-decoration:underline;text-underline-offset:3px}
+.sp-crumb li{display:flex;align-items:center;gap:8px}
+.sp-crumb [aria-current]{color:#242221;font-weight:600}
+.sp-hero-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(32px,5cqw,72px);align-items:center}
+.sp-hero-t{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.sp-stat{display:inline-flex;align-items:center;gap:8px;background:#FFFFFF;color:#242221;border:1px solid #E6E0D5;border-radius:999px;padding:6px 14px 6px 12px;font-size:14px;line-height:1.5;font-weight:600}
+.sp-stat i{width:8px;height:8px;border-radius:50%;display:block}
+.sp-stat .ho{font-weight:400;color:#5D5A54;padding-left:10px;margin-left:2px;border-left:1px solid #E6E0D5}
+.sp-imp{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.92);color:#242221;border-radius:6px;padding:4px 10px;font-size:13px;line-height:1.5;font-weight:500}
+.sp-loc{display:flex;align-items:center;gap:8px;font-size:18px;line-height:1.5;font-weight:500;color:#242221}
+.sp-btns{display:flex;flex-wrap:wrap;gap:16px;margin-top:8px}
+.sp-heroimg{position:relative;aspect-ratio:5/4;border-radius:12px;overflow:hidden;background:#F4F6F8}
+.sp-heroimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.sp-gl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid #EDE6D6;border-radius:12px;background:#FFFFFF}
+.sp-gl>div{padding:22px 24px;display:flex;flex-direction:row;align-items:center;gap:16px;border-left:1px solid #EDE8DD}
+.sp-gl>div:nth-child(4n+1){border-left:0}
+.sp-gl>div:nth-child(n+5){border-top:1px solid #EDE8DD}
+.sp-ic{width:44px;height:44px;border-radius:50%;background:#F6EEDB;display:flex;align-items:center;justify-content:center;flex:none}
+.sp-gl .sp-ic{background:none;width:36px;height:36px;border-radius:0}
+.sp-gl .l{font-size:14px;line-height:1.3;color:#5D5A54}
+.sp-gl .v{font-size:22px;line-height:1.25;font-weight:600;color:#242221}
+@media (max-width:1259px){.sp-gl>div{padding:20px;gap:14px}.sp-gl .v{font-size:20px}}
+.sp-h3{margin:0;font-size:24px;line-height:1.3;font-weight:600;color:#242221}
+.sp-p{margin:0;font-size:16px;line-height:1.65;color:#5D5A54}
+.sp-p-l{margin:0;font-size:clamp(17px,1.4cqw,20px);line-height:1.65;color:#242221}
+.sp-head{display:flex;flex-direction:column;gap:12px;margin-bottom:clamp(24px,2.4cqw,32px)}
+.sp-two{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,6cqw,96px);align-items:start}
+.sp-dl{margin:0;border:1px solid #EDE6D6;border-radius:12px;background:#FFFFFF;padding:8px 24px}
+.sp-dl>div{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:16px;padding:18px 0;border-top:1px solid #EDE8DD}
+.sp-dl>div:first-child{border-top:0}
+.sp-dl dt{font-size:16px;line-height:1.5;color:#5D5A54}
+.sp-dl dd{margin:0;font-size:16px;line-height:1.5;font-weight:600;color:#242221}
+.sp-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border:1px solid #EDE6D6;border-radius:12px;background:#FFFFFF}
+.sp-card .im{position:relative;min-height:300px;border-radius:11px 0 0 11px;overflow:hidden;background:#F4F6F8}
+.sp-card .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.sp-card .tx{padding:40px 32px;display:flex;flex-direction:column;justify-content:center;gap:16px;align-items:flex-start}
+.sp-planbox{background:#FFFFFF!important}
+.sp-planbox img{object-fit:contain!important}
+.sp-card .im.sp-planbox img{inset:24px;width:calc(100% - 48px);height:calc(100% - 48px)}
+@media (min-width:900px){.sp-plans .sp-card{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}}
+.sp-plans .sp-card{border:0;border-radius:0}
+.sp-plans .sp-card .im.sp-planbox{border:0!important;border-radius:0}
+.sp-plans .sp-card .im.sp-planbox img{inset:0 24px 0 0;width:calc(100% - 24px);height:100%}
+.sp-plans .sp-card .tx{padding:0 0 0 32px}
+@media (max-width:899px){.sp-plans .sp-card .im.sp-planbox img{inset:0;width:100%;height:100%}.sp-plans .sp-card .tx{padding:24px 0 0}.sp-plans .sp-card .im{aspect-ratio:auto;min-height:0;height:auto}.sp-plans .sp-card .im.sp-planbox{aspect-ratio:4/3}}
+.sp-card .im.sp-planbox{border-right:1px solid #EDE8DD}
+.sp-plans .sp-card .im{min-height:400px}
+.sp-plans .sp-card .im.sp-planbox img{inset:0 24px 56px 0;width:calc(100% - 24px);height:calc(100% - 56px);cursor:zoom-in}
+.sp-xp{position:absolute;left:0;right:24px;margin:0 auto;width:fit-content;bottom:12px;display:inline-flex;align-items:center;gap:8px;height:32px;padding:0;border:0;background:none;color:#3E3223;font:600 15px/1 Onest,sans-serif;cursor:pointer;text-decoration:none}
+header{border-bottom:1px solid #EDE8DD}
+.sp-xp:hover{color:#B8934A;text-decoration:underline;text-underline-offset:4px}
+.sp-xp svg{width:18px;height:18px}
+@media (max-width:899px){.sp-plans .sp-card .im.sp-planbox img{inset:0 0 56px 0;width:100%;height:calc(100% - 56px)}.sp-xp{right:0}}
+@media (max-width:899px){.sp-card .im.sp-planbox{border-right:0;border-bottom:1px solid #EDE8DD}.sp-card .im.sp-planbox img{inset:12px;width:calc(100% - 24px);height:calc(100% - 24px)}}
+.sp-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#F4F6F8;color:#767168;font-size:14px;line-height:1.4;text-align:center;padding:16px}
+.sp-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;width:100%}
+.sp-facts>div{padding:16px 24px 16px 0;display:flex;flex-direction:column;gap:2px}
+.sp-facts>div:nth-child(even){padding:16px 0 16px 24px;border-left:1px solid #EDE8DD}
+.sp-facts>div:nth-child(-n+2){border-bottom:1px solid #EDE8DD}
+.sp-facts .l{font-size:14px;line-height:1.3;color:#5D5A54}
+.sp-facts .v{font-size:18px;line-height:1.3;font-weight:600;color:#242221}
+.sp-tabs{display:flex;flex-wrap:wrap;gap:8px}
+.sp-tab{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 20px;border:1px solid #E6E0D5;border-radius:999px;background:#FFFFFF;font-family:inherit;font-size:16px;line-height:1;font-weight:400;color:#242221}
+.sp-tab:hover{background:#F6EEDB}
+@media (max-width:599px){.sp-plans .sp-tab{padding:0 14px;font-size:15px}}
+.sp-tab:focus-visible{outline:3px solid #242221;outline-offset:2px}
+.sp-tab.on,.sp-tab.on:hover{background:#FFFFFF;border-color:#242221;font-weight:600}
+.sp-panel[hidden]{display:none}
+.sp-pan{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(24px,4cqw,56px);align-items:center;margin-top:24px}
+.sp-pan .im{position:relative;aspect-ratio:3/2;border-radius:12px;overflow:hidden;background:#F4F6F8}
+.sp-pan .im.sp-planbox{border:1px solid #EDE6D6}
+.sp-pan .im img,.sp-card .im img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.sp-price{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4cqw,56px);align-items:center;border:1px solid #EDE6D6;border-radius:12px;background:#FFFFFF;padding:40px 32px}
+.sp-ask{display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:clamp(32px,4cqw,56px);margin-top:clamp(40px,4cqw,56px);padding-top:clamp(32px,3cqw,40px);border-top:1px solid #EDE8DD}
+.sp-ask .t{display:flex;flex-direction:column;gap:8px;max-width:460px;align-items:flex-start;text-align:left}
+.sp-ask .btn{flex:none}
+@media (max-width:899px){.sp-ask{flex-direction:column;align-items:stretch;gap:20px}.sp-ask .btn{width:100%}}
+.sp-avail{display:inline-flex;align-items:center;gap:8px;background:#F6EEDB;color:#3E3223;border-radius:999px;padding:6px 14px;font-size:14px;line-height:1.5;font-weight:600}
+.sp-fg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:0;padding:0;list-style:none}
+.sp-fg li{list-style:none;padding:32px;display:flex;flex-direction:column;align-items:flex-start;gap:16px;font-size:18px;line-height:1.45;color:#242221}
+.sp-fg li:nth-child(4n+1){padding-left:0}
+.sp-fg li:nth-child(4n){padding-right:0}
+.sp-fg li:nth-child(4n+2),.sp-fg li:nth-child(4n+3),.sp-fg li:nth-child(4n){border-left:1px solid #E6E0D5}
+.sp-fg li:nth-child(-n+4){border-bottom:1px solid #EDE8DD}
+.sp-fg li:nth-child(-n+4){padding-top:8px}
+.sp-fg li:nth-child(n+5){padding-bottom:8px}
+.sp-fi{display:flex;flex:none}
+@media (max-width:899px){.sp-fg{grid-template-columns:repeat(2,minmax(0,1fr))}
+.sp-fg li:nth-child(n){border:0;padding:28px 24px}
+.sp-fg li:nth-child(odd){padding-left:0}
+.sp-fg li:nth-child(even){padding-right:0;border-left:1px solid #E6E0D5}
+.sp-fg li:nth-child(-n+6){border-bottom:1px solid #EDE8DD}
+.sp-fg li:nth-child(-n+2){padding-top:8px}
+.sp-fg li:nth-child(n+7){padding-bottom:8px}}
+@media (max-width:599px){.sp-fg{grid-template-columns:1fr}
+.sp-fg li:nth-child(n){flex-direction:row;align-items:center;gap:16px;padding:16px 0;border:0;border-top:1px solid #EDE8DD}
+.sp-fg li:last-child{border-bottom:1px solid #EDE8DD}.sp-fi svg{width:32px;height:32px}}
+.sp-feat{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.sp-fs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6cqw,96px);align-items:start}
+.sp-feat li{list-style:none;display:flex;align-items:center;gap:16px;padding:14px 0;border-top:1px solid #EDE8DD;font-size:18px;line-height:1.5;color:#242221}
+.sp-feat li:last-child{border-bottom:1px solid #EDE8DD}
+.sp-am{width:32px;height:32px;display:flex;align-items:center;justify-content:center;flex:none}
+.sp-ck{width:32px;height:32px;border-radius:50%;background:#F6EEDB;display:flex;align-items:center;justify-content:center;flex:none}
+.sp-spl{position:relative;align-self:stretch;min-height:100%}
+.sp-ghost{position:absolute;left:0;bottom:calc(32px - clamp(48px,6.1cqw,88px));width:clamp(130px,11cqw,160px);height:auto;opacity:.1;pointer-events:none;user-select:none}
+.sp-ghost path{fill:#E6BF62!important}
+@media (max-width:899px){.sp-ghost{display:none}}
+.sp-split{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(32px,6cqw,96px);align-items:start}
+.sp-abt{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px clamp(32px,6cqw,96px);margin-top:clamp(32px,3.4cqw,48px);padding-top:clamp(28px,2.8cqw,40px);border-top:1px solid #EDE8DD}
+.sp-abt>div{display:flex;flex-direction:column;gap:10px}
+.sp-acc{border-bottom:1px solid #EDE8DD}
+.sp-acc details p{padding-right:16px!important}
+.sp-acc details{border-top:1px solid #EDE8DD}
+.sp-acc summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;font-size:20px;line-height:1.3;font-weight:600;color:#242221}
+.sp-acc summary::-webkit-details-marker{display:none}
+.sp-acc summary:focus-visible{outline:3px solid #242221;outline-offset:2px}
+.sp-acc summary:hover{color:#D4AD60}
+.sp-st{display:flex;align-items:center;gap:16px}
+.sp-acc summary svg{flex:none}
+.sp-acc details[open] summary svg{transform:rotate(180deg)}
+.sp-acc details p{margin:0;padding:0 48px 24px 0;font-size:16px;line-height:1.65;color:#5D5A54}
+.sp-gal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(10,minmax(0,1fr));gap:16px;aspect-ratio:2.4/1}
+.sp-gal .g{position:relative;border-radius:12px;overflow:hidden;background:#F4F6F8}
+.sp-gal .g{cursor:zoom-in}
+.sp-gal .g:nth-child(1){grid-column:1;grid-row:1/11}
+.sp-gal .g:nth-child(2){grid-column:2;grid-row:1/7}
+.sp-gal .g:nth-child(3){grid-column:2;grid-row:7/11}
+.sp-gal .g:nth-child(4){grid-column:3;grid-row:1/11}
+.sp-gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.sp-cap{position:absolute;left:12px;bottom:12px;background:#FFFFFF;border-radius:8px;padding:6px 12px;font-size:14px;line-height:1.4;font-weight:600;color:#242221;z-index:1;max-width:calc(100% - 24px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sp-prog{width:100%;margin-top:8px}
+.sp-prog-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;font-size:14px;line-height:1.4;font-weight:600;color:#5D5A54}
+.sp-prog-h b{font-size:24px;line-height:1.2;font-weight:600;color:#242221}
+.sp-prog-t{height:10px;border-radius:999px;background:#F1EBDD;overflow:hidden}
+.sp-prog-t i{display:block;height:100%;border-radius:999px;background:#E6BF62}
+.sp-upd .tx{gap:20px}
+.sp-upd .sp-date{font-weight:400}
+.sp-hp{position:relative;background:#FFFFFF;border:1px solid #EDE6D6;border-radius:12px;top:0;transition:top .25s ease,border-color .25s ease;display:flex;flex-direction:column}
+.sp-hp:hover{top:-6px;border-color:#E6BF62}
+.sp-hp::after{content:"";position:absolute;left:0;right:0;top:100%;height:8px}
+.sp-hp a.pj{color:#242221;text-decoration:none}
+.sp-hp a.pj::after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;z-index:1}
+.sp-hp a.pj:focus-visible{outline:none}
+.sp-hp:has(a.pj:focus-visible){outline:3px solid #242221;outline-offset:3px}
+.sp-hp .im{position:relative;aspect-ratio:1/1;border-radius:11px 11px 0 0;overflow:hidden;background:#F4F6F8}
+.sp-hp .tx{padding:24px 24px 28px;display:flex;flex-direction:column;gap:10px;min-height:180px}
+.sp-hgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
+@media (max-width:899px){.wrap:has(>.sp-mh){display:flex;flex-direction:column}.sp-mh{display:contents!important}.sp-mh .ab-h2{margin-bottom:40px}.sp-mh .btn{order:3;align-self:center;margin-top:40px}}
+@media (max-width:599px){.sp-mh .btn{align-self:stretch}}
+@media (min-width:1100px){.sp-hgrid .sp-hp:nth-child(2){margin-top:48px}}
+@media (max-width:1099px){.sp-hgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.sp-hgrid .sp-hp:nth-child(3){display:none}}
+@media (max-width:599px){.sp-hgrid{grid-template-columns:1fr}.sp-hgrid .sp-hp:nth-child(3){display:flex}.sp-hp .tx{min-height:0}}
+.sp-lrow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px;margin-bottom:clamp(24px,2.4cqw,32px)}
+.sp-lrow .sp-loc{max-width:640px}
+.sp-lmap{position:relative;height:clamp(360px,30cqw,440px);border-radius:12px;overflow:hidden;background:#F4F6F8;border:1px solid #EDE6D6}
+.sp-lmap svg.bg{position:absolute;inset:0;width:100%;height:100%}
+.sp-lpin{position:absolute;left:50%;top:48%;transform:translate(-50%,-100%);display:flex}
+@media (max-width:899px){.sp-lmap{height:auto;aspect-ratio:4/3}.sp-lrow .btn{width:100%}}
+.sp-stl{list-style:none;margin:0;padding:16px 0 0;border-top:1px solid #EDE8DD;width:100%;display:flex;flex-direction:column;gap:10px}
+.sp-stl li{display:flex;align-items:flex-start;gap:10px;font-size:16px;line-height:1.5;color:#5D5A54}
+.sp-stl b{font-weight:600;color:#242221}
+.sp-stl .mk{flex:none;width:16px;height:24px;display:flex;align-items:center;justify-content:center}
+.sp-stl .mk i{width:8px;height:8px;border-radius:50%;background:#E6BF62;display:block}
+.sp-date{display:inline-flex;align-items:center;gap:8px;font-size:14px;line-height:1.4;font-weight:600;color:#5D5A54}
+.sp-map{position:relative;aspect-ratio:16/10;border-radius:12px;overflow:hidden;background:#F4F6F8;border:1px solid #EDE6D6}
+.sp-map svg.bg{position:absolute;inset:0;width:100%;height:100%}
+.sp-pinm{position:absolute;left:50%;top:46%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
+.sp-two2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.sp-dc{background:#FFFFFF;border:1px solid #EDE6D6;border-radius:12px;padding:32px 24px;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.sp-dc .btn{margin-top:8px;min-height:48px;padding:10px 28px}
+.sp-enq{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6cqw,96px);align-items:start}
+.sp-form{border:1px solid #EDE6D6;border-radius:12px;background:#FFFFFF;padding:32px 24px;display:flex;flex-direction:column;gap:20px}
+.sp-f{display:flex;flex-direction:column;gap:8px}
+.sp-f label,.sp-f .lb{font-size:14px;line-height:1.3;font-weight:600;letter-spacing:.02em;color:#242221}
+.sp-f .opt{font-weight:400;color:#5D5A54;letter-spacing:0}
+.sp-f input[type=text],.sp-f input[type=tel],.sp-f input[type=email],.sp-f textarea{width:100%;height:48px;padding:0 20px;border:1px solid #E6E0D5;border-radius:999px;background:#FFFFFF;font-family:inherit;font-size:16px;line-height:1.4;color:#242221}
+.sp-f textarea{height:120px;padding:14px 20px;border-radius:20px;resize:vertical}
+.sp-f input::placeholder,.sp-f textarea::placeholder{color:#767168;opacity:1}
+.sp-f input:focus,.sp-f textarea:focus{outline:3px solid #242221;outline-offset:2px;border-color:#242221}
+.sp-frow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.sp-chips{display:flex;flex-wrap:wrap;gap:8px}
+.sp-chips .sp-tab{height:40px;padding:0 16px}
+.sp-form .btn{align-self:flex-start}
+.sp-ok{display:none;align-items:flex-start;gap:16px;padding:8px 0}
+.sp-ok h3{margin:0 0 8px;font-size:24px;line-height:1.3;font-weight:600;color:#242221}
+.sp-ok p{margin:0;font-size:16px;line-height:1.65;color:#5D5A54}
+.sp-err{display:none;gap:12px;align-items:flex-start;background:#FCE9E5;color:#8F3326;border-radius:8px;padding:12px 16px;font-size:16px;line-height:1.5}
+.sp-note{margin:16px 0 0;font-size:14px;line-height:1.5;color:#5D5A54;font-style:italic}
+.sp-vall{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;color:#242221;text-decoration:none}
+.sp-vall:hover{color:#D4AD60}
+.sp-vall svg{transition:transform .2s}
+.sp-vall:hover svg{transform:translateX(3px)}
+.sp-cards .pj-card .im{aspect-ratio:16/10}
+.sp-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:stretch}
+@media (max-width:1099px){
+ .sp-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .sp-cards .pj-card:nth-child(3){display:none}
+}
+@media (max-width:899px){
+ .sp-gl{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .sp-gl>div:nth-child(4n+1){border-left:1px solid #EDE8DD}
+ .sp-gl>div:nth-child(2n+1){border-left:0}
+ .sp-gl>div:nth-child(n+3){border-top:1px solid #EDE8DD}
+ .sp-gl>div:nth-child(n+5){border-top:1px solid #EDE8DD}
+ .sp-abt{grid-template-columns:1fr}
+ .sp-hero-grid,.sp-two,.sp-card,.sp-pan,.sp-price,.sp-split,.sp-enq{grid-template-columns:1fr}
+ .sp-hero-grid{gap:24px}
+ .sp-heroimg{order:-1;aspect-ratio:4/3}
+ .sp-crumb{display:none}
+ .sp-back{display:inline-flex;align-items:center;gap:6px;font-size:16px;line-height:1.5;color:#5D5A54;text-decoration:none;padding:10px 0;margin:0 0 6px}
+ .sp-card .im,.sp-plans .sp-card .im{min-height:0;aspect-ratio:4/3;border-radius:11px 11px 0 0}
+ .sp-card .tx{padding:32px 24px}
+ .sp-fs{grid-template-columns:1fr;gap:48px}
+ .sp-two2{grid-template-columns:1fr}
+ .sp-gal{aspect-ratio:auto;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}
+ .sp-gal .g{aspect-ratio:4/3}
+ .sp-gal .g:nth-child(n){grid-row:auto;grid-column:auto}
+}
+@media (max-width:599px){
+ .sp-gl{grid-template-columns:1fr}
+ .sp-gl>div,.sp-gl>div:nth-child(n){border-left:0;border-top:1px solid #EDE8DD;padding:16px 16px}
+ .sp-gl>div:first-child{border-top:0}
+ .sp-gl>div>div{display:flex;flex:1;align-items:center;justify-content:space-between;gap:12px}
+ .sp-gl .v{font-size:18px;text-align:right;white-space:nowrap}
+ .sp-cards{grid-template-columns:1fr}
+ .sp-cards .pj-card:nth-child(3){display:flex}
+ .sp-frow{grid-template-columns:1fr}
+ .sp-dl>div{grid-template-columns:1fr;gap:4px}
+ .sp-gal{grid-template-columns:1fr;gap:16px}
+ .sp-acc details p{padding-right:0}
+ .sp-btns .btn,.sp-card .btn,.sp-price .btn,.sp-enq .btn{width:100%}
+ .sp-btns{width:100%}
+}
+
+.sp-gl{grid-template-columns:repeat(3,minmax(0,1fr))}
+.sp-gl>div:nth-child(n){border-left:1px solid #EDE8DD;border-top:0}
+.sp-gl>div:nth-child(3n+1){border-left:0}
+.sp-gl>div:nth-child(n+4){border-top:1px solid #EDE8DD}
+@media (max-width:899px){
+ .sp-gl{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .sp-gl>div:nth-child(n){border-left:1px solid #EDE8DD;border-top:1px solid #EDE8DD}
+ .sp-gl>div:nth-child(2n+1){border-left:0}
+ .sp-gl>div:nth-child(-n+2){border-top:0}
+ .sp-plans .sp-card .im.sp-planbox .sp-ph{bottom:56px}
+}
+@media (max-width:599px){
+ .sp-gl{grid-template-columns:1fr}
+ .sp-gl>div:nth-child(n){border-left:0;border-top:1px solid #EDE8DD}
+ .sp-gl>div:first-child{border-top:0}
+ .sp-gl .v{white-space:normal}
+ .sp-gl .l{max-width:60%}
+}
+.sp-plans .sp-card .im.sp-planbox .sp-ph{background:#F4F6F8;right:24px;bottom:56px;border-radius:8px}
+@media (max-width:899px){.sp-plans .sp-card .im.sp-planbox .sp-ph{right:0;border-radius:8px}}
+.sp-heroimg .sp-ph{font-size:15px}
+</style>
+
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="site.css">
+<script src="site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<div style="background:#FFFFFF">
+<header class="hd" style="background:#FFFFFF">
+<div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding-top:8px;padding-bottom:8px">
+<a href="index.html" aria-label="Wahi Properties Ltd, home" style="display:block;padding:4px 12px 4px 0"><img src="images/logo.svg" alt="Wahi Properties Ltd" style="display:block;width:170px;height:auto"></a>
+<nav class="hd-nav" id="hd-nav" aria-label="Main">
+<a class="nav" href="index.html">Home</a>
+<a class="nav" href="about.html">About Us</a>
+<a class="nav nav-on" aria-current="location" href="projects.html">Projects</a>
+<a class="nav" href="joint-venture.html">Joint Venture</a>
+<a class="nav" href="buyers-guide.html">Buyer's Guide</a>
+<a class="nav" href="contact-us.html">Contact Us</a>
+</nav>
+<div class="hdr-r">
+<a class="btn btn-primary call" href="tel:01604363259" aria-label="Call Us">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E3223" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg>
+<span class="ct">Call Us</span></a>
+<button type="button" class="hd-tgl" aria-label="Menu" aria-expanded="false" aria-controls="hd-nav"><svg class="i-o" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><svg class="i-c" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</div>
+</div>
+</header>
+<main id="main-content">
+<section class="sp-hero"><div class="wrap">
+<a class="sp-back" href="projects.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5D5A54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg>Projects</a>
+<nav aria-label="Breadcrumb"><ol class="sp-crumb"><li><a href="index.html">Home</a><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5D5A54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></li><li><a href="projects.html">Projects</a><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5D5A54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></li><li><span aria-current="page">The Selim Heights</span></li></ol></nav>
+<div class="sp-hero-grid">
+<div class="sp-hero-t">
+<h1 class="ab-h1">The Selim Heights</h1>
+<div class="sp-loc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg><span>Chunkutia, South Keraniganj, Dhaka</span></div>
+<p class="ab-lead">Three-bedroom apartments in two sizes, with a rooftop pool and shared spaces for families.</p>
+<div class="sp-btns"><a class="btn btn-primary" href="https://wa.me/8801604363259?text=Hello%20Wahi%20Properties%2C%20I%20would%20like%20to%20know%20the%20price%20of%20The%20Selim%20Heights." target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="#3E3223" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>Request Price</a><a class="btn btn-secondary" href="https://wa.me/8801604363259?text=Hello%20Wahi%20Properties%2C%20could%20you%20send%20me%20the%20brochure%20for%20The%20Selim%20Heights%3F" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E3223" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7.5 11l4.5 4.5 4.5-4.5M5 20h14"></path></svg>Request Brochure</a></div></div>
+<div class="sp-heroimg"><img src="images/selim-heights-hero.webp" alt="Exterior rendering of the three towers at Selim Heights" style="object-position:38% 50%"><span class="sp-imp">Artist’s impression</span></div>
+</div></div></section><section class="ab-sec" style="background:#FBF8F1;padding-top:clamp(32px,3cqw,40px);padding-bottom:clamp(32px,3cqw,40px)"><div class="wrap">
+<h2 class="ab-h2" style="font-size:clamp(24px,2.2cqw,32px);margin-bottom:20px">At a Glance</h2>
+<div class="sp-gl"><div><span class="sp-ic"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M7 28V5h13v23z" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 12h5v16h-5z" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 28h26" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 10h6M10.5 15h6M10.5 20h6" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M22.5 17v.5M22.5 22v.5" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="l">Towers</div><div class="v">3</div></div></div><div><span class="sp-ic"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 4l12 6-12 6-12-6z" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16l12 6 12-6" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 22l12 6 12-6" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="l">Floors</div><div class="v">Basement + Ground + 14</div></div></div><div><span class="sp-ic"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M8 5h16l3 15H5z" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 26h22" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 26l2.2-2M5 26l2.2 2M27 26l-2.2-2M27 26l-2.2 2" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="l">Land area</div><div class="v">36.25 decimals (shotok)</div></div></div><div><span class="sp-ic"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 5h22v22H5z" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 16h9M14 5v11M14 21v6M14 21h13" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="l">Apartment sizes</div><div class="v">1,300 and 1,500 sq ft</div></div></div><div><span class="sp-ic"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M4 27V7" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h24v7" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="20" width="24" height="5" rx="1.5" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linejoin="round"/><path d="M28 20v-4a4 4 0 0 0-4-4H15v8" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="15" r="3" fill="none" stroke="#B8934A" stroke-width="1.8"/></svg></span><div><div class="l">Bedrooms</div><div class="v">3</div></div></div><div><span class="sp-ic"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M4 14h24v3a7 7 0 0 1-7 7H11a7 7 0 0 1-7-7z" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 14V8a3 3 0 0 1 6 0" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 24l-1.5 3M22 24l1.5 3" fill="none"  stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="l">Bathrooms, incl. staff</div><div class="v">4</div></div></div></div></div></section><section class="ab-sec" style="background:#FFFFFF"><div class="wrap">
+<div class="sp-head"><h2 class="ab-h2">About the Project</h2></div>
+<p class="sp-p-l" style="max-width:800px;text-wrap:balance;margin-bottom:clamp(28px,3cqw,44px)">The Selim Heights is a residential development in Mather Kona, South Keraniganj. Its three towers offer layouts with separate living and dining areas, a kitchen and a staff room. The plans include a children’s activity area and a rooftop terrace with space to sit outside or get together.</p>
+<div class="sp-plans"><h3 class="sp-h3" style="margin:0 0 16px">Floor Plans</h3><div class="sp-tabs" role="tablist" aria-label="Floor plans" style="margin-bottom:32px"><button type="button" role="tab" class="sp-tab on" aria-selected="true" data-i="0">Tower 1</button><button type="button" role="tab" class="sp-tab" aria-selected="false" data-i="1">Tower 2</button><button type="button" role="tab" class="sp-tab" aria-selected="false" data-i="2">Tower 3</button><button type="button" role="tab" class="sp-tab" aria-selected="false" data-i="3">1st Floor</button><button type="button" role="tab" class="sp-tab" aria-selected="false" data-i="4">Ground Floor</button><button type="button" role="tab" class="sp-tab" aria-selected="false" data-i="5">Basement</button><button type="button" role="tab" class="sp-tab" aria-selected="false" data-i="6">Roof</button></div><div class="sp-panel" role="tabpanel" data-i="0"><article class="sp-card"><div class="im sp-planbox"><img src="images/selim-tower-1-floor-plan.webp" alt="Tower 1 floor plan showing two apartments on either side of the shared lift and stairs."><button type="button" class="sp-xp" aria-label="Expand plan"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E3223" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"></path></svg>Expand plan</button></div><div class="tx"><h3 class="sp-h3">Tower 1: Progoti</h3><p class="sp-p">The floor plan shows two apartments, each 1,500 sq ft. Each has three bedrooms, two attached bathrooms, a shared bathroom and a separate staff bathroom.</p><div class="sp-facts"><div><span class="l">Size</span><span class="v">1,500 sq ft</span></div><div><span class="l">Bedrooms</span><span class="v">3</span></div><div><span class="l">Bathrooms</span><span class="v">4</span></div><div><span class="l">Staff bathroom</span><span class="v">Included</span></div></div><div class="sp-btns" style="margin-top:8px"><a class="btn btn-primary" href="https://wa.me/8801604363259?text=Hello%20Wahi%20Properties%2C%20I%20would%20like%20to%20know%20the%20price%20and%20available%20apartments%20at%20The%20Selim%20Heights." target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="#3E3223" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>Ask About Price</a></div></div></article></div><div class="sp-panel" role="tabpanel" data-i="1" hidden><article class="sp-card"><div class="im sp-planbox"><img src="images/selim-tower-2-floor-plan.webp" alt="Tower 2 floor plan showing three apartments arranged around the shared lift and stairs."><button type="button" class="sp-xp" aria-label="Expand plan"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E3223" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"></path></svg>Expand plan</button></div><div class="tx"><h3 class="sp-h3">Tower 2: Prottoy</h3><p class="sp-p">This plan shows two 1,300 sq ft apartments and one 1,500 sq ft apartment. Both sizes have three bedrooms, separate living and dining areas, and a staff room.</p><div class="sp-facts"><div><span class="l">Size</span><span class="v">1,300 or 1,500 sq ft</span></div><div><span class="l">Bedrooms</span><span class="v">3</span></div><div><span class="l">Bathrooms</span><span class="v">4</span></div><div><span class="l">Staff bathroom</span><span class="v">Included</span></div></div><div class="sp-btns" style="margin-top:8px"><a class="btn btn-primary" href="https://wa.me/8801604363259?text=Hello%20Wahi%20Properties%2C%20I%20would%20like%20to%20know%20the%20price%20and%20available%20apartments%20at%20The%20Selim%20Heights." target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="#3E3223" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>Ask About Price</a></div></div></article></div><div class="sp-panel" role="tabpanel" data-i="2" hidden><article class="sp-card"><div class="im sp-planbox"><img src="images/selim-tower-3-floor-plan.webp" alt="Tower 3 floor plan showing three apartments connected by a shared corridor."><button type="button" class="sp-xp" aria-label="Expand plan"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E3223" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"></path></svg>Expand plan</button></div><div class="tx"><h3 class="sp-h3">Tower 3: Prottasha</h3><p class="sp-p">This plan shows three 1,300 sq ft apartments. Each has three bedrooms, a kitchen, separate living and dining areas, and a staff room.</p><div class="sp-facts"><div><span class="l">Size</span><span class="v">1,300 sq ft</span></div><div><span class="l">Bedrooms</span><span class="v">3</span></div><div><span class="l">Bathrooms</span><span class="v">4</span></div><div><span class="l">Staff bathroom</span><span class="v">Included</span></div></div><div class="sp-btns" style="margin-top:8px"><a class="btn btn-primary" href="https://wa.me/8801604363259?text=Hello%20Wahi%20Properties%2C%20I%20would%20like%20to%20know%20the%20price%20and%20available%20apartments%20at%20The%20Selim%20Heights." target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="#3E3223" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>Ask About Price</a></div></div></article></div><div class="sp-panel" role="tabpanel" data-i="3" hidden><article class="sp-card"><div class="im sp-planbox"><img src="images/selim-first-floor-plan.webp" alt="First-floor plan showing how the three tower layouts fit together."><button type="button" class="sp-xp" aria-label="Expand plan"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E3223" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"></path></svg>Expand plan</button></div><div class="tx"><h3 class="sp-h3">First Floor</h3><p class="sp-p">See the apartment layouts and shared lift and stair access across the three towers.</p></div></article></div><div class="sp-panel" role="tabpanel" data-i="4" hidden><article class="sp-card"><div class="im sp-planbox"><img src="images/selim-ground-floor-plan.webp" alt="Ground-floor plan showing parking, the building management office and the children’s activity area."><button type="button" class="sp-xp" aria-label="Expand plan"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E3223" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"></path></svg>Expand plan</button></div><div class="tx"><h3 class="sp-h3">Ground Floor</h3><p class="sp-p">The ground floor includes parking, a building management office and a 1,267 sq ft children’s play and activity area. The plan also includes a security control room and a separate waiting room and toilet for drivers.</p></div></article></div><div class="sp-panel" role="tabpanel" data-i="5" hidden><article class="sp-card"><div class="im sp-planbox"><img src="images/selim-basement-plan.webp" alt="Basement plan showing the vehicle ramp and parking layout."><button type="button" class="sp-xp" aria-label="Expand plan"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E3223" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"></path></svg>Expand plan</button></div><div class="tx"><h3 class="sp-h3">Basement</h3><p class="sp-p">The basement plan shows space for car and motorcycle parking, with a ramp for vehicle access.</p></div></article></div><div class="sp-panel" role="tabpanel" data-i="6" hidden><article class="sp-card"><div class="im sp-planbox"><img src="images/selim-roof-plan.webp" alt="Roof plan showing the swimming pool, community space and planted areas."><button type="button" class="sp-xp" aria-label="Expand plan"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E3223" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"></path></svg>Expand plan</button></div><div class="tx"><h3 class="sp-h3">Roof</h3><p class="sp-p">The roof plan includes a swimming pool, a 1,656 sq ft community space, landscaped areas and a barbecue area.</p></div></article></div></div>
+</div></section><section class="ab-sec" style="background:#FBF8F1"><div class="wrap">
+<div class="sp-head"><h2 class="ab-h2">Features and Amenities</h2></div><ul class="sp-fg"><li><span class="sp-fi"><svg width="36" height="36" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M12 21V9a3 3 0 0 1 3-3M20 21V9a3 3 0 0 1 3-3M12 12h8M12 16.5h8" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 25.5c2 0 2-1.6 4-1.6s2 1.6 4 1.6 2-1.6 4-1.6 2 1.6 4 1.6 2-1.6 4-1.6 2 1.6 4 1.6" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Rooftop swimming pool</li><li><span class="sp-fi"><svg width="36" height="36" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M10 20h12l-1.5 8h-9z" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 20V11" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 15c-4 0-6-2-6-6 4 0 6 2 6 6z" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 12c0-4 2-6 6-6 0 4-2 6-6 6z" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Landscaped rooftop and barbecue area</li><li><span class="sp-fi"><svg width="36" height="36" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="10" cy="11" r="3.2" fill="none" stroke="#B8934A" stroke-width="1.8"/><circle cx="22" cy="11" r="3.2" fill="none" stroke="#B8934A" stroke-width="1.8"/><path d="M3.5 25c0-4 2.9-6.5 6.5-6.5s6.5 2.5 6.5 6.5M15.5 25c0-4 2.9-6.5 6.5-6.5s6.5 2.5 6.5 6.5" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Rooftop community space</li><li><span class="sp-fi"><svg width="36" height="36" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 6h22M7 27L9 6M25 27L23 6M12 6v14M20 6v14M9.5 20h5M17.5 20h5" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Children’s play and activity area</li><li><span class="sp-fi"><svg width="36" height="36" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M4 21h24v-5l-3-6H7l-3 6z" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16h24" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="24" r="2.3" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="24" r="2.3" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Car and motorcycle parking</li><li><span class="sp-fi"><svg width="36" height="36" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M7 4h18v24H7z" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 4v24" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 12l2.5-3 2.5 3" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 20l2.5 3 2.5-3" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Passenger lifts and backup generator</li><li><span class="sp-fi"><svg width="36" height="36" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 4l10 4v8c0 6-4 10-10 12C10 26 6 22 6 16V8z" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.5 16l3.5 3.5 6-7" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>CCTV in shared areas and an intercom to each apartment</li><li><span class="sp-fi"><svg width="36" height="36" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 16a3 3 0 0 1 6 0v3h10v-3a3 3 0 0 1 6 0v7H5z" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 23v4M24 23v4" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 13V9a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v4" fill="none" stroke="#B8934A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Building management office and drivers’ waiting room</li></ul></div></section><section class="ab-sec" style="background:#FFFFFF"><div class="wrap"><div class="sp-split">
+<div class="sp-spl"><div style="display:flex;flex-direction:column;gap:16px"><h2 class="ab-h2">Building Specifications</h2><p class="sp-p">The main materials and fittings used in the building.</p><div class="sp-btns" style="margin-top:8px"><a class="btn btn-secondary" href="https://wa.me/8801604363259?text=Hello%20Wahi%20Properties%2C%20could%20you%20send%20me%20the%20brochure%20for%20The%20Selim%20Heights%3F" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E3223" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7.5 11l4.5 4.5 4.5-4.5M5 20h14"></path></svg>Request Brochure</a></div></div><svg class="sp-ghost" viewBox="88 370 266 311" aria-hidden="true" focusable="false"><path d="M0 0 C2.394 2.394 1.993 8.268 2.375 11.625 C2.505 12.759 2.635 13.892 2.769 15.06 C4.473 30.523 5.523 46.044 6.664 61.556 C7.031 66.407 7.441 71.253 7.869 76.1 C9.412 93.605 10.08 111.052 10.125 128.625 C10.13 129.858 10.134 131.09 10.139 132.36 C10.099 155.315 6.497 181.632 -10.016 199.137 C-11.958 200.838 -13.956 202.423 -16 204 C-17.34 205.18 -18.673 206.368 -20 207.562 C-30.804 217 -30.804 217 -34 217 C-34 217.66 -34 218.32 -34 219 C-43.505 224.259 -53.011 229.506 -62.625 234.562 C-89.387 248.689 -89.387 248.689 -99 256 C-99.638 256.484 -100.276 256.968 -100.934 257.467 C-104.583 260.237 -108.222 263.02 -111.852 265.816 C-118.519 270.946 -125.276 275.947 -132.094 280.875 C-134.342 282.519 -136.575 284.185 -138.801 285.859 C-143.051 289.054 -147.366 292.153 -151.688 295.25 C-159.243 300.686 -166.658 306.278 -174 312 C-184.983 320.498 -196.023 328.924 -207.246 337.102 C-207.929 337.599 -208.612 338.097 -209.315 338.61 C-211.204 339.984 -213.096 341.353 -214.988 342.723 C-218 345 -218 345 -221 348 C-222.992 349.345 -224.995 350.675 -227 352 C-235.427 357.98 -243.663 364.224 -251.919 370.436 C-255.277 372.96 -258.639 375.48 -262 378 C-263.306 378.98 -264.612 379.959 -265.957 380.969 C-268.765 383.075 -271.575 385.179 -274.387 387.281 C-275.107 387.82 -275.827 388.359 -276.568 388.914 C-278.57 390.412 -280.572 391.909 -282.574 393.406 C-284.616 394.952 -286.645 396.516 -288.645 398.117 C-291.045 400.036 -293.502 401.836 -296 403.625 C-301.333 407.484 -306.55 411.479 -311.758 415.504 C-316.801 419.386 -321.902 423.19 -327 427 C-329.584 428.937 -332.167 430.875 -334.75 432.812 C-338.919 435.94 -343.088 439.067 -347.262 442.188 C-358.894 450.89 -358.894 450.89 -363.812 454.75 C-367.848 457.914 -371.989 460.918 -376.145 463.922 C-378.95 465.964 -381.728 468.038 -384.5 470.125 C-390.767 474.844 -397.086 479.49 -403.414 484.127 C-407.342 487.012 -411.202 489.946 -415 493 C-418.364 495.537 -421.739 498.06 -425.117 500.578 C-428.796 503.326 -432.428 506.116 -436 509 C-441.042 512.828 -446.142 516.573 -451.25 520.312 C-456.919 524.463 -462.553 528.655 -468.164 532.883 C-470.964 534.973 -473.79 537.021 -476.625 539.062 C-480.103 541.578 -483.484 544.166 -486.812 546.875 C-492.027 551.109 -497.493 554.953 -502.996 558.801 C-506 561 -506 561 -509 564 C-510.991 565.347 -512.993 566.677 -515 568 C-518.107 570.218 -521.179 572.483 -524.25 574.75 C-525.097 575.374 -525.944 575.998 -526.816 576.641 C-531.915 580.413 -536.913 584.277 -541.828 588.285 C-544.885 590.699 -548.09 592.877 -551.297 595.086 C-557.503 599.48 -563.458 604.223 -569.441 608.914 C-574.319 612.736 -579.289 616.403 -584.312 620.031 C-586.745 621.813 -589.129 623.637 -591.5 625.5 C-595.536 628.668 -599.668 631.681 -603.828 634.684 C-608.371 638.001 -612.859 641.391 -617.342 644.788 C-620.277 647.003 -623.223 649.147 -626.293 651.172 C-629 653 -629 653 -632 656 C-634.169 657.588 -636.359 659.147 -638.562 660.688 C-643.717 664.334 -648.697 668.1 -653.594 672.082 C-657.943 675.549 -662.487 678.751 -667 682 C-669.67 683.934 -672.336 685.871 -675 687.812 C-676.258 688.726 -677.516 689.64 -678.812 690.582 C-682 693 -682 693 -685 696 C-689.99 700.025 -695.076 703.767 -700.375 707.375 C-705.582 710.941 -710.455 714.751 -715.297 718.793 C-720.453 723.003 -725.791 727.156 -731.57 730.477 C-734.115 732.072 -735.896 733.868 -738 736 C-743.952 740.464 -749.3 744.14 -757 744 C-759.543 741.457 -759.339 740.323 -759.562 736.785 C-759.637 735.704 -759.712 734.623 -759.789 733.51 C-759.859 732.372 -759.928 731.235 -760 730.062 C-760.496 722.427 -761.103 714.826 -761.934 707.219 C-763.097 696.421 -763.974 685.606 -764.805 674.778 C-765.06 671.466 -765.324 668.154 -765.588 664.842 C-767.133 645.089 -768.673 625.131 -767.75 605.312 C-767.702 604.236 -767.654 603.159 -767.604 602.049 C-766.366 578.538 -758.737 555.341 -741.359 538.824 C-736.673 534.885 -731.71 531.527 -726.543 528.254 C-722.932 525.957 -719.481 523.487 -716 521 C-714.018 519.966 -712.016 518.968 -710 518 C-707.811 516.777 -705.622 515.553 -703.434 514.328 C-698.477 511.623 -693.402 509.13 -688.293 506.727 C-683.861 504.403 -679.705 501.707 -675.5 499 C-666.692 493.329 -666.692 493.329 -662.844 491.5 C-659.066 489.508 -656.198 486.821 -653 484 C-650.58 482.123 -648.142 480.27 -645.688 478.438 C-645.346 478.182 -645.346 478.182 -643.618 476.891 C-638.389 472.998 -633.107 469.179 -627.812 465.375 C-621.655 460.949 -615.584 456.437 -609.594 451.785 C-596.171 441.382 -582.599 431.172 -569 421 C-567.614 419.959 -566.229 418.917 -564.844 417.875 C-559.029 413.502 -553.213 409.133 -547.312 404.875 C-542.205 401.182 -537.218 397.342 -532.23 393.488 C-525.803 388.538 -519.303 383.686 -512.762 378.887 C-511.195 377.737 -509.629 376.587 -508.062 375.438 C-507.264 374.851 -506.465 374.265 -505.642 373.661 C-498.488 368.393 -491.42 363.015 -484.381 357.594 C-479.43 353.795 -474.41 350.14 -469.265 346.607 C-466.978 344.984 -464.798 343.272 -462.625 341.5 C-457.66 337.47 -452.56 333.638 -447.438 329.812 C-441.014 325.014 -434.611 320.194 -428.25 315.312 C-416.366 306.204 -404.416 297.202 -392.201 288.539 C-387.583 285.238 -383.286 281.722 -379 278 C-378.092 277.402 -377.185 276.804 -376.25 276.188 C-373.28 274.189 -370.666 272.06 -367.938 269.75 C-362.812 265.484 -357.42 262.059 -351.652 258.727 C-349 257 -349 257 -347 254 C-346.777 250.421 -346.674 246.914 -346.656 243.332 C-346.642 242.222 -346.628 241.112 -346.614 239.968 C-346.584 237.535 -346.558 235.102 -346.536 232.669 C-346.474 226.023 -346.38 219.377 -346.285 212.73 C-346.266 211.317 -346.246 209.903 -346.226 208.446 C-345.946 189.624 -345.367 170.81 -344.797 151.994 C-344.349 137.184 -343.915 122.395 -343.99 107.577 C-344.035 96.112 -343.841 84.646 -343.683 73.182 C-343.644 70.235 -343.609 67.288 -343.578 64.341 C-343.533 60.046 -343.475 55.752 -343.414 51.457 C-343.403 50.133 -343.391 48.81 -343.379 47.446 C-343.359 46.232 -343.339 45.019 -343.319 43.769 C-343.306 42.7 -343.292 41.63 -343.278 40.529 C-343 38 -343 38 -341 36 C-338.18 35.751 -338.18 35.751 -334.502 35.753 C-333.113 35.749 -331.723 35.744 -330.291 35.74 C-328.757 35.746 -327.223 35.751 -325.642 35.757 C-324.838 35.756 -324.838 35.756 -320.77 35.751 C-316.35 35.746 -311.931 35.754 -307.512 35.764 C-302.896 35.773 -298.28 35.771 -293.664 35.771 C-285.912 35.772 -278.16 35.781 -270.408 35.794 C-261.433 35.81 -252.458 35.815 -243.483 35.814 C-234.865 35.814 -226.246 35.819 -217.627 35.827 C-213.952 35.831 -210.277 35.833 -206.602 35.833 C-201.477 35.834 -196.353 35.844 -191.228 35.855 C-189.692 35.854 -188.156 35.854 -186.573 35.853 C-185.88 35.855 -185.88 35.855 -182.371 35.866 C-181.158 35.868 -179.944 35.87 -178.694 35.871 C-176 36 -176 36 -175 37 C-174.792 39.024 -174.651 41.055 -174.535 43.086 C-174.458 44.392 -174.382 45.699 -174.302 47.045 C-174.223 48.474 -174.144 49.903 -174.062 51.375 C-174.02 52.109 -174.02 52.109 -173.805 55.822 C-173.532 60.548 -173.266 65.274 -173 70 C-172.821 73.128 -172.641 76.255 -172.461 79.383 C-172.126 85.203 -171.794 91.023 -171.465 96.844 C-170.989 105.23 -170.496 113.615 -170 122 C-165.68 119.84 -162.019 117.151 -158.188 114.25 C-157.844 113.993 -157.844 113.993 -156.107 112.695 C-151.588 109.292 -147.281 105.702 -143 102 C-141.033 100.509 -139.065 99.018 -137.081 97.551 C-134.973 95.98 -132.903 94.369 -130.836 92.746 C-125.343 88.465 -119.728 84.359 -114.105 80.25 C-109.4 76.8 -104.761 73.282 -100.166 69.688 C-92.49 63.706 -84.715 57.814 -76.688 52.312 C-73.284 49.968 -70.105 47.467 -66.938 44.812 C-62.268 40.926 -57.418 37.407 -52.438 33.938 C-46.958 30.119 -41.613 26.211 -36.438 21.988 C-9.481 0 -9.481 0 0 0 Z " fill="#242221" transform="scale(0.25) translate(1131,1488)"></path>
+<path d="M 149,679 L 149,540 Q 147,535 154,531 L 283,437 L 283,524 L 218,524 L 218,665 L 283,665 L 283,679 Z M 283,522 L 351,522 L 351,667 L 283,667 Z" fill="#E6BF62"></path></svg></div>
+<div><div class="sp-acc"><details name="sp-spec" open><summary>Structure<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><p>The brochure specifies machine-made concrete blocks or solid bricks for the walls and laboratory testing of construction materials.</p></details><details name="sp-spec"><summary>Floors and Walls<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><p>Polished tiles in the main rooms, non-slip tiles on the kitchen veranda, and smooth paint on interior walls and ceilings.</p></details><details name="sp-spec"><summary>Doors and Windows<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><p>Solid teak main door with a fingerprint lock, glass sliding doors and windows, and window security grilles. Bathroom doors are made from wood-plastic composite.</p></details><details name="sp-spec"><summary>Kitchen<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><p>Granite countertop, tiled walls and floors, a double-bowl sink, and hot and cold water lines. The plans specify an LPG connection with a leak detector.</p></details><details name="sp-spec"><summary>Bathrooms<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><p>Wall and floor tiles, mirrors, and concealed hot and cold water lines. The main and second bathrooms have cabinet basins with marble countertops.</p></details><details name="sp-spec"><summary>Electrical and Plumbing<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><p>Power points for air conditioning in bedrooms and living and dining areas, plus concealed TV and internet connections. The water supply includes an underground reservoir and an overhead tank.</p></details></div></div></div></div></section><section class="ab-sec" style="background:#FBF8F1"><div class="wrap">
+<div class="sp-head"><h2 class="ab-h2">Project Gallery</h2></div>
+<div class="sp-gal"><div class="g"><img src="images/selim-exterior-rendering-of-the-three-selim.webp" alt="Exterior rendering of the three Selim Heights towers" style="object-position:50% 50%"><span class="sp-cap">Building exterior</span></div><div class="g"><img src="images/selim-interior-rendering-of-a-living-room.webp" alt="Interior rendering of a living room with seating and a balcony window" style="object-position:50% 50%"><span class="sp-cap">Apartment living room</span></div><div class="g"><img src="images/selim-rendering-of-planted-rooftop-seating-areas.webp" alt="Rendering of planted rooftop seating areas" style="object-position:50% 50%"><span class="sp-cap">Landscaped rooftop</span></div><div class="g"><img src="images/selim-rendering-of-the-rooftop-swimming-pool.webp" alt="Rendering of the rooftop swimming pool with a shaded pergola and white walls" style="object-position:50% 10%"><span class="sp-cap">Rooftop pool</span></div></div>
+<p class="sp-note">All images are artist’s impressions.</p></div></section><section class="ab-sec" style="background:#FFFFFF"><div class="wrap">
+<div class="sp-head"><h2 class="ab-h2">Location</h2></div>
+<div class="sp-lrow"><div class="sp-loc" style="font-weight:500;color:#242221;align-items:flex-start;font-size:clamp(18px,1.6cqw,22px);line-height:1.5"><span style="margin-top:calc((1.5em - 20px) / 2);display:flex"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span><span>Mather Kona, Chairman Bari Road, Chunkutia, South Keraniganj, Dhaka</span></div>
+<a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Chairman+Bari+Road+Chunkutia+South+Keraniganj+Dhaka" target="_blank" rel="noopener">Get Directions</a></div>
+<div class="sp-lmap" role="img" aria-label="Map showing the project location"><svg class="bg" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1200" height="420" fill="#F4F6F8"/><rect x="40" y="30" width="170" height="70" rx="8" fill="#EAEFF3"/><rect x="330" y="170" width="150" height="90" rx="8" fill="#EAEFF3"/><rect x="560" y="20" width="190" height="70" rx="8" fill="#EAEFF3"/><rect x="900" y="170" width="200" height="80" rx="8" fill="#EAEFF3"/><rect x="940" y="330" width="170" height="70" rx="8" fill="#EAEFF3"/><rect x="60" y="330" width="190" height="70" rx="8" fill="#EAEFF3"/><rect x="500" y="340" width="220" height="60" rx="8" fill="#EAEFF3"/><path d="M-20 120C200 150 420 90 700 130S1050 100 1220 140" stroke="#E9EDF1" stroke-width="14" fill="none"/><path d="M-20 300C200 270 380 340 600 300S980 220 1220 250" stroke="#FFFFFF" stroke-width="34" fill="none"/><path d="M260-20C300 120 220 260 280 440" stroke="#FFFFFF" stroke-width="24" fill="none"/><path d="M820-20C800 110 870 230 840 440" stroke="#FFFFFF" stroke-width="22" fill="none"/></svg><div class="sp-lpin"><svg width="44" height="54" viewBox="0 0 44 54" aria-hidden="true"><path d="M22 52S4 34 4 21a18 18 0 0 1 36 0c0 13-18 31-18 31z" fill="#E6BF62" stroke="#3E3223" stroke-width="2.4"/><circle cx="22" cy="21" r="6.5" fill="#FFFFFF" stroke="#3E3223" stroke-width="2.4"/></svg></div></div>
+</div></section><div style="background:#FFFFFF"><div class="wrap"><div style="height:1px;background:#EDE8DD"></div></div></div><section id="enquiry" class="ab-sec" style="background:#FFFFFF"><div class="wrap"><div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;max-width:860px;margin:0 auto">
+<h2 class="ab-h2">Interested in The Selim Heights?</h2>
+<p class="sp-p-l" style="max-width:720px">Message us on WhatsApp to ask about pricing, apartment availability or arranging a site visit.</p>
+<div class="sp-btns" style="justify-content:center;margin-top:8px"><a class="btn btn-primary" href="https://wa.me/8801604363259?text=Hello%20Wahi%20Properties%2C%20I%20am%20interested%20in%20The%20Selim%20Heights." target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="#3E3223" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>Chat on WhatsApp</a></div>
+</div></div></section><section class="ab-sec" style="background:#FBF8F1"><div class="wrap">
+<div class="sp-mh" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 32px;margin-bottom:clamp(32px,4cqw,48px)"><h2 class="ab-h2">More Wahi Projects</h2><a class="btn btn-primary" href="projects.html">View All Projects</a></div>
+<div class="sp-hgrid"><article class="sp-hp"><div class="im"><img src="images/skyline-residence.webp" alt="The Skyline Residence, a slim modern apartment tower" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;object-position:51% 50%"><span style="position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;gap:8px;background:#FFFFFF;color:#242221;border:1px solid #E6E0D5;border-radius:999px;padding:6px 14px 6px 12px;font-size:14px;line-height:1.5;font-weight:600"><i style="width:8px;height:8px;border-radius:50%;display:block;background:#D4AD60"></i>Ongoing</span></div><div class="tx"><h3 style="margin:0;font-size:24px;line-height:1.3;font-weight:600;color:#242221"><a class="pj" href="the-skyline-residence.html">The Skyline Residence</a></h3><div style="display:flex;align-items:center;gap:8px;font-size:16px;line-height:1.5;color:#5D5A54"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg><span>Bashundhara Residential Area</span></div><p style="margin:0;font-size:16px;line-height:1.65;color:#5D5A54">One four-bedroom apartment on each residential floor.</p></div></article><article class="sp-hp"><div class="im"><img src="images/the-horizon.webp" alt="The Horizon apartment building under construction" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;object-position:50% 50%"><span style="position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;gap:8px;background:#FFFFFF;color:#242221;border:1px solid #E6E0D5;border-radius:999px;padding:6px 14px 6px 12px;font-size:14px;line-height:1.5;font-weight:600"><i style="width:8px;height:8px;border-radius:50%;display:block;background:#8FA3B8"></i>Upcoming</span></div><div class="tx"><h3 style="margin:0;font-size:24px;line-height:1.3;font-weight:600;color:#242221"><a class="pj" href="the-horizon.html">The Horizon</a></h3><div style="display:flex;align-items:center;gap:8px;font-size:16px;line-height:1.5;color:#5D5A54"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg><span>Jolshiri Abashon</span></div><p style="margin:0;font-size:16px;line-height:1.65;color:#5D5A54">Four-bedroom layouts on the main residential floors.</p></div></article><article class="sp-hp"><div class="im"><img src="images/ar-rahman-view.webp" alt="Ar Rahman View apartment building at sunset" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;object-position:52% 50%"><span style="position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;gap:8px;background:#FFFFFF;color:#242221;border:1px solid #E6E0D5;border-radius:999px;padding:6px 14px 6px 12px;font-size:14px;line-height:1.5;font-weight:600"><i style="width:8px;height:8px;border-radius:50%;display:block;background:#6E9B72"></i>Completed</span></div><div class="tx"><h3 style="margin:0;font-size:24px;line-height:1.3;font-weight:600;color:#242221"><a class="pj" href="ar-rahman-view.html">Ar Rahman View</a></h3><div style="display:flex;align-items:center;gap:8px;font-size:16px;line-height:1.5;color:#5D5A54"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg><span>Bashundhara</span></div><p style="margin:0;font-size:16px;line-height:1.65;color:#5D5A54">A completed residential project by Wahi.</p></div></article></div></div></section>
+</main>
+<footer style="background:#FFFFFF;padding:clamp(48px,6cqw,72px) 0 32px">
+<div class="wrap" style="display:flex;flex-direction:column;gap:48px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<a href="index.html" aria-label="Wahi Properties Ltd, home" style="display:block;padding:12px 12px 12px 0"><img src="images/logo.svg" alt="Wahi Properties Ltd" style="display:block;width:180px;max-width:100%;height:auto"></a>
+<p style="margin:0;font-size:16px;line-height:1.65;color:#5D5A54;max-width:300px">Residential apartments and joint venture partnerships in Dhaka, backed by 30 years of experience.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<h3 style="margin:0;font-size:20px;line-height:1.3;font-weight:600;color:#242221">Quick Links</h3>
+<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:16px;line-height:1.5">
+<li><a class="fl" href="index.html">Home</a></li>
+<li><a class="fl" href="about.html">About Us</a></li>
+<li><a class="fl" href="projects.html">Projects</a></li>
+<li><a class="fl" href="joint-venture.html">Joint Venture</a></li>
+<li><a class="fl" href="buyers-guide.html">Buyer's Guide</a></li>
+<li><a class="fl" href="contact-us.html">Contact Us</a></li>
+</ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<h3 style="margin:0;font-size:20px;line-height:1.3;font-weight:600;color:#242221">Our Projects</h3>
+<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:16px;line-height:1.5">
+<li><a class="fl" href="the-skyline-residence.html">The Skyline Residence</a></li>
+<li><a class="fl" href="the-horizon.html">The Horizon</a></li>
+<li><a class="fl" href="ar-rahman-view.html">Ar Rahman View</a></li>
+<li><a class="fl" href="bb-buriganga-view.html">BB Buriganga View</a></li>
+</ul>
+<div><a class="vall" href="projects.html">View All Projects <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<h3 style="margin:0;font-size:20px;line-height:1.3;font-weight:600;color:#242221">Get in Touch</h3>
+<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;font-size:16px;line-height:1.5;color:#5D5A54">
+<li style="display:flex;gap:12px;align-items:flex-start">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg>
+<span style="display:flex;flex-direction:column;gap:4px"><a class="fl" href="tel:01604363259">01604 363259</a></span></li>
+<li style="display:flex;gap:12px;align-items:flex-start">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+<span>107, Islampur Road, Kader Sardar Mansion, Islampur Market Road, Dhaka-1100</span></li>
+<li style="display:flex;gap:12px;align-items:flex-start">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+<span>Office hours: Saturday–Thursday, <span style="white-space:nowrap">10 AM–5 PM.</span></span></li>
+<li style="display:flex;gap:12px;align-items:flex-start">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+<a class="fl" href="mailto:wahiproperties.ltd@gmail.com" style="overflow-wrap:anywhere">wahiproperties.ltd@gmail.com</a></li>
+</ul>
+</div>
+</div>
+<div style="border-top:1px solid #EDE8DD;padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;font-size:16px;line-height:1.5;color:#5D5A54">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px"><span>© 2026 Wahi Properties Ltd</span><span aria-hidden="true" style="width:1px;height:16px;background:#EDE8DD"></span><a class="fl" href="privacy-terms.html">Privacy &amp; Terms</a></div>
+<span>Designed &amp; Developed by <a class="fl" href="https://zenticlab.com" style="font-weight:500">Zentic Lab</a></span>
+</div>
+</div>
+</footer>
+</div>
+
+</body>
+</html>
