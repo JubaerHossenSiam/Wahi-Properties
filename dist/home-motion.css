@@ -1,0 +1,115 @@
+.home-page {
+  --home-ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+.home-page .hero-bg {
+  background: #78ade7;
+}
+
+.home-page .hero-panel > * {
+  animation: home-entrance 1s var(--home-ease) both;
+}
+
+.home-page .hero-panel > :nth-child(2) {
+  animation-delay: .14s;
+}
+
+.home-page .hero-panel > :nth-child(3) {
+  animation-delay: .28s;
+}
+
+.home-page .home-reveal-pending {
+  opacity: 0;
+}
+
+.home-page .stn2 {
+  font-variant-numeric: tabular-nums;
+}
+
+.home-counter-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.home-page .btn,
+.home-page .cbtn {
+  transition: transform .35s var(--home-ease),
+    background-color .25s ease, border-color .25s ease,
+    box-shadow .35s ease;
+}
+
+.home-page .btn:active,
+.home-page .cbtn:active {
+  transform: translateY(1px);
+}
+
+.home-page .s-proj article {
+  transition: top .45s var(--home-ease), border-color .35s ease,
+    box-shadow .45s ease;
+}
+
+.home-page .s-proj article img,
+.home-page .s-jv img {
+  transition: transform 1.1s var(--home-ease);
+}
+
+.home-page .s-proj article:focus-within {
+  border-color: #d4ad60;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-page .btn:hover,
+  .home-page .cbtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgb(62 50 35 / 12%);
+  }
+
+  .home-page .s-proj article:hover {
+    box-shadow: 0 18px 36px rgb(62 50 35 / 10%);
+  }
+
+  .home-page .s-proj article:hover img,
+  .home-page .s-jv .wrap > div:hover img {
+    transform: scale(1.035);
+  }
+}
+
+@keyframes home-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .hero-panel > * {
+    animation: none;
+  }
+
+  .home-page .home-reveal-pending {
+    opacity: 1;
+  }
+
+  .home-page .btn,
+  .home-page .cbtn,
+  .home-page .s-proj article,
+  .home-page .s-proj article img,
+  .home-page .s-jv img {
+    transition: none;
+  }
+
+  .home-page .btn:hover,
+  .home-page .cbtn:hover,
+  .home-page .s-proj article:hover img,
+  .home-page .s-jv .wrap > div:hover img {
+    transform: none;
+  }
+}
