@@ -50,7 +50,6 @@
     '.s-proj article',
     '.s-expect h2',
     '.s-expect .wrap > div > div',
-    '.s-cust .wrap > div:first-child, .s-cust .cust-track',
     '.s-buy .wrap > div',
     '.s-buy .stp',
     '.s-jv .wrap > div',
