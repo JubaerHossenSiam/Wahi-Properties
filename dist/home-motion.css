@@ -38,8 +38,7 @@
 .home-page .btn,
 .home-page .cbtn {
   transition: transform .35s var(--home-ease),
-    background-color .25s ease, border-color .25s ease,
-    box-shadow .35s ease;
+    background-color .25s ease, border-color .25s ease;
 }
 
 .home-page .btn:active,
@@ -65,7 +64,6 @@
   .home-page .btn:hover,
   .home-page .cbtn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 22px rgb(62 50 35 / 12%);
   }
 
   .home-page .s-proj article:hover {

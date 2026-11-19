@@ -76,17 +76,6 @@
     finishCounters.forEach((finish) => finish());
   });
 
-  const heroImage = document.querySelector('.hero-bg img');
-  const animateHero = () => {
-    if (!heroImage.naturalWidth) return;
-    animate(heroImage, [
-      { transform: 'scale(1.055)' },
-      { transform: 'scale(1)' },
-    ], { duration: 2200, easing, fill: 'backwards' });
-  };
-  if (heroImage.complete) animateHero();
-  else heroImage.addEventListener('load', animateHero, { once: true });
-
   const stats = document.querySelector('.s-stats .wrap');
   const statsObserver = new IntersectionObserver((entries) => {
     if (!entries.some((entry) => entry.isIntersecting)) return;
