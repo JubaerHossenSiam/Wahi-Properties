@@ -43,7 +43,6 @@
   }
 
   const groups = [
-    '.s-stats .stx',
     '.s-who .s-photo',
     '.s-who .s-whog > div:last-child > *',
     '.s-proj .hdr-va > *',
