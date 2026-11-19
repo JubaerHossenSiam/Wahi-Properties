@@ -28,7 +28,7 @@
       end.transform = 'translateY(0)';
     }
     const animation = element.animate([start, end], {
-      duration: Number(element.dataset.pageDuration),
+      duration: 800,
       delay: Number(element.dataset.pageDelay),
       easing,
       fill: 'backwards',
@@ -53,18 +53,16 @@
     ['.ab-icard, .ab-vc, .ab-hp', 'rise'],
     ['.jv-step, .bg-step', 'rise'],
     ['.jv-card, .bg-card, .bg-ic, .jv-hp', 'rise'],
-    ['.pj-grid', 'fade', 400],
     ['.sp-fi, .sp-hp', 'rise'],
     ['.sp-gal > .g', 'fade'],
     ['.dt-row', 'rise'],
     ['.ct-split > div:first-child > :not(h2)', 'rise'],
     ['.s-cta .wrap > div', 'rise'],
   ];
-  for (const [selector, kind, duration = 800] of groups) {
+  for (const [selector, kind] of groups) {
     document.querySelectorAll(selector).forEach((element, index) => {
       element.dataset.pageReveal = kind;
       element.dataset.pageDelay = Math.min(index * 75, 225);
-      element.dataset.pageDuration = duration;
     });
   }
   // Animate a single container when a selected group contains its own heading.
@@ -72,7 +70,6 @@
     if (element.parentElement.closest('[data-page-reveal]')) {
       element.removeAttribute('data-page-reveal');
       element.removeAttribute('data-page-delay');
-      element.removeAttribute('data-page-duration');
       return;
     }
     element.classList.add('page-reveal-pending');
@@ -84,14 +81,6 @@
     const target = event.target.closest('[data-page-reveal]');
     if (target) reveal(target, true);
   });
-
-  const showProjectResults = (event) => {
-    if (!event.target.closest('.pj-side, .pj-dd-sort, [data-clear-projects]')) return;
-    document.querySelectorAll('.pj-grid').forEach((grid) => reveal(grid, true));
-  };
-  document.addEventListener('input', showProjectResults);
-  document.addEventListener('change', showProjectResults);
-  document.addEventListener('click', showProjectResults);
 
   const counterObserver = new IntersectionObserver((entries) => {
     for (const entry of entries) {
