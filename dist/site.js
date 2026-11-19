@@ -141,6 +141,10 @@ if (projectGrid) {
   const cards = Array.from(projectGrid.querySelectorAll('.pj-card'));
   const resultCount = document.querySelector('.pj-res');
   const emptyState = document.querySelector('.pj-empty');
+  const loadMoreContainer = document.querySelector('.pj-lm');
+  const loadMoreButton = loadMoreContainer.querySelector('button');
+  const pageSize = 6;
+  let visibleLimit = pageSize;
   const sizeBands = [[0, 1200], [1201, 1500], [1501, 2000], [2001, Infinity]];
   const normalize = (value) => value.trim().toLowerCase().replace(/\s+/g, ' ');
   const urlValue = (value) => normalize(value).replace(/ /g, '-');
@@ -176,7 +180,7 @@ if (projectGrid) {
         menu.select(index);
         dropdown.open = false;
         summary.focus();
-        renderProjects();
+        resetProjects();
       });
     });
 
@@ -213,6 +217,11 @@ if (projectGrid) {
     return menu.index ? menu.options[menu.index].querySelector('.t').textContent : '';
   }
 
+  function resetProjects() {
+    visibleLimit = pageSize;
+    renderProjects();
+  }
+
   function renderProjects() {
     const tokens = normalize(search.value).split(' ').filter(Boolean);
     const statusIndex = statusInputs.findIndex((input) => input.checked);
@@ -246,27 +255,45 @@ if (projectGrid) {
       const direction = sort.index === 1 ? 1 : -1;
       ordered.sort((a, b) => direction * a.querySelector('.pj').textContent.localeCompare(b.querySelector('.pj').textContent, 'en'));
     }
+    let shown = 0;
     ordered.forEach((card, index) => {
+      const visible = !card.hidden && shown < visibleLimit;
+      card.hidden = !visible;
+      if (visible) shown += 1;
       if (projectGrid.children[index] !== card) projectGrid.insertBefore(card, projectGrid.children[index]);
     });
 
     projectGrid.hidden = count === 0;
     emptyState.hidden = count > 0;
-    resultCount.querySelector('b').textContent = count;
-    resultCount.lastChild.textContent = count === 1 ? ' project' : ' projects';
+    resultCount.querySelector('b').textContent = shown;
+    resultCount.lastChild.textContent = ' of ' + count + (count === 1 ? ' project' : ' projects');
+    loadMoreContainer.hidden = shown === count;
 
     const activeFilters = [status, selectedType, selectedArea, bedroom !== 'Any', sizeBand].filter(Boolean).length;
     filterBadge.textContent = activeFilters;
     filterBadge.hidden = activeFilters === 0;
     filterToggle.setAttribute('aria-label', activeFilters ? 'Filters, ' + activeFilters + ' active' : 'Filters');
+    history.replaceState({
+      ...history.state,
+      wahiProjects: {
+        query: search.value,
+        status: statusIndex,
+        type: type.index,
+        area: area.index,
+        size: size.index,
+        sort: sort.index,
+        bedroom: bedrooms.findIndex((chip) => chip.classList.contains('on')),
+        limit: visibleLimit,
+      },
+    }, '');
   }
 
-  statusInputs.forEach((input) => input.addEventListener('change', renderProjects));
-  search.addEventListener('input', renderProjects);
+  statusInputs.forEach((input) => input.addEventListener('change', resetProjects));
+  search.addEventListener('input', resetProjects);
   bedrooms.forEach((chip, index) => {
     chip.addEventListener('click', () => {
       selectBedrooms(index);
-      renderProjects();
+      resetProjects();
     });
   });
   filterToggle.setAttribute('aria-controls', 'project-filters');
@@ -284,7 +311,7 @@ if (projectGrid) {
       statusInputs[0].checked = true;
       [type, area, size].forEach((menu) => menu.select(0));
       selectBedrooms(0);
-      renderProjects();
+      resetProjects();
       if (emptyState.contains(button)) search.focus();
     });
   });
@@ -295,6 +322,30 @@ if (projectGrid) {
   const initialType = type.options.findIndex((option) => urlValue(option.querySelector('.t').textContent) === params.get('type'));
   if (initialStatus) initialStatus.checked = true;
   if (initialType > 0) type.select(initialType);
+  const savedProjects = history.state?.wahiProjects;
+  if (savedProjects) {
+    search.value = typeof savedProjects.query === 'string' ? savedProjects.query : '';
+    if (Number.isInteger(savedProjects.status) && statusInputs[savedProjects.status]) {
+      statusInputs[savedProjects.status].checked = true;
+    }
+    for (const [name, menu] of Object.entries({ type, area, size, sort })) {
+      const index = savedProjects[name];
+      if (Number.isInteger(index) && menu.options[index]) menu.select(index);
+    }
+    if (Number.isInteger(savedProjects.bedroom) && bedrooms[savedProjects.bedroom]) {
+      selectBedrooms(savedProjects.bedroom);
+    }
+    if (Number.isInteger(savedProjects.limit) && savedProjects.limit >= pageSize) {
+      visibleLimit = savedProjects.limit;
+    }
+  }
+  loadMoreButton.addEventListener('click', () => {
+    const previousCount = projectGrid.querySelectorAll('.pj-card:not([hidden])').length;
+    visibleLimit += pageSize;
+    renderProjects();
+    const nextCard = projectGrid.querySelectorAll('.pj-card:not([hidden])')[previousCount];
+    nextCard.querySelector('.pj').focus({ preventScroll: true });
+  });
   renderProjects();
 }
 
