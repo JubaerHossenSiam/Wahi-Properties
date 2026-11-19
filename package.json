@@ -1,0 +1,12 @@
+{
+  "name": "wahi-properties",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-bangla.mjs",
+    "preview": "node preview.mjs"
+  },
+  "devDependencies": {
+    "linkedom": "0.18.15"
+  }
+}

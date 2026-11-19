@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<title>আমাদের প্রকল্প | ওয়াহী প্রপার্টিজ লিমিটেড</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap">
+<style>
+
+body{margin:0;font-family:"Onest",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:#5D5A54;background:#FFFFFF}
+*{box-sizing:border-box}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:14px 32px;border-radius:999px;font-family:inherit;font-size:16px;line-height:1.4;font-weight:500;text-decoration:none;border:1px solid #3E3223;cursor:pointer}
+.btn-primary{background:#E6BF62;color:#3E3223;border-color:#E6BF62}
+.btn-primary:hover{background:#D4AD60;border-color:#D4AD60}
+.btn-secondary{background:#F4F6F8;color:#242221;border-color:#242221}
+.btn-secondary:hover{background:#E8ECF0}
+header .btn{min-height:44px;padding:8px 24px}
+header .btn.call{background:#FFFFFF;border:2px solid #D4AD60;color:#242221}
+header .btn.call:hover{background:#F6EEDB;border-color:#D4AD60}
+a:focus-visible,button:focus-visible{outline:3px solid #242221;outline-offset:3px}
+a.nav{color:#242221;text-decoration:none;font-size:16px;font-weight:500;line-height:1.4;padding:8px 0;border-bottom:2px solid transparent;position:relative}
+a.nav::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:#D4AD60;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+a.nav:hover::after{transform:scaleX(1)}
+a.nav-on{color:#D4AD60}
+a.fl{color:#242221;text-decoration:none}
+a.fl:hover{text-decoration:underline;text-underline-offset:3px}
+@media (min-width:1000px){footer .wrap > div:first-child{grid-template-columns:1fr .8fr .9fr 1.5fr!important}}
+footer .wrap > div:first-child > div:last-child ul{color:#242221!important}
+footer .vall{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:#242221;text-decoration:none;font-size:16px;margin-top:4px}
+footer .vall:hover{color:#D4AD60}
+footer .vall:hover svg{transform:translateX(3px)}
+footer .vall svg{transition:transform .2s}
+footer{padding-top:48px!important}
+footer .wrap{gap:48px!important}
+footer .wrap > div:first-child > div:first-child > a{padding:0 12px 0 0!important}
+@media (min-width:700px){footer{padding-top:64px!important}footer .wrap{gap:64px!important}}
+@media (min-width:1100px){footer{padding-top:80px!important}footer .wrap{gap:80px!important}}
+.lang{display:flex;align-items:center;gap:2px;height:44px;padding:4px;border:1px solid #E6E0D5;border-radius:999px;background:#FFFFFF;box-sizing:border-box}
+.lang button{all:unset;box-sizing:border-box;cursor:pointer;height:34px;min-width:44px;padding:0 12px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;line-height:1;color:#5D5A54;font-family:inherit}
+.lang button:nth-child(2){font-size:15px}
+.lang button:hover{color:#242221;background:#F3F0E9}
+.lang button.on,.lang button.on:hover{background:#E6BF62;color:#3E3223}
+.hdr-r{display:flex;align-items:center;gap:16px}
+.hd-nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px}
+.lang-m,.hd-tgl .i-c{display:none}
+.hd-tgl{all:unset;box-sizing:border-box;display:none;width:44px;height:44px;border:1px solid #E6E0D5;border-radius:999px;background:#FFFFFF;align-items:center;justify-content:center;cursor:pointer}
+.hd-tgl:hover{background:#F6EEDB}
+.hd-tgl:focus-visible{outline:3px solid #242221;outline-offset:3px}
+@media (max-width:1359px){
+ .hd-nav{gap:8px 28px}
+}
+@media (max-width:1199px){
+ .hd-nav{gap:8px 24px}
+ header .btn.call{width:44px;padding:0;gap:0}
+ header .btn.call .ct{display:none}
+}
+@media (max-width:1099px){
+ header .btn.call{width:auto;padding:8px 24px;gap:10px}
+ header .btn.call .ct{display:inline}
+ header .hd-tgl{display:flex}
+ header.hd-open .hd-tgl .i-o{display:none}
+ header.hd-open .hd-tgl .i-c{display:block}
+ .lang-d{display:none}
+ .hd-nav{display:none;order:3;flex-basis:100%;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;padding:0 0 20px}
+ header.hd-open .hd-nav{display:flex}
+ .hd-nav a.nav{padding:14px 0;font-size:18px;border-bottom:1px solid #EDE8DD}
+ .hd-nav a.nav::after{display:none}
+ .lang-m{display:flex;align-self:flex-start;margin-top:20px}
+}
+@media (max-width:599px){
+ header .btn.call{width:44px;padding:0;gap:0}
+ header .btn.call .ct{display:none}
+ header>.wrap:first-child{gap:16px 12px!important}
+ header a[aria-label] img{width:140px!important}
+ .hdr-r{gap:12px}
+}
+
+
+h2{text-wrap:balance}
+body{container-type:inline-size}
+.ab-sec{padding-top:clamp(60px,7cqw,100px);padding-bottom:clamp(60px,7cqw,100px)}
+.ab-h1{margin:0;font-size:clamp(44px,5cqw,72px);line-height:1.05;letter-spacing:-0.025em;font-weight:600;color:#242221}
+.ab-h2{margin:0;font-size:clamp(32px,3.4cqw,48px);line-height:1.12;letter-spacing:-0.02em;font-weight:600;color:#242221}
+.ab-lead{margin:0;font-size:clamp(17px,1.4cqw,20px);line-height:1.65;color:#242221}
+.ab-hero-bg{-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent 100%),linear-gradient(to right,transparent 42%,#000 58%);mask-image:linear-gradient(to bottom,#000 55%,transparent 100%),linear-gradient(to right,transparent 42%,#000 58%)}
+@media (max-width:899px){.ab-hero-bg{-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent 100%);mask-image:linear-gradient(to bottom,#000 55%,transparent 100%)}.ab-hero-bg img{object-position:0% 50%!important}}
+.pj-hero-bg{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 32%),linear-gradient(to bottom,#000 90%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 32%),linear-gradient(to bottom,#000 90%,transparent 100%);mask-composite:intersect}
+@media (max-width:899px){.pj-hero-t{max-width:none!important}.pj-hero-bg{opacity:.35;-webkit-mask-image:none;mask-image:none}.pj-hero-bg img{object-position:78% 50%!important}}
+
+/* Projects page */
+.pj-layout{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:clamp(24px,3.4cqw,48px);align-items:start}
+html,body{scrollbar-width:none;-ms-overflow-style:none}html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}@media (min-width:900px){.pj-side{max-height:calc(100vh - 48px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;}}
+.pj-side{position:sticky;top:24px;z-index:6;background:#FFFFFF;border:1px solid #EDE6D6;border-radius:12px;padding:24px}
+.pj-side h2{margin:0 0 20px;font-size:20px;line-height:1.3;font-weight:600;color:#242221}
+.pj-field{padding:20px 0;border-top:1px solid #EDE8DD}
+.pj-field:first-of-type{padding-top:0;border-top:0}
+.pj-lab{display:block;margin:0 0 12px;font-size:14px;line-height:1.3;font-weight:600;letter-spacing:.02em;color:#242221}
+.pj-search{display:flex;align-items:center;gap:8px;height:48px;width:100%;padding:0 12px;border:1px solid #E6E0D5;border-radius:999px;background:#FFFFFF}
+.pj-search:focus-within{outline:3px solid #242221;outline-offset:2px}
+.pj-search svg{flex:none}
+.pj-search input{flex:1;min-width:0;border:0;outline:0;background:transparent;font-family:inherit;font-size:16px;line-height:1.4;color:#242221;padding:0}
+.pj-search input::placeholder{color:#767168;opacity:1}
+.pj-radios{display:flex;flex-direction:column;gap:4px}
+.pj-radio{display:flex;align-items:center;gap:12px;min-height:40px;font-family:inherit;font-size:16px;line-height:1.4;font-weight:400;color:#242221;cursor:pointer}
+.pj-radio input{width:20px;height:20px;margin:0;accent-color:#242221;cursor:pointer}
+.pj-chips{display:flex;flex-wrap:wrap;gap:8px}
+.pj-chip{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 16px;border:1px solid #E6E0D5;border-radius:999px;background:#FFFFFF;font-family:inherit;font-size:16px;line-height:1;font-weight:400;color:#242221}
+.pj-chip:hover{background:#F4F6F8}
+.pj-chip:focus-visible{outline:3px solid #242221;outline-offset:2px}
+.pj-chip.on,.pj-chip.on:hover{background:#FFFFFF;border-color:#242221}
+.pj-sel{display:flex;align-items:center;height:48px;width:100%;padding:0 16px 0 20px;border:1px solid #E6E0D5;border-radius:999px;background:#FFFFFF;position:relative}
+.pj-sel:focus-within{outline:3px solid #242221;outline-offset:2px}
+.pj-sel span{font-size:14px;line-height:1;color:#5D5A54;margin-right:8px;white-space:nowrap}
+.pj-sel select{flex:1;min-width:0;appearance:none;-webkit-appearance:none;border:0;outline:0;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23242221' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right center;padding:0 26px 0 0;height:44px;font-family:inherit;font-size:16px;line-height:1.4;font-weight:400;color:#242221;cursor:pointer}
+.pj-sort{width:auto;height:44px}
+.pj-clear{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:100%;text-align:center;margin-top:0;padding:24px 0 0;border-top:1px solid #EDE8DD;font-family:inherit;font-size:16px;line-height:1.5;font-weight:600;color:#242221;text-decoration:underline;text-underline-offset:3px}
+.pj-clear:hover{color:#D4AD60}
+.pj-dd{position:relative}
+.pj-dd summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:8px;height:48px;padding:0 16px 0 20px;border:1px solid #E6E0D5;border-radius:999px;background:#FFFFFF;font-size:16px;line-height:1.4;font-weight:400;color:#242221;cursor:pointer}
+.pj-dd summary::-webkit-details-marker{display:none}
+.pj-dd summary:focus-visible{outline:3px solid #242221;outline-offset:2px}
+.pj-dd summary .v{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pj-dd summary .chev{flex:none}
+.pj-dd[open] summary{border-color:#242221}
+.pj-dd[open] summary .chev{transform:rotate(180deg)}
+.pj-dd-sort summary{height:44px;justify-content:flex-start}
+.pj-dd-sort summary .pre{font-size:14px;line-height:1;color:#5D5A54;margin-right:0}
+.pj-dd-sort summary .v{flex:none}
+.pj-dd-sort summary .chev{margin-left:4px}
+.pj-menu{position:absolute;left:0;right:0;top:calc(100% + 8px);z-index:20;background:#FFFFFF;border:1px solid #E6E0D5;border-radius:12px;padding:8px;display:flex;flex-direction:column;gap:2px;max-height:400px;overflow-y:auto}
+.pj-side .pj-menu{position:static;margin-top:8px;max-height:none;overflow:visible}
+.pj-dd-sort .pj-menu{left:auto;right:0;width:260px}
+.pj-opt{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;padding:0 12px;border-radius:8px;font-family:inherit;font-size:16px;line-height:1.4;font-weight:400;color:#242221}
+.pj-opt:hover{background:#F4F6F8}
+.pj-opt:focus-visible{outline:3px solid #242221;outline-offset:-3px}
+.pj-opt.on{background:#F4F6F8}
+.pj-opt svg{flex:none;visibility:hidden}
+.pj-opt.on svg{visibility:visible}
+.pj-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px}
+.pj-res{font-size:16px;line-height:1.5;color:#5D5A54}
+.pj-res b{color:#242221;font-weight:600}
+.pj-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch;margin-top:20px}
+.pj-card{position:relative;background:#FFFFFF;border:1px solid #EDE6D6;border-radius:12px;top:0;transition:top .25s ease,border-color .25s ease;display:flex;flex-direction:column}
+.pj-card:hover{top:-6px;border-color:#E6BF62}
+.pj-card::after{content:"";position:absolute;left:0;right:0;top:100%;height:8px}
+.pj-card a.pj{color:#242221;text-decoration:none}
+.pj-card a.pj:focus-visible{outline:none}
+.pj-card:has(a.pj:focus-visible){outline:3px solid #242221;outline-offset:3px}
+.pj-card a.pj::after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;z-index:1}
+.pj-card .im{position:relative;aspect-ratio:4/3;border-radius:11px 11px 0 0;overflow:hidden;background:#F4F6F8}
+.pj-card .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.pj-badge{position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;gap:8px;background:#FFFFFF;color:#242221;border:1px solid #E6E0D5;border-radius:999px;padding:6px 14px 6px 12px;font-size:14px;line-height:1.5;font-weight:600}
+.pj-sold{position:absolute;right:0;bottom:0;background:#FCE9E5;color:#8F3326;border-radius:8px 0 0 0;padding:8px 18px;font-size:14px;line-height:1.5;font-weight:600}
+.pj-badge i{width:8px;height:8px;border-radius:50%;display:block}
+.pj-card .tx{padding:24px 24px 28px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pj-card h3{margin:0;font-size:24px;line-height:1.3;font-weight:600;color:#242221}
+.pj-card .loc{display:flex;align-items:center;gap:8px;font-size:16px;line-height:1.5;color:#5D5A54}
+.pj-card .loc svg{flex:none}
+.pj-card p{margin:0;font-size:16px;line-height:1.65;color:#5D5A54}
+.pj-more{margin-top:auto;padding-top:8px;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;color:#242221}
+.pj-more svg{transition:transform .2s}
+.pj-card:hover .pj-more svg{transform:translateX(3px)}
+.pj-empty{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;padding:clamp(48px,5cqw,72px) 24px;margin-top:20px;border:1px solid #EDE6D6;border-radius:12px}
+.pj-empty .ic{width:56px;height:56px;border-radius:50%;background:#F6EEDB;display:flex;align-items:center;justify-content:center;margin-bottom:4px}
+.pj-empty h2{margin:0;font-size:24px;line-height:1.3;font-weight:600;color:#242221}
+.pj-empty p{margin:0;max-width:460px;font-size:16px;line-height:1.65;color:#5D5A54}
+.pj-empty .btn{margin-top:12px;min-height:48px;padding:10px 28px}
+@media (max-width:899px){.pj-layout{grid-template-columns:minmax(0,1fr)}.pj-side input{min-width:0}.pj-side{position:static;max-height:none;overflow:visible}}
+.pj-fw,.pj-ph,.pj-show{display:none}
+.pj-fbadge[hidden]{display:none}
+@media (max-width:899px){
+.pj-layout{gap:20px}
+.pj-side{position:relative;top:0;z-index:6;display:flex;align-items:center;gap:12px;padding:0;border:0;border-radius:0;background:transparent}
+.pj-side h2{display:none}
+.pj-side>.pj-field:first-of-type{flex:1;min-width:0;padding:0;border:0}
+.pj-fw{display:block;flex:none;padding:0;border:0}
+.pj-radios{flex-direction:row;flex-wrap:wrap;gap:8px}
+.pj-radio{position:relative;min-height:40px;padding:0 16px;gap:0;border:1px solid #E6E0D5;border-radius:999px;background:#FFFFFF}
+.pj-radio:hover{background:#F4F6F8}
+.pj-radio:has(input:checked){border-color:#242221}
+.pj-radio:has(input:focus-visible){outline:3px solid #242221;outline-offset:2px}
+.pj-radio input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.pj-fbtn{all:unset;box-sizing:border-box;cursor:pointer;position:relative;display:flex;align-items:center;justify-content:center;width:48px;height:48px;border:1px solid #E6E0D5;border-radius:999px;background:#FFFFFF;font-family:inherit;font-size:0;line-height:1;color:#242221}
+.pj-fbtn:hover{background:#F4F6F8}
+.pj-fbtn:focus-visible{outline:3px solid #242221;outline-offset:3px}
+.pj-fbadge{position:absolute;top:-8px;right:-6px;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:#E6BF62;color:#3E3223;font-size:13px;line-height:1;font-weight:600;display:inline-flex;align-items:center;justify-content:center}
+.pj-panel{display:none;position:absolute;left:0;right:0;top:0;z-index:30;background:#FFFFFF;border:1px solid #E6E0D5;border-radius:12px;padding:16px 24px 24px;box-shadow:0 16px 48px rgba(36,34,33,.18)}
+.pj-side.pj-fo .pj-panel{display:block}
+.pj-ph{display:flex;align-items:center;justify-content:space-between;padding-bottom:12px}
+.pj-ph h3{margin:0;font-size:20px;line-height:1.3;font-weight:600;color:#242221}
+.pj-x{all:unset;box-sizing:border-box;cursor:pointer;width:44px;height:44px;margin-right:-8px;border:1px solid #E6E0D5;border-radius:999px;display:flex;align-items:center;justify-content:center}
+.pj-x:hover{background:#F4F6F8}
+.pj-x:focus-visible{outline:3px solid #242221;outline-offset:2px}
+.pj-show{display:flex;width:100%;margin-top:4px}
+.pj-panel .pj-clear{border-top:0;padding:20px 0 0}
+}
+@media (max-width:599px){.pj-grid{grid-template-columns:1fr}.pj-head{flex-wrap:nowrap}.pj-dd-sort .v{display:none}.pj-dd-sort summary{height:40px;padding:0 0 0 12px;border:0;background:transparent;gap:6px}.pj-dd-sort[open] summary{border:0}.pj-dd-sort summary .pre{font-size:16px;font-weight:500;color:#242221}.pj-dd-sort .pj-menu{position:absolute;margin-top:0;left:auto;right:0;width:240px;box-shadow:0 12px 32px rgba(36,34,33,.16)}}
+.pj-lm{display:flex;justify-content:center;margin-top:40px}
+.pj-lm[hidden]{display:none}
+</style>
+
+<link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../page-motion.css">
+<script data-locale-resource="" defer src="../locale.js"></script><script src="../site.js" defer></script>
+<script src="../page-motion.js" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet"><link data-locale-resource="" href="../locale.css" rel="stylesheet"><link data-locale-resource="" href="../projects.html" hreflang="en" rel="alternate"><link data-locale-resource="" href="projects.html" hreflang="bn" rel="alternate"></head>
+<body class="inner-page">
+<a class="skip-link" href="#main-content">মূল বিষয়বস্তুতে যান</a>
+
+<div style="background:#FFFFFF">
+<header class="hd" style="background:#FFFFFF">
+<div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding-top:8px;padding-bottom:8px">
+<a href="index.html" aria-label="ওয়াহী প্রপার্টিজ লিমিটেড, হোম" style="display:block;padding:4px 12px 4px 0"><img src="../images/logo.svg" alt="ওয়াহী প্রপার্টিজ লিমিটেড" style="display:block;width:170px;height:auto"></a>
+<nav class="hd-nav" id="hd-nav" aria-label="মূল নেভিগেশন">
+<a class="nav" href="index.html">হোম</a>
+<a class="nav" href="about.html">আমাদের সম্পর্কে</a>
+<a class="nav nav-on" aria-current="page" href="projects.html">প্রকল্প</a>
+<a class="nav" href="joint-venture.html">জয়েন্ট ভেঞ্চার</a>
+<a class="nav" href="buyers-guide.html">ফ্ল্যাট কেনার গাইড</a>
+<a class="nav" href="contact-us.html">যোগাযোগ</a>
+<div aria-label="ভাষা" role="group" class="lang lang-m"><a aria-label="English" data-language="en" hreflang="en" lang="en" href="../projects.html">EN</a><a aria-current="true" class="on" aria-label="বাংলা" data-language="bn" hreflang="bn" lang="bn" href="projects.html">বাংলা</a></div></nav>
+<div class="hdr-r"><div aria-label="ভাষা" role="group" class="lang lang-d"><a aria-label="English" data-language="en" hreflang="en" lang="en" href="../projects.html">EN</a><a aria-current="true" class="on" aria-label="বাংলা" data-language="bn" hreflang="bn" lang="bn" href="projects.html">বাংলা</a></div>
+<a class="btn btn-primary call" href="tel:01604363259" aria-label="কল করুন">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E3223" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" /></svg>
+<span class="ct">কল করুন</span></a>
+<button type="button" class="hd-tgl" aria-label="মেনু" aria-expanded="false" aria-controls="hd-nav"><svg class="i-o" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg><svg class="i-c" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg></button>
+</div>
+</div>
+</header>
+<main id="main-content">
+<section class="ab-sec" style="position:relative;overflow:hidden;background:#FBF8F1;padding-top:clamp(64px,8cqw,120px);padding-bottom:clamp(64px,8cqw,120px)"><div class="pj-hero-bg" style="position:absolute;left:0;top:0;right:0;bottom:0"><img src="../images/projects-hero.webp" alt="ওয়াহীর একটি সম্পন্ন আবাসিক ভবনের পাশে আরেকটি নির্মাণাধীন ভবন" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block"></div><div class="wrap" style="position:relative;width:100%"><div class="pj-hero-t" style="display:flex;flex-direction:column;gap:20px;max-width:min(520px,46cqw)"><h1 class="ab-h1">আমাদের প্রকল্প</h1><p class="ab-lead">ঢাকা ও আশপাশে ওয়াহীর আবাসিক প্রকল্পগুলো দেখুন। কোনগুলোর কাজ শেষ, কোনগুলো নির্মাণাধীন আর কোনগুলো পরিকল্পনায় আছে, জেনে নিন।</p></div></div></section>
+<section class="ab-sec" style="background:#FFFFFF;padding-top:clamp(40px,4cqw,56px)">
+<div class="wrap">
+<div class="pj-layout"><aside class="pj-side" aria-label="প্রকল্প ফিল্টার করুন"><h2>প্রকল্প খুঁজুন</h2><div class="pj-field"><label class="pj-search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5D5A54" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" /></svg><input type="search" placeholder="প্রকল্পের নাম বা এলাকা লিখুন" aria-label="প্রকল্পের নাম বা এলাকা লিখুন"></label></div><div class="pj-field pj-fw"><button type="button" class="pj-fbtn" aria-label="ফিল্টার" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10" /><circle cx="16" cy="7" r="2" /><circle cx="8" cy="17" r="2" /></svg>ফিল্টার<span class="pj-fbadge" hidden>0</span></button></div><div class="pj-panel" role="group" aria-label="ফিল্টার"><div class="pj-ph"><h3>ফিল্টার</h3><button type="button" class="pj-x" aria-label="ফিল্টার বন্ধ করুন"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg></button></div><div class="pj-field"><span class="pj-lab">প্রকল্পের অবস্থা</span><div class="pj-radios" role="radiogroup" aria-label="প্রকল্পের অবস্থা"><label class="pj-radio"><input type="radio" name="status" checked>সব প্রকল্প</label><label class="pj-radio"><input type="radio" name="status">সম্পন্ন</label><label class="pj-radio"><input type="radio" name="status">নির্মাণাধীন</label><label class="pj-radio"><input type="radio" name="status">আসন্ন</label></div></div><div class="pj-field"><span class="pj-lab">প্রকল্পের ধরন</span><details class="pj-dd pj-dd-field" name="pj-dd"><summary aria-label="প্রকল্পের ধরন"><span class="v">সব ধরন</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg></summary><div class="pj-menu" role="listbox" aria-label="প্রকল্পের ধরন"><button data-value="All Types" type="button" class="pj-opt on" role="option" aria-selected="true"><span class="t">সব ধরন</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button><button data-value="Joint Venture" type="button" class="pj-opt" role="option" aria-selected="false"><span class="t">জয়েন্ট ভেঞ্চার</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button><button data-value="Own Projects" type="button" class="pj-opt" role="option" aria-selected="false"><span class="t">নিজস্ব প্রকল্প</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button></div></details></div><div class="pj-field"><span class="pj-lab">লোকেশন</span><details class="pj-dd pj-dd-field" name="pj-dd"><summary aria-label="লোকেশন"><span class="v">সব এলাকা</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg></summary><div class="pj-menu" role="listbox" aria-label="লোকেশন"><button data-value="All Locations" type="button" class="pj-opt on" role="option" aria-selected="true"><span class="t">সব এলাকা</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button><button data-value="Bashundhara" type="button" class="pj-opt" role="option" aria-selected="false"><span class="t">বসুন্ধরা</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button><button data-value="Bashundhara River View" type="button" class="pj-opt" role="option" aria-selected="false"><span class="t">বসুন্ধরা রিভার ভিউ</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button><button data-value="Dhanmondi" type="button" class="pj-opt" role="option" aria-selected="false"><span class="t">ধানমন্ডি</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button><button data-value="Jolshiri Abashon" type="button" class="pj-opt" role="option" aria-selected="false"><span class="t">জলসিঁড়ি আবাসন</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button><button data-value="Mirpur DOHS" type="button" class="pj-opt" role="option" aria-selected="false"><span class="t">মিরপুর ডিওএইচএস</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button><button data-value="Mohammadpur" type="button" class="pj-opt" role="option" aria-selected="false"><span class="t">মোহাম্মদপুর</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button><button data-value="Uttara" type="button" class="pj-opt" role="option" aria-selected="false"><span class="t">উত্তরা</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button><button data-value="South Keraniganj" type="button" class="pj-opt" role="option" aria-selected="false"><span class="t">দক্ষিণ কেরানীগঞ্জ</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button></div></details></div><div class="pj-field"><span class="pj-lab">বেডরুম</span><div class="pj-chips" role="group" aria-label="বেডরুম"><button data-value="Any" type="button" class="pj-chip on" aria-pressed="true">যেকোনো</button><button data-value="2" type="button" class="pj-chip" aria-pressed="false">২</button><button data-value="3" type="button" class="pj-chip" aria-pressed="false">৩</button><button data-value="4" type="button" class="pj-chip" aria-pressed="false">৪</button></div></div><div class="pj-field"><span class="pj-lab">ফ্ল্যাটের আয়তন</span><details class="pj-dd pj-dd-field" name="pj-dd"><summary aria-label="ফ্ল্যাটের আয়তন"><span class="v">যেকোনো আয়তন</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg></summary><div class="pj-menu" role="listbox" aria-label="ফ্ল্যাটের আয়তন"><button data-value="Any Size" type="button" class="pj-opt on" role="option" aria-selected="true"><span class="t">যেকোনো আয়তন</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button><button data-value="Up to 1,200 sq ft" type="button" class="pj-opt" role="option" aria-selected="false"><span class="t">১,২০০ বর্গফুট পর্যন্ত</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button><button data-value="1,200 – 1,500 sq ft" type="button" class="pj-opt" role="option" aria-selected="false"><span class="t">১,২০০–১,৫০০ বর্গফুট</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button><button data-value="1,500 – 2,000 sq ft" type="button" class="pj-opt" role="option" aria-selected="false"><span class="t">১,৫০০–২,০০০ বর্গফুট</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button><button data-value="Above 2,000 sq ft" type="button" class="pj-opt" role="option" aria-selected="false"><span class="t">২,০০০ বর্গফুটের বেশি</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button></div></details></div><button type="button" class="btn btn-primary pj-show">প্রকল্প দেখুন</button><button type="button" class="pj-clear" data-clear-projects="">ফিল্টার মুছুন</button></div></aside><div class="pj-main"><div class="pj-head"><div class="pj-res" role="status" aria-live="polite" aria-atomic="true">১০টি প্রকল্পের মধ্যে <b>৬</b>টি দেখানো হচ্ছে</div><details class="pj-dd pj-dd-sort" name="pj-dd"><summary aria-label="সাজান"><span class="pre">সাজান</span><span class="v">সম্প্রতি যোগ করা</span><svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg></summary><div class="pj-menu" role="listbox" aria-label="সাজান"><button data-value="Recently Added" type="button" class="pj-opt on" role="option" aria-selected="true"><span class="t">সম্প্রতি যোগ করা</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button><button data-value="Project Name: A–Z" type="button" class="pj-opt" role="option" aria-selected="false"><span class="t">প্রকল্পের নাম: A–Z</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button><button data-value="Project Name: Z–A" type="button" class="pj-opt" role="option" aria-selected="false"><span class="t">প্রকল্পের নাম: Z–A</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></button></div></details></div><div class="pj-grid" id="project-results"><article data-location="South Keraniganj" data-name="The Selim Heights" data-search="দ্য সেলিম হাইটস দক্ষিণ কেরানীগঞ্জ" class="pj-card" data-area="South Keraniganj" data-beds="3" data-sizes="1300,1500"><div class="im"><img loading="lazy" decoding="async" src="../images/selim-heights-hero.webp" alt="সেলিম হাইটসের তিনটি টাওয়ারের বাইরের নকশাচিত্র" style="object-position:38% 50%"></div><div class="tx"><h3><a class="pj" href="the-selim-heights.html">দ্য সেলিম হাইটস</a></h3><div class="loc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg><span>দক্ষিণ কেরানীগঞ্জ</span></div><p>দুই আয়তনের তিন বেডরুমের ফ্ল্যাট। সঙ্গে ছাদে সুইমিং পুল ও পরিবারের সবাই মিলে সময় কাটানোর জায়গা।</p><span class="pj-more" aria-hidden="true">প্রকল্প দেখুন<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></div></article><article data-location="Jolshiri Abashon" data-name="The Astoria" data-search="দ্য অ্যাস্টোরিয়া জলসিঁড়ি আবাসন" class="pj-card" data-area="Jolshiri Abashon" data-beds="4"><div class="im"><img loading="lazy" decoding="async" src="../images/astoria-hero.webp" alt="দিনের আলোয় গাছপালায় সাজানো বারান্দাসহ দ্য অ্যাস্টোরিয়ার নকশাচিত্র" style="object-position:50% 50%"></div><div class="tx"><h3><a class="pj" href="the-astoria.html">দ্য অ্যাস্টোরিয়া</a></h3><div class="loc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg><span>জলসিঁড়ি আবাসন</span></div><p>চার বেডরুমের ফ্ল্যাট, সঙ্গে মেজানাইন তলায় জিম ও খোলা ছাদ।</p><span class="pj-more" aria-hidden="true">প্রকল্প দেখুন<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></div></article><article data-location="Bashundhara Residential Area" data-name="The Skyline Residence" data-search="দ্য স্কাইলাইন রেসিডেন্স বসুন্ধরা আবাসিক এলাকা" class="pj-card" data-area="Bashundhara" data-status="Ongoing" data-type="Joint Venture" data-beds="3"><div class="im"><img loading="lazy" decoding="async" src="../images/skyline-hero.webp" alt="দিনের আলোয় দ্য স্কাইলাইন রেসিডেন্সের সামনের দিকের নকশাচিত্র" style="object-position:50% 50%"><span class="pj-badge"><i style="background:#D4AD60"></i>নির্মাণাধীন</span></div><div class="tx"><h3><a class="pj" href="the-skyline-residence.html">দ্য স্কাইলাইন রেসিডেন্স</a></h3><div class="loc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg><span>বসুন্ধরা আবাসিক এলাকা</span></div><p>প্রতি আবাসিক তলায় একটি ফ্ল্যাট, যেখানে রয়েছে তিনটি মূল বেডরুম ও আলাদা স্টাফ রুম।</p><span class="pj-more" aria-hidden="true">প্রকল্প দেখুন<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></div></article><article data-location="Jolshiri Abashon" data-name="The Horizon" data-search="দ্য হরাইজন জলসিঁড়ি আবাসন" class="pj-card" data-area="Jolshiri Abashon" data-status="Upcoming" data-type="Joint Venture" data-beds="2,4"><div class="im"><img loading="lazy" decoding="async" src="../images/horizon-hero.webp" alt="দিনের আলোয় দ্য হরাইজনের পুরো ভবন ও প্রবেশপথের নকশাচিত্র" style="object-position:50% 50%"><span class="pj-badge"><i style="background:#D4AD60"></i>আসন্ন</span></div><div class="tx"><h3><a class="pj" href="the-horizon.html">দ্য হরাইজন</a></h3><div class="loc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg><span>জলসিঁড়ি আবাসন</span></div><p>দুটি লিভিং এরিয়াসহ চার বেডরুমের ফ্ল্যাট। মেজানাইন তলায় রয়েছে দুই বেডরুমের লেআউট।</p><span class="pj-more" aria-hidden="true">প্রকল্প দেখুন<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></div></article><article data-location="Bashundhara" data-name="Ar Rahman View" data-search="আর রহমান ভিউ বসুন্ধরা" class="pj-card" data-area="Bashundhara" data-status="Completed" data-type="Joint Venture"><div class="im"><img loading="lazy" decoding="async" src="../images/ar-rahman-view.webp" alt="সূর্যাস্তের আলোয় আর রহমান ভিউ আবাসিক ভবন" style="object-position:52% 50%"><span class="pj-badge"><i style="background:#6E9B72"></i>সম্পন্ন</span></div><div class="tx"><h3><a class="pj" href="ar-rahman-view.html">আর রহমান ভিউ</a></h3><div class="loc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg><span>বসুন্ধরা</span></div><p>বসুন্ধরায় নির্মাণকাজ সম্পন্ন একটি আবাসিক ভবন।</p><span class="pj-more" aria-hidden="true">প্রকল্প দেখুন<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></div></article><article data-location="Mirpur DOHS" data-name="Noor Mansion" data-search="নূর ম্যানশন মিরপুর ডিওএইচএস" class="pj-card" data-area="Mirpur DOHS" data-status="Completed"><div class="im"><img loading="lazy" decoding="async" src="../images/home-hero.webp" alt="কাঠের সাজসহ আধুনিক আবাসিক ভবন" style="object-position:75% 50%"><span class="pj-badge"><i style="background:#6E9B72"></i>সম্পন্ন</span><span class="pj-sold">সব বিক্রি হয়েছে</span></div><div class="tx"><h3><a class="pj" href="noor-mansion.html">নূর ম্যানশন</a></h3><div class="loc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg><span>মিরপুর ডিওএইচএস</span></div><p>প্রতি তলায় একটি ফ্ল্যাটসহ আবাসিক ভবন।</p><span class="pj-more" aria-hidden="true">প্রকল্প দেখুন<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></div></article><article data-location="Uttara Sector 7" data-name="Hasan Tower" data-search="হাসান টাওয়ার উত্তরা সেক্টর ৭" class="pj-card" data-area="Uttara" data-status="Completed" data-beds="3"><div class="im"><img loading="lazy" decoding="async" src="../images/cta-evening.webp" alt="সন্ধ্যার আলোয় আবাসিক ভবন" style="object-position:88% 50%"><span class="pj-badge"><i style="background:#6E9B72"></i>সম্পন্ন</span></div><div class="tx"><h3><a class="pj" href="hasan-tower.html">হাসান টাওয়ার</a></h3><div class="loc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg><span>উত্তরা সেক্টর ৭</span></div><p>নির্মাণকাজ সম্পন্ন ভবন, যেখানে রয়েছে তিন বেডরুমের ফ্ল্যাট।</p><span class="pj-more" aria-hidden="true">প্রকল্প দেখুন<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></div></article><article data-location="Bashundhara River View" data-name="BB Buriganga View" data-search="বিবি বুড়িগঙ্গা ভিউ বসুন্ধরা রিভার ভিউ" class="pj-card" data-area="Bashundhara River View" data-status="Ongoing" data-beds="3" data-sizes="1270,1442"><div class="im"><img loading="lazy" decoding="async" src="../images/bb-buriganga-view.webp" alt="নদীর পাশের আবাসিক ভবন" style="object-position:50% 60%"><span class="pj-badge"><i style="background:#D4AD60"></i>নির্মাণাধীন</span></div><div class="tx"><h3><a class="pj" href="bb-buriganga-view.html">বিবি বুড়িগঙ্গা ভিউ</a></h3><div class="loc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg><span>বসুন্ধরা রিভার ভিউ</span></div><p>দুটি লেআউটে তিন বেডরুমের ফ্ল্যাট, আয়তন ১,২৭০ থেকে ১,৪৪২ বর্গফুট।</p><span class="pj-more" aria-hidden="true">প্রকল্প দেখুন<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></div></article><article data-location="Dhanmondi" data-name="Lakeview Court" data-search="লেকভিউ কোর্ট ধানমন্ডি" class="pj-card" data-area="Dhanmondi" data-status="Ongoing" data-beds="3,4"><div class="im"><img loading="lazy" decoding="async" src="../images/cta-towers.webp" alt="সন্ধ্যার আলোয় আবাসিক টাওয়ারগুলো" style="object-position:50% 30%"><span class="pj-badge"><i style="background:#D4AD60"></i>নির্মাণাধীন</span></div><div class="tx"><h3><a class="pj" href="lakeview-court.html">লেকভিউ কোর্ট</a></h3><div class="loc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg><span>ধানমন্ডি</span></div><p>নির্মাণাধীন আবাসিক ভবন, যেখানে রয়েছে তিন ও চার বেডরুমের লেআউট।</p><span class="pj-more" aria-hidden="true">প্রকল্প দেখুন<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></div></article><article data-location="Mohammadpur" data-name="Greenfield Heights" data-search="গ্রিনফিল্ড হাইটস মোহাম্মদপুর" class="pj-card" data-area="Mohammadpur" data-status="Upcoming" data-beds="2,3"><div class="im"><img loading="lazy" decoding="async" src="../images/landowner-plot.webp" alt="দুটি আবাসিক ভবনের মাঝের খালি জমি" style="object-position:50% 50%"><span class="pj-badge"><i style="background:#8FA3B8"></i>আসন্ন</span></div><div class="tx"><h3><a class="pj" href="greenfield-heights.html">গ্রিনফিল্ড হাইটস</a></h3><div class="loc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg><span>মোহাম্মদপুর</span></div><p>পরিকল্পনাধীন আবাসিক প্রকল্প, যেখানে থাকবে দুই ও তিন বেডরুমের ফ্ল্যাট।</p><span class="pj-more" aria-hidden="true">প্রকল্প দেখুন<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></div></article></div>
+<div class="pj-lm" hidden><button type="button" class="btn btn-secondary" aria-controls="project-results">আরও প্রকল্প দেখুন</button></div>
+<div class="pj-empty" hidden><span class="ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8A6A1E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" /><path d="M8.5 8.5l5 5M13.5 8.5l-5 5" /></svg></span><h2>আপনার দেওয়া ফিল্টারে কোনো প্রকল্প পাওয়া যায়নি।</h2><p>অন্য এলাকা বা প্রকল্পের অবস্থা বেছে দেখুন। সব প্রকল্প দেখতে ফিল্টারগুলো মুছে দিন।</p><button type="button" data-clear-projects="" class="btn btn-secondary">ফিল্টার মুছুন</button></div></div></div>
+</div>
+</section>
+<section class="s-cta" style="position:relative;overflow:hidden;background:#F4F6F8;padding:clamp(72px,9cqw,136px) 0">
+<div style="position:absolute;left:0;top:0;right:0;bottom:0">
+<img src="../images/cta-towers.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;object-position:50% 20%"><div aria-hidden="true" style="position:absolute;inset:0;background:rgba(36,34,33,.35)"></div>
+</div>
+<div class="wrap" style="position:relative;display:flex;justify-content:center">
+<div style="background:#FFFFFF;border-radius:8px;padding:36px 24px;width:100%;max-width:760px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;box-shadow:0 24px 64px rgba(36,34,33,.18)">
+<h2 style="margin:0;font-size:clamp(30px,3.2cqw,44px);line-height:1.15;font-weight:600;color:#242221;max-width:560px;text-wrap:balance">কোনো প্রকল্পে আগ্রহী?</h2>
+<p style="margin:0;font-size:clamp(16px,1.25cqw,18px);line-height:1.65;color:#5D5A54;max-width:520px">কোন প্রকল্পটি দেখছেন, আমাদের জানান। আমরা বর্তমান দাম ও কোন ফ্ল্যাটগুলো পাওয়া যাচ্ছে তা জানাতে পারি, অথবা ঘুরে দেখার ব্যবস্থা করতে সাহায্য করতে পারি।</p>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:8px">
+<a class="btn btn-primary" href="https://wa.me/8801604363259">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="#3E3223" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>হোয়াটসঅ্যাপে কথা বলুন</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer style="background:#FFFFFF;padding:clamp(48px,6cqw,72px) 0 32px">
+<div class="wrap" style="display:flex;flex-direction:column;gap:48px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<a href="index.html" aria-label="ওয়াহী প্রপার্টিজ লিমিটেড, হোম" style="display:block;padding:12px 12px 12px 0"><img src="../images/logo.svg" alt="ওয়াহী প্রপার্টিজ লিমিটেড" style="display:block;width:180px;max-width:100%;height:auto"></a>
+<p style="margin:0;font-size:16px;line-height:1.65;color:#5D5A54;max-width:300px">৩০ বছরের অভিজ্ঞতায় ঢাকায় আবাসিক ফ্ল্যাট নির্মাণ ও জয়েন্ট ভেঞ্চার অংশীদারত্ব।</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<h3 style="margin:0;font-size:20px;line-height:1.3;font-weight:600;color:#242221">প্রয়োজনীয় লিংক</h3>
+<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:16px;line-height:1.5">
+<li><a class="fl" href="index.html">হোম</a></li>
+<li><a class="fl" href="about.html">আমাদের সম্পর্কে</a></li>
+<li><a class="fl" href="projects.html">প্রকল্প</a></li>
+<li><a class="fl" href="joint-venture.html">জয়েন্ট ভেঞ্চার</a></li>
+<li><a class="fl" href="buyers-guide.html">ফ্ল্যাট কেনার গাইড</a></li>
+<li><a class="fl" href="contact-us.html">যোগাযোগ</a></li>
+</ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<h3 style="margin:0;font-size:20px;line-height:1.3;font-weight:600;color:#242221">আমাদের প্রকল্প</h3>
+<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:16px;line-height:1.5">
+<li><a class="fl" href="the-skyline-residence.html">দ্য স্কাইলাইন রেসিডেন্স</a></li>
+<li><a class="fl" href="the-horizon.html">দ্য হরাইজন</a></li>
+<li><a class="fl" href="ar-rahman-view.html">আর রহমান ভিউ</a></li>
+<li><a class="fl" href="bb-buriganga-view.html">বিবি বুড়িগঙ্গা ভিউ</a></li>
+</ul>
+<div><a class="vall" href="projects.html">সব প্রকল্প দেখুন<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<h3 style="margin:0;font-size:20px;line-height:1.3;font-weight:600;color:#242221">যোগাযোগ করুন</h3>
+<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;font-size:16px;line-height:1.5;color:#5D5A54">
+<li style="display:flex;gap:12px;align-items:flex-start">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" /></svg>
+<span style="display:flex;flex-direction:column;gap:4px"><a class="fl" href="tel:01604363259">০১৬০৪ ৩৬৩২৫৯</a></span></li>
+<li style="display:flex;gap:12px;align-items:flex-start">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg>
+<span>ওয়াহী প্রপার্টিজ লিমিটেড, মীম টাওয়ার, কনটেইনার পোর্ট রোড, হাসনাবাদ ১৩১১</span></li>
+<li style="display:flex;gap:12px;align-items:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>অফিসের সময়: শনিবার–বৃহস্পতিবার, সকাল ১০টা–বিকেল ৫টা।</li>
+<li style="display:flex;gap:12px;align-items:flex-start">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg>
+<a class="fl" href="mailto:wahiproperties.ltd@gmail.com" style="overflow-wrap:anywhere">wahiproperties.ltd@gmail.com</a></li>
+</ul>
+</div>
+</div>
+<div style="border-top:1px solid #EDE8DD;padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;font-size:16px;line-height:1.5;color:#5D5A54">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px"><span>© ২০২৬ ওয়াহী প্রপার্টিজ লিমিটেড</span><span aria-hidden="true" style="width:1px;height:16px;background:#EDE8DD"></span><a class="fl" href="privacy-terms.html">গোপনীয়তা ও শর্তাবলি</a></div>
+<span>ডিজাইন ও ডেভেলপমেন্ট: <a class="fl" href="https://zenticlab.com" style="font-weight:500">Zentic Lab</a></span>
+</div>
+</div>
+</footer>
+</div>
+
+</body>
+</html>

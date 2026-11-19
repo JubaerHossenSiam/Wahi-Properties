@@ -23,7 +23,7 @@ const server = createServer(async (request, response) => {
 
   try {
     const pathname = decodeURIComponent(new URL(request.url, 'http://127.0.0.1').pathname);
-    const file = resolve(siteDirectory, pathname === '/' ? 'index.html' : '.' + pathname);
+    const file = resolve(siteDirectory, '.' + pathname + (pathname.endsWith('/') ? 'index.html' : ''));
     const contentType = contentTypes[extname(file)];
     if (!file.startsWith(resolve(siteDirectory) + sep) || !contentType) {
       response.writeHead(404).end();

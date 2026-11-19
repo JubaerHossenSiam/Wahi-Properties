@@ -1,0 +1,163 @@
+import { readFile, writeFile, readdir, mkdir } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import { parseHTML } from 'linkedom';
+
+const root = fileURLToPath(new URL('../', import.meta.url));
+const dist = root + 'dist/';
+const translations = JSON.parse(await readFile(root + 'translations/bn.json', 'utf8'));
+const normalize = (text) => text.replace(/\s+/g, ' ').trim();
+const files = (await readdir(dist)).filter((file) => file.endsWith('.html'));
+await mkdir(dist + 'bn', { recursive: true });
+
+function switcher(document, file, bangla, mobile) {
+  const group = document.createElement('div');
+  group.className = 'lang ' + (mobile ? 'lang-m' : 'lang-d');
+  group.setAttribute('role', 'group');
+  group.setAttribute('aria-label', bangla ? 'ভাষা' : 'Language');
+  for (const [lang, label, name] of [['en', 'EN', 'English'], ['bn', 'বাংলা', 'বাংলা']]) {
+    const link = document.createElement('a');
+    link.href = lang === 'bn' ? (bangla ? '' : 'bn/') + file : (bangla ? '../' : '') + file;
+    link.lang = lang;
+    link.setAttribute('hreflang', lang);
+    link.dataset.language = lang;
+    link.textContent = label;
+    link.setAttribute('aria-label', name);
+    if ((lang === 'bn') === bangla) {
+      link.className = 'on';
+      link.setAttribute('aria-current', 'true');
+    }
+    group.append(link);
+  }
+  return group;
+}
+
+function shared(document, file, bangla) {
+  document.querySelectorAll('.lang,[data-locale-resource]').forEach((node) => node.remove());
+  document.querySelector('.hd-nav').append(switcher(document, file, bangla, true));
+  document.querySelector('.hdr-r').prepend(switcher(document, file, bangla, false));
+  const prefix = bangla ? '../' : '';
+  const css = document.createElement('link');
+  css.rel = 'stylesheet';
+  css.href = prefix + 'locale.css';
+  css.dataset.localeResource = '';
+  document.head.append(css);
+  const js = document.createElement('script');
+  js.src = prefix + 'locale.js';
+  js.defer = true;
+  js.dataset.localeResource = '';
+  document.head.insertBefore(js, document.head.querySelector('script'));
+  for (const lang of ['en', 'bn']) {
+    const link = document.createElement('link');
+    link.rel = 'alternate';
+    link.hreflang = lang;
+    link.href = lang === 'bn' ? (bangla ? '' : 'bn/') + file : (bangla ? '../' : '') + file;
+    link.dataset.localeResource = '';
+    document.head.append(link);
+  }
+}
+
+function translatedContent(node, target, map) {
+  // Retain linked email addresses, brand credits, emphasis, and decorative icons.
+  const document = node.ownerDocument;
+  const leaves = [];
+  const findText = (child) => {
+    if (child.nodeType === 3 && normalize(child.textContent)) leaves.push(child);
+    else if (child.nodeType === 1 && !child.matches('svg')) child.childNodes.forEach(findText);
+  };
+  node.childNodes.forEach(findText);
+  if (leaves.length === 1) {
+    leaves[0].textContent = target;
+    return;
+  }
+  const inline = Array.from(node.querySelectorAll('a,b,strong')).filter((child) => !child.parentElement.closest('a,b,strong'));
+  const parts = [];
+  let remainder = target;
+  for (const child of inline) {
+    const original = normalize(child.textContent);
+    let label = map[original] || original.replace(/\d/g, (digit) => '০১২৩৪৫৬৭৮৯'[digit]);
+    if (child.matches('b,strong') && original.endsWith(':') && target.includes(':')) label = target.split(':')[0] + ':';
+    const index = remainder.lastIndexOf(label);
+    if (index < 0) throw new Error('Missing inline translation for ' + original);
+    parts.push(document.createTextNode(remainder.slice(0, index)));
+    const copy = child.cloneNode(true);
+    copy.textContent = label;
+    parts.push(copy);
+    remainder = remainder.slice(index + label.length);
+  }
+  parts.push(document.createTextNode(remainder));
+  const decorations = Array.from(node.children).filter((child) => !normalize(child.textContent) && !child.matches('br'));
+  node.replaceChildren(...decorations, ...parts);
+}
+
+function translate(document, map) {
+  function walk(node) {
+    if (node.nodeType === 3) {
+      const target = map[normalize(node.textContent)];
+      if (target) node.textContent = node.textContent.replace(/\S[\s\S]*\S|\S/, target);
+      return;
+    }
+    if (node.nodeType !== 1 || node.matches('script,style,svg')) return;
+    const text = normalize(node.textContent);
+    const target = map[text];
+    // Match complete authored phrases before translating individual text nodes.
+    if (target && !node.matches('html,head,body,main,header,footer,section,nav,ul,ol,details')
+      && !node.querySelector('button,details,img,h1,h2,h3,h4,p')) {
+      translatedContent(node, target, map);
+      return;
+    }
+    for (const child of [...node.childNodes]) walk(child);
+  }
+  walk(document.body);
+  for (const node of document.querySelectorAll('[alt],[aria-label],[title],[placeholder]')) {
+    for (const attr of ['alt', 'aria-label', 'title', 'placeholder']) {
+      const value = node.getAttribute(attr);
+      if (value && map[normalize(value)]) node.setAttribute(attr, map[normalize(value)]);
+    }
+  }
+}
+
+for (const file of files) {
+  const english = parseHTML(await readFile(dist + file, 'utf8')).document;
+  const map = { ...translations.common, ...translations.pages[file], ...translations.interface };
+  for (const card of english.querySelectorAll('.pj-grid .pj-card')) {
+    const name = normalize(card.querySelector('.pj').textContent);
+    const location = normalize(card.querySelector('.loc span').textContent);
+    card.dataset.search = (map[name] || '') + ' ' + (map[location] || '');
+  }
+  shared(english, file, false);
+  await writeFile(dist + file, '<!doctype html>\n' + english.documentElement.outerHTML + '\n');
+
+  const document = parseHTML(english.documentElement.outerHTML).document;
+  document.documentElement.lang = 'bn';
+  document.title = file === 'index.html'
+    ? 'ওয়াহী প্রপার্টিজ লিমিটেড | ঢাকায় আবাসিক ফ্ল্যাট'
+    : (map[document.title.split(' | ')[0]] || map[normalize(document.querySelector('h1').textContent)]) + ' | ওয়াহী প্রপার্টিজ লিমিটেড';
+  // Filtering and URL parameters keep language-independent values.
+  for (const option of document.querySelectorAll('.pj-opt')) option.dataset.value = option.querySelector('.t').textContent;
+  for (const chip of document.querySelectorAll('.pj-chip')) chip.dataset.value = chip.textContent.trim();
+  for (const card of document.querySelectorAll('.pj-card')) {
+    card.dataset.name = card.querySelector('.pj').textContent;
+    card.dataset.location = card.querySelector('.loc span').textContent;
+  }
+  translate(document, map);
+  // Source files contain an obsolete address. Keep the current office location.
+  for (const node of document.querySelectorAll('img[src],script[src],link[href]')) {
+    const attr = node.localName === 'link' ? 'href' : 'src';
+    const value = node.getAttribute(attr);
+    if (value && !/^(?:https?:|\/|\.\.\/|#|data:)/.test(value)) node.setAttribute(attr, '../' + value);
+  }
+  for (const node of document.querySelectorAll('[srcset]')) {
+    node.setAttribute('srcset', node.getAttribute('srcset').split(',').map((candidate) => {
+      const [url, ...descriptor] = candidate.trim().split(/\s+/);
+      const relative = !/^(?:https?:|\/|\.\.\/|data:)/.test(url);
+      return [(relative ? '../' : '') + url, ...descriptor].join(' ');
+    }).join(', '));
+  }
+  const font = document.createElement('link');
+  font.rel = 'stylesheet';
+  font.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap';
+  document.head.append(font);
+  shared(document, file, true);
+  await writeFile(dist + 'bn/' + file, '<!doctype html>\n' + document.documentElement.outerHTML + '\n');
+}
+console.log('Built Bangla content and language links for ' + files.length + ' pages.');

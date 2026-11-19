@@ -90,7 +90,7 @@
 
       const number = entry.target;
       const finalText = number.textContent;
-      const finalValue = Number(finalText);
+      const finalValue = siteLocale.parseNumber(finalText);
       const label = document.createElement('span');
       const visual = document.createElement('span');
       label.className = 'page-counter-label';
@@ -108,7 +108,7 @@
       const tick = (now) => {
         const progress = Math.min(1, (now - start) / 3000);
         const easedProgress = (1 - Math.cos(Math.PI * progress)) / 2;
-        visual.textContent = Math.round(finalValue * easedProgress);
+        visual.textContent = siteLocale.number(Math.round(finalValue * easedProgress));
         if (progress < 1) frame = requestAnimationFrame(tick);
       };
       frame = requestAnimationFrame(tick);

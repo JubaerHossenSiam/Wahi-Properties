@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<title>আমাদের সম্পর্কে | ওয়াহী প্রপার্টিজ লিমিটেড</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap">
+<style>
+body{margin:0;font-family:"Onest",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:#5D5A54;background:#FFFFFF}
+*{box-sizing:border-box}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:14px 32px;border-radius:999px;font-family:inherit;font-size:16px;line-height:1.4;font-weight:500;text-decoration:none;border:1px solid #3E3223;cursor:pointer}
+.btn-primary{background:#E6BF62;color:#3E3223;border-color:#E6BF62}
+.btn-primary:hover{background:#D4AD60;border-color:#D4AD60}
+.btn-secondary{background:#F4F6F8;color:#242221;border-color:#242221}
+.btn-secondary:hover{background:#E8ECF0}
+header .btn{min-height:44px;padding:8px 24px}
+header .btn.call{background:#FFFFFF;border:2px solid #D4AD60;color:#242221}
+header .btn.call:hover{background:#F6EEDB;border-color:#D4AD60}
+a:focus-visible{outline:3px solid #242221;outline-offset:3px}
+a.nav{color:#242221;text-decoration:none;font-size:16px;font-weight:500;line-height:1.4;padding:8px 0;border-bottom:2px solid transparent;position:relative}
+a.nav::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:#D4AD60;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+a.nav:hover::after{transform:scaleX(1)}
+a.nav-on{color:#D4AD60}
+a.fl{color:#242221;text-decoration:none}
+a.fl:hover{text-decoration:underline;text-underline-offset:3px}
+@media (min-width:1000px){footer .wrap > div:first-child{grid-template-columns:1fr .8fr .9fr 1.5fr!important}}
+footer .wrap > div:first-child > div:last-child ul{color:#242221!important}
+footer .vall{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:#242221;text-decoration:none;font-size:16px;margin-top:4px}
+footer .vall:hover{color:#D4AD60}
+footer .vall:hover svg{transform:translateX(3px)}
+footer .vall svg{transition:transform .2s}
+footer{padding-top:48px!important}
+footer .wrap{gap:48px!important}
+footer .wrap > div:first-child > div:first-child > a{padding:0 12px 0 0!important}
+@media (min-width:700px){footer{padding-top:64px!important}footer .wrap{gap:64px!important}}
+@media (min-width:1100px){footer{padding-top:80px!important}footer .wrap{gap:80px!important}}
+.lang{display:flex;align-items:center;gap:2px;height:44px;padding:4px;border:1px solid #E6E0D5;border-radius:999px;background:#FFFFFF;box-sizing:border-box}
+.lang button{all:unset;box-sizing:border-box;cursor:pointer;height:34px;min-width:44px;padding:0 12px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;line-height:1;color:#5D5A54;font-family:inherit}
+.lang button:nth-child(2){font-size:15px}
+.lang button:hover{color:#242221;background:#F3F0E9}
+.lang button.on,.lang button.on:hover{background:#E6BF62;color:#3E3223}
+.hdr-r{display:flex;align-items:center;gap:16px}
+.hd-nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px}
+.lang-m,.hd-tgl .i-c{display:none}
+.hd-tgl{all:unset;box-sizing:border-box;display:none;width:44px;height:44px;border:1px solid #E6E0D5;border-radius:999px;background:#FFFFFF;align-items:center;justify-content:center;cursor:pointer}
+.hd-tgl:hover{background:#F6EEDB}
+.hd-tgl:focus-visible{outline:3px solid #242221;outline-offset:3px}
+@media (max-width:1359px){
+ .hd-nav{gap:8px 28px}
+}
+@media (max-width:1199px){
+ .hd-nav{gap:8px 24px}
+ header .btn.call{width:44px;padding:0;gap:0}
+ header .btn.call .ct{display:none}
+}
+@media (max-width:1099px){
+ header .btn.call{width:auto;padding:8px 24px;gap:10px}
+ header .btn.call .ct{display:inline}
+ header .hd-tgl{display:flex}
+ header.hd-open .hd-tgl .i-o{display:none}
+ header.hd-open .hd-tgl .i-c{display:block}
+ .lang-d{display:none}
+ .hd-nav{display:none;order:3;flex-basis:100%;flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:0;padding:0 0 20px}
+ header.hd-open .hd-nav{display:flex}
+ .hd-nav a.nav{padding:14px 0;font-size:18px;border-bottom:1px solid #EDE8DD}
+ .hd-nav a.nav::after{display:none}
+ .lang-m{display:flex;align-self:flex-start;margin-top:20px}
+}
+@media (max-width:599px){
+ header .btn.call{width:44px;padding:0;gap:0}
+ header .btn.call .ct{display:none}
+ header>.wrap:first-child{gap:16px 12px!important}
+ header a[aria-label] img{width:140px!important}
+ .hdr-r{gap:12px}
+}
+
+h2{text-wrap:balance}
+/* About page */
+.ab-sec{padding-top:clamp(60px,7cqw,100px);padding-bottom:clamp(60px,7cqw,100px)}
+.ab-h1{margin:0;font-size:clamp(44px,5cqw,72px);line-height:1.05;letter-spacing:-0.025em;font-weight:600;color:#242221}
+.ab-h2{margin:0;font-size:clamp(32px,3.4cqw,48px);line-height:1.12;letter-spacing:-0.02em;font-weight:600;color:#242221}
+.ab-lead{margin:0;font-size:clamp(17px,1.4cqw,20px);line-height:1.65;color:#242221}
+.ab-hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6cqw,96px);align-items:start}
+.ab-who-p{margin:0;font-size:clamp(20px,2cqw,28px);line-height:1.5;font-weight:500;color:#242221;text-wrap:pretty}
+.ab-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3cqw,40px)}
+.ab-card{background:#FFFFFF;border:1px solid #EDE6D6;border-radius:12px;padding:36px 24px;display:flex;flex-direction:column;gap:16px;transition:border-color .25s ease}
+.ab-card:hover{border-color:#E6BF62}
+.ab-card h3{margin:0;font-size:24px;line-height:1.3;font-weight:600;color:#242221}
+.ab-card p{margin:0;font-size:16px;line-height:1.65;color:#5D5A54}
+.ab-link{margin-top:auto;padding-top:8px;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;color:#242221;text-decoration:none}
+.ab-link:hover{color:#D4AD60}
+.ab-link:hover svg{transform:translateX(3px)}
+.ab-link svg{transition:transform .2s}
+.ab-stats{background:#F6EEDB;border-radius:16px;padding:36px 40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.stx{display:flex;align-items:center;padding:8px 16px 8px 0}
+.stx2{border-left:1px solid rgba(62,50,35,.2);padding-left:40px}
+.stv{display:flex;align-items:baseline;gap:8px;flex-wrap:nowrap}
+.stn2{font-size:clamp(48px,5cqw,72px);line-height:1;font-weight:500;color:#242221;letter-spacing:-0.02em}
+.stu{font-size:clamp(18px,1.6cqw,22px);line-height:1.2;font-weight:600;color:#3E3223}
+.stl{margin-top:10px;font-size:16px;line-height:1.4;color:#5D5A54}
+.ab-story{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:clamp(40px,6cqw,96px);align-items:center}
+.ab-photo{position:relative;aspect-ratio:1/1;z-index:0;margin-bottom:20px}
+.ab-photo::before{content:"";position:absolute;left:-20px;bottom:-20px;width:62%;height:62%;background:#F6EEDB;border-radius:12px;z-index:-1}
+.ab-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 15%;border-radius:12px;display:block}
+.ab-people{display:flex;flex-direction:column;border-bottom:1px solid #E6E0D5}
+.ab-person{display:flex;flex-direction:column;gap:4px;padding:20px 0;border-top:1px solid #E6E0D5}
+.ab-person b{font-size:20px;line-height:1.3;font-weight:600;color:#242221}
+.ab-person span{font-size:16px;line-height:1.5;color:#5D5A54}
+.ab-cap{position:absolute;left:12px;bottom:12px;display:flex;flex-direction:column;gap:0;background:#FFFFFF;border-radius:8px;padding:8px 14px;box-shadow:0 8px 24px rgba(36,34,33,.14)}
+.ab-cap b{font-size:15px;line-height:1.3;font-weight:600;color:#242221}
+.ab-cap span{font-size:13px;line-height:1.4;color:#5D5A54}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ab-vals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(32px,5cqw,72px)}
+.ab-val{display:flex;flex-direction:column;gap:16px;padding-top:32px;border-top:1px solid #E6E0D5}
+.ab-val h3{margin:0;font-size:24px;line-height:1.3;font-weight:600;color:#242221}
+.ab-val p{margin:0;font-size:16px;line-height:1.65;color:#5D5A54}
+.ab-ck{width:44px;height:44px;border-radius:50%;background:#E6BF62;display:flex;align-items:center;justify-content:center}
+.ab-vision p.v{margin:0;font-size:clamp(28px,3.4cqw,48px);line-height:1.2;letter-spacing:-0.02em;font-weight:600;color:#242221;text-wrap:balance}
+.ab-vision p.t{margin:0;font-size:clamp(18px,1.6cqw,22px);line-height:1.4;font-weight:600;color:#D4AD60}
+.ab-proj{position:relative;display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);background:#FFFFFF;border:1px solid #EDE6D6;border-radius:12px;top:0;transition:top .25s ease,border-color .25s ease}
+.ab-proj:hover{top:-6px;border-color:#E6BF62}
+.ab-proj::after{content:"";position:absolute;left:0;right:0;top:100%;height:8px}
+.ab-proj a.pj{color:#242221;text-decoration:none}
+.ab-proj a.pj::after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;z-index:1}
+.ab-proj .im{position:relative;min-height:380px;border-radius:11px 0 0 11px;overflow:hidden;background:#F4F6F8}
+.ab-proj .tx{padding:36px 24px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+@media (min-width:900px){.ab-proj .tx{padding:48px 48px}}
+@media (max-width:899px){
+ .ab-hero-grid{grid-template-columns:1fr}
+ .ab-cards,.ab-vals{grid-template-columns:1fr}
+ .ab-cards{gap:56px}
+ .ab-vals{gap:40px}
+ .ab-stats{grid-template-columns:1fr;gap:24px;padding:28px 24px}
+ .stx2{border-left:0;padding-left:0;border-top:1px solid rgba(62,50,35,.2);padding-top:24px}
+ .ab-proj{grid-template-columns:1fr}
+ .ab-proj .im{min-height:0;aspect-ratio:4/3;border-radius:11px 11px 0 0}
+}
+
+body{container-type:inline-size}
+.ab-stats3{background:#F6EEDB;border-radius:16px;padding:36px 40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.ab-open{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #E6E0D5;border-bottom:1px solid #E6E0D5}
+.ab-open .stx{padding:32px 16px 32px 0}
+.ab-open .stx2{border-left:1px solid #E6E0D5;padding-left:40px}
+.ab-ov{position:relative;z-index:2;margin-top:-56px}
+.ab-row{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,5fr) auto;gap:16px 48px;align-items:center;padding:32px 0;border-top:1px solid #E6E0D5}
+.ab-row:last-child{border-bottom:1px solid #E6E0D5}
+.ab-row h3{margin:0;font-size:clamp(22px,2cqw,28px);line-height:1.25;font-weight:600;color:#242221}
+.ab-row p{margin:0;font-size:16px;line-height:1.65;color:#5D5A54}
+.ab-row .ab-link{margin:0;padding:0}
+.ab-pc{background:#FFFFFF;border:1px solid #EDE6D6;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:4px}
+.ab-pc b{font-size:20px;line-height:1.3;font-weight:600;color:#242221}
+.ab-pc span{font-size:16px;line-height:1.5;color:#5D5A54}
+.ab-pcard{position:relative;background:#FFFFFF;border:1px solid #EDE6D6;border-radius:12px;top:0;transition:top .25s ease,border-color .25s ease}
+.ab-pcard:hover{top:-6px;border-color:#E6BF62}
+.ab-pcard::after{content:"";position:absolute;left:0;right:0;top:100%;height:8px}
+.ab-pcard a.pj{color:#242221;text-decoration:none}
+.ab-pcard a.pj::after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;z-index:1}
+.ab-pcard .im{position:relative;aspect-ratio:4/3;border-radius:11px 11px 0 0;overflow:hidden;background:#F4F6F8}
+.ab-pcard .tx{padding:24px 24px 28px;display:flex;flex-direction:column;gap:10px}
+.ab-img{position:relative;border-radius:12px;overflow:hidden;background:#F4F6F8}
+.ab-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ab-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6cqw,96px);align-items:center}
+.ab-split{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(32px,6cqw,96px);align-items:start}
+.ab-icard{display:flex;flex-direction:column}
+.ab-icard .im{position:relative;aspect-ratio:4/3;background:#F4F6F8;border-radius:12px;overflow:hidden}
+.ab-icard .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ab-icard .tx{padding:24px 0 0;display:flex;flex-direction:column;gap:12px;flex:1}
+.ab-icard h3{margin:0;font-size:24px;line-height:1.3;font-weight:600;color:#242221}
+.ab-icard p{margin:0;font-size:16px;line-height:1.65;color:#5D5A54}
+.ab-panel{background:#F6EEDB;border-radius:16px;padding:48px 24px}
+.ab-panel .ab-vals{gap:0}
+.ab-panel .ab-val{border-top:0;padding:0 clamp(24px,3cqw,48px)}
+.ab-panel .ab-val+.ab-val{border-left:1px solid rgba(62,50,35,.2)}
+.ab-panel .ab-val:first-child{padding-left:0}
+.ab-panel .ab-val:last-child{padding-right:0}
+.ab-qm{font-size:120px;line-height:.6;height:56px;font-weight:600;color:#D4AD60;display:block}
+.ab-vcg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:stretch;width:100%}
+.ab-vc{background:#FFFFFF;border:1px solid #EDE6D6;border-radius:12px;padding:32px 24px;display:flex;flex-direction:column}
+.ab-vil{display:block;margin:0 0 24px -4px;line-height:0}
+.ab-vil svg{display:block;width:160px;max-width:100%;height:auto}
+/* placeholder illustrations: very light tones so they stay quiet */
+.ab-vil [fill="#F3E8CB"]{fill:#FAF5E6}
+.ab-vil [fill="#E3CF98"]{fill:#F2E9CF}
+.ab-vil circle[fill="#D4AD60"]{fill:#F3E8C8}
+.ab-vil [stroke="#FFFFFF"]{stroke:#B8934A}
+.ab-vil [fill="#FFFFFF"]{fill:#B8934A}
+.ab-vil path[stroke="#D4AD60"]{stroke:#E8DAB0}
+.ab-vc h3{margin:0;font-size:24px;line-height:1.3;font-weight:600;color:#242221}
+.ab-vc p{margin:10px 0 0;font-size:16px;line-height:1.65;color:#5D5A54}
+@media (max-width:899px){.ab-vcg{grid-template-columns:1fr;gap:16px}.ab-vil svg{width:128px}.ab-vil{margin-bottom:20px}}
+@media (max-width:899px){
+ .ab-stats3{grid-template-columns:1fr;gap:24px;padding:28px 24px}
+ .ab-stats3 .stx2,.ab-open .stx2{border-left:0;padding-left:0;border-top:1px solid rgba(62,50,35,.2);padding-top:24px}
+ .ab-open{grid-template-columns:1fr}
+ .ab-open .stx{padding:24px 0}
+ .ab-open .stx2{border-top:1px solid #E6E0D5}
+ .ab-row{grid-template-columns:1fr;gap:12px}
+ .ab-two,.ab-split{grid-template-columns:1fr}
+ .ab-panel .ab-val{padding:0}
+ .ab-panel .ab-val+.ab-val{border-left:0;border-top:1px solid rgba(62,50,35,.2);padding-top:32px}
+ .ab-panel .ab-vals{gap:32px}
+ .ab-ov{margin-top:-40px}
+}
+
+.ab-two > div > .ab-mini{flex:1}
+.ab-mini{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);align-items:stretch}
+.ab-mini .im{aspect-ratio:auto!important;min-height:180px;border-radius:11px 0 0 11px}
+.ab-mini .tx{justify-content:center;padding:24px}
+@media (max-width:599px){.ab-mini{grid-template-columns:1fr}.ab-mini .im{min-height:0;aspect-ratio:4/3!important;border-radius:11px 11px 0 0}}
+
+.ab-hero-bg{-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent 100%),linear-gradient(to right,transparent 42%,#000 58%);mask-image:linear-gradient(to bottom,#000 55%,transparent 100%),linear-gradient(to right,transparent 42%,#000 58%)}
+@media (max-width:899px){.ab-hero-bg{-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent 100%);mask-image:linear-gradient(to bottom,#000 55%,transparent 100%)}}
+.ab-who2{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,6cqw,96px);align-items:center}
+@media (max-width:899px){.ab-who2{grid-template-columns:1fr}.ab-statrow{grid-template-columns:112px minmax(0,1fr)}}
+@media (max-width:640px){.ab-statrow{grid-template-columns:88px minmax(0,1fr)}.ab-statrow .stn2{font-size:40px}}
+.ab-statrow{display:grid;grid-template-columns:112px minmax(0,1fr);align-items:baseline;gap:0;padding:26px 0;border-top:1px solid #EDE8DD}
+.ab-statrow .stn2{font-size:48px;font-weight:500;color:#D4AD60;line-height:1;letter-spacing:-0.02em}
+.ab-statrow .stt{padding-top:2px;font-size:clamp(20px,1.7cqw,24px);line-height:1.3;font-weight:600;color:#242221}
+.ab-statrow .std{margin:0;font-size:16px;line-height:1.65;color:#5D5A54}
+.ab-statlist .ab-statrow:first-child{border-top:0}
+@media (min-width:900px){.ab-who2{align-items:stretch}.ab-who2>div:first-child{justify-content:center}.ab-statlist{display:flex;flex-direction:column}.ab-statrow{flex:1;align-items:baseline;align-content:center;padding:18px 0}.ab-statrow .stt{padding-top:0}}
+
+.ab-hp{position:relative;background:#FFFFFF;border:1px solid #EDE6D6;border-radius:12px;top:0;transition:top .25s ease,border-color .25s ease;display:flex;flex-direction:column}
+.ab-hp:hover{top:-6px;border-color:#E6BF62}
+.ab-hp::after{content:"";position:absolute;left:0;right:0;top:100%;height:8px}
+.ab-hp a.pj{color:#242221;text-decoration:none}
+.ab-hp a.pj::after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;z-index:1}
+.ab-hp .im{position:relative;aspect-ratio:1/1;border-radius:11px 11px 0 0;overflow:hidden;background:#F4F6F8}
+.ab-hp .tx{padding:24px 24px 28px;display:flex;flex-direction:column;gap:10px;min-height:180px}
+.ab-hgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
+@media (max-width:899px){div:has(>.hdr-va){gap:40px!important}.hdr-va{display:contents!important}.hdr-va .btn{order:3;align-self:center}}
+@media (max-width:599px){.hdr-va .btn{align-self:stretch}}
+@media (min-width:1100px){.ab-hgrid .ab-hp:nth-child(2){margin-top:48px}}
+@media (max-width:899px){.ab-hero-bg img{object-position:0% 50%!important}}
+@media (max-width:1099px){.ab-hgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:599px){.ab-hgrid{grid-template-columns:1fr}.ab-hp .tx{min-height:0}}
+</style>
+
+<link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../page-motion.css">
+<script data-locale-resource="" defer src="../locale.js"></script><script src="../site.js" defer></script>
+<script src="../page-motion.js" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet"><link data-locale-resource="" href="../locale.css" rel="stylesheet"><link data-locale-resource="" href="../about.html" hreflang="en" rel="alternate"><link data-locale-resource="" href="about.html" hreflang="bn" rel="alternate"></head>
+<body class="inner-page">
+<a class="skip-link" href="#main-content">মূল বিষয়বস্তুতে যান</a>
+
+<div style="background:#FFFFFF">
+<header class="hd" style="background:#FFFFFF">
+<div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding-top:8px;padding-bottom:8px">
+<a href="index.html" aria-label="ওয়াহী প্রপার্টিজ লিমিটেড, হোম" style="display:block;padding:4px 12px 4px 0"><img src="../images/logo.svg" alt="ওয়াহী প্রপার্টিজ লিমিটেড" style="display:block;width:170px;height:auto"></a>
+<nav class="hd-nav" id="hd-nav" aria-label="মূল নেভিগেশন">
+<a class="nav" href="index.html">হোম</a>
+<a class="nav nav-on" aria-current="page" href="about.html">আমাদের সম্পর্কে</a>
+<a class="nav" href="projects.html">প্রকল্প</a>
+<a class="nav" href="joint-venture.html">জয়েন্ট ভেঞ্চার</a>
+<a class="nav" href="buyers-guide.html">ফ্ল্যাট কেনার গাইড</a>
+<a class="nav" href="contact-us.html">যোগাযোগ</a>
+<div aria-label="ভাষা" role="group" class="lang lang-m"><a aria-label="English" data-language="en" hreflang="en" lang="en" href="../about.html">EN</a><a aria-current="true" class="on" aria-label="বাংলা" data-language="bn" hreflang="bn" lang="bn" href="about.html">বাংলা</a></div></nav>
+<div class="hdr-r"><div aria-label="ভাষা" role="group" class="lang lang-d"><a aria-label="English" data-language="en" hreflang="en" lang="en" href="../about.html">EN</a><a aria-current="true" class="on" aria-label="বাংলা" data-language="bn" hreflang="bn" lang="bn" href="about.html">বাংলা</a></div>
+<a class="btn btn-primary call" href="tel:01604363259" aria-label="কল করুন">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E3223" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" /></svg>
+<span class="ct">কল করুন</span></a>
+<button type="button" class="hd-tgl" aria-label="মেনু" aria-expanded="false" aria-controls="hd-nav"><svg class="i-o" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg><svg class="i-c" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg></button>
+</div>
+</div>
+</header>
+<main id="main-content">
+<section class="ab-sec" style="position:relative;overflow:hidden;background:#FBF8F1;padding-top:clamp(64px,8cqw,120px);padding-bottom:clamp(64px,8cqw,120px)"><div class="ab-hero-bg" style="position:absolute;left:0;top:0;right:0;bottom:0"><img src="../images/about-hero.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block"></div><div class="wrap" style="position:relative;width:100%"><div style="display:flex;flex-direction:column;gap:20px;max-width:720px"><h1 class="ab-h1">আমাদের সম্পর্কে</h1><p class="ab-lead">ওয়াহী প্রপার্টিজ লিমিটেডের মানুষ ও কাজের সঙ্গে পরিচিত হোন।</p></div></div></section>
+<section class="ab-sec" style="background:#FBF8F1;padding-top:clamp(16px,2cqw,32px)">
+<div class="wrap">
+<div class="ab-who2"><div style="display:flex;flex-direction:column;gap:28px"><h2 class="ab-h2">আমাদের পরিচয়</h2><p class="ab-who-p">ওয়াহী প্রপার্টিজ লিমিটেড ঢাকাভিত্তিক একটি আবাসন নির্মাতা প্রতিষ্ঠান। যাঁরা নিজের একটি বাড়ি খুঁজছেন, তাঁদের জন্য আমরা ঢাকা ও আশপাশে আবাসিক ফ্ল্যাট নির্মাণ করি। পাশাপাশি, জয়েন্ট ভেঞ্চারের মাধ্যমে নিজেদের জমিতে ভবন করতে চান এমন জমির মালিকদের সঙ্গেও কাজ করি।</p></div><div class="ab-statlist"><div class="ab-statrow"><span class="stn2">৩০</span><h3 class="stt" style="margin:0">বছরের অভিজ্ঞতা</h3></div><div class="ab-statrow"><span class="stn2">১৭</span><h3 class="stt" style="margin:0">প্রকল্প সম্পন্ন</h3></div><div class="ab-statrow"><span class="stn2">১৫০</span><h3 class="stt" style="margin:0">ফ্ল্যাট হস্তান্তর</h3></div></div></div>
+</div>
+</section>
+<section class="ab-sec" style="background:#FFFFFF;">
+<div class="wrap">
+<div style="display:flex;flex-direction:column;gap:clamp(40px,5cqw,56px)"><h2 class="ab-h2">আমাদের কাজ</h2><div class="ab-cards"><article class="ab-icard"><div class="im"><img src="../images/skyline-residence.webp" alt="আবাসিক ভবন" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;object-position:50% 50%"></div><div class="tx"><h3>আবাসিক ফ্ল্যাট নির্মাণ</h3><p>আমরা ঢাকা ও আশপাশে আবাসিক ভবন নির্মাণ করি। প্রকল্পগুলো দেখে লোকেশন, লেআউট ও সুযোগ-সুবিধা সম্পর্কে জানুন।</p><div style="margin-top:auto"><a class="ab-link" href="projects.html">সব প্রকল্প দেখুন<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></div></div></article><article class="ab-icard"><div class="im"><img src="../images/floor-plan-help.webp" alt="ওয়াহীর একজন কর্মী এক দম্পতিকে ফ্লোর প্ল্যান দেখাচ্ছেন" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;object-position:50% 50%"></div><div class="tx"><h3>বাড়ি বেছে নিতে সহায়তা</h3><p>কেমন ফ্ল্যাট খুঁজছেন, আমাদের বলুন। আমরা প্রকল্পের তথ্য জানাতে, দাম নিয়ে কথা বলতে এবং ঘুরে দেখার ব্যবস্থা করতে পারি।</p><div style="margin-top:auto"><a class="ab-link" href="buyers-guide.html">ফ্ল্যাট কেনার গাইড পড়ুন<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></div></div></article><article class="ab-icard"><div class="im"><img src="../images/landowner-plot.webp" alt="দুটি আবাসিক ভবনের মাঝের খালি জমিতে একজন জমির মালিক ও ওয়াহীর একজন কর্মী কথা বলছেন" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;object-position:50% 50%"></div><div class="tx"><h3>জমির মালিকদের সঙ্গে অংশীদারত্ব</h3><p>আমরা জমির মালিকদের সঙ্গে মিলে আবাসিক ফ্ল্যাট নির্মাণ করি। দুই পক্ষের ফ্ল্যাটের ভাগ আলোচনা করে ঠিক করা হয়।</p><div style="margin-top:auto"><a class="ab-link" href="joint-venture.html">জয়েন্ট ভেঞ্চার সম্পর্কে জানুন<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></div></div></article></div></div>
+</div>
+</section>
+<section class="ab-sec" style="background:#FBF8F1;">
+<div class="wrap">
+<div class="ab-split" style="align-items:center"><div class="ab-photo"><img src="../images/founder.webp" alt="ওয়াহী প্রপার্টিজ লিমিটেডের প্রতিষ্ঠাতা জনাব মো. ওয়াহিদুল ইসলাম" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;object-position:50% 15%"><div class="ab-cap"><b>জনাব মো. ওয়াহিদুল ইসলাম</b><span>প্রতিষ্ঠাতা</span></div></div><div style="display:flex;flex-direction:column;gap:32px"><h2 class="ab-h2">আমাদের গল্প</h2><p class="ab-who-p">৩০ বছর আগে জনাব মো. ওয়াহিদুল ইসলাম ওয়াহী প্রপার্টিজ লিমিটেড প্রতিষ্ঠা করেন। ব্যবসা বড় হওয়ার পথে তাঁর বাবা, মরহুম মো. বাদশা মিয়া, পাশে থেকেছেন এবং সাধ্যমতো সবভাবে প্রতিষ্ঠানকে সহযোগিতা করেছেন। সেই পথ ধরে ওয়াহী আজও ঢাকা ও আশপাশে মানুষের জন্য বাড়ি নির্মাণ করে চলেছে।</p></div></div>
+</div>
+</section>
+<section class="ab-sec" style="background:#FFFFFF;">
+<div class="wrap">
+<div style="display:flex;flex-direction:column;align-items:center;gap:clamp(32px,4cqw,48px)"><h2 class="ab-h2" style="text-align:center">আমাদের কাজের ভিত্তি</h2><div class="ab-vcg"><div class="ab-vc"><span class="ab-vil"><svg viewBox="0 0 200 110" width="200" height="110" role="img" aria-label="টিক চিহ্নযুক্ত কথোপকথন বুদ্‌বুদসহ দুজন মানুষের আলোচনা"><path d="M8 100h184" stroke="#EBDDB5" stroke-width="2.6" stroke-linecap="round" /><circle cx="46" cy="58" r="11" fill="#F0E4C2" stroke="#B8934A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M24 100a22 22 0 0 1 44 0z" fill="#F0E4C2" stroke="#B8934A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /><circle cx="154" cy="58" r="11" fill="#F0E4C2" stroke="#B8934A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M132 100a22 22 0 0 1 44 0z" fill="#F0E4C2" stroke="#B8934A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M80 8h40a12 12 0 0 1 12 12v22a12 12 0 0 1-12 12h-14l-10 12-3-12H80a12 12 0 0 1-12-12V20A12 12 0 0 1 80 8z" fill="#FAF5E6" stroke="#B8934A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M85 32l9 9 20-20" fill="none" stroke="#B8934A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /><path d="M66 40q-6 0-8 6M134 40q6 0 8 6" fill="none" stroke="#EBDDB5" stroke-width="2.6" stroke-linecap="round" /></svg></span><h3>সততা</h3><p>প্রতিটি ধাপে ক্রেতা ও জমির মালিকদের সঙ্গে সৎ ও খোলামেলা কথা বলা।</p></div><div class="ab-vc"><span class="ab-vil"><svg viewBox="48 0 200 110" width="200" height="110" role="img" aria-label="টিক চিহ্ন ও স্বাক্ষরসহ চুক্তিপত্র এবং কলম"><rect x="56" y="6" width="88" height="96" rx="10" fill="#FAF5E6" stroke="#B8934A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /><circle cx="78" cy="26" r="7" fill="#F0E4C2" stroke="#B8934A" stroke-width="2" /><path d="M74.5 26l2.5 2.5 4.5-5" fill="none" stroke="#B8934A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /><rect x="92" y="23" width="38" height="6" rx="3" fill="#EBDDB5" /><circle cx="78" cy="44" r="7" fill="#F0E4C2" stroke="#B8934A" stroke-width="2" /><path d="M74.5 44l2.5 2.5 4.5-5" fill="none" stroke="#B8934A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /><rect x="92" y="41" width="38" height="6" rx="3" fill="#EBDDB5" /><circle cx="78" cy="62" r="7" fill="#F0E4C2" stroke="#B8934A" stroke-width="2" /><path d="M74.5 62l2.5 2.5 4.5-5" fill="none" stroke="#B8934A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /><rect x="92" y="59" width="38" height="6" rx="3" fill="#EBDDB5" /><path d="M72 90q5-12 10 0t10 0t10 0" fill="none" stroke="#B8934A" stroke-width="2.4" stroke-linecap="round" /><path d="M70 96h56" stroke="#EBDDB5" stroke-width="2.4" stroke-linecap="round" /><g transform="rotate(38 158 62)"><rect x="151" y="30" width="14" height="44" rx="3" fill="#F0E4C2" stroke="#B8934A" stroke-width="2.4" /><path d="M151 74h14l-7 14z" fill="#FAF5E6" stroke="#B8934A" stroke-width="2.4" stroke-linejoin="round" /></g></svg></span><h3>স্পষ্ট চুক্তি</h3><p>ফ্ল্যাটের বিস্তারিত, পেমেন্টের শর্ত ও জমির মালিকের ভাগ বুঝিয়ে, আলোচনা করে ঠিক করা।</p></div><div class="ab-vc"><span class="ab-vil"><svg viewBox="0 0 200 110" width="200" height="110" role="img" aria-label="ক্রেন ও নিরাপত্তা হেলমেটসহ নির্মাণাধীন আবাসিক ভবন"><path d="M8 102h184" stroke="#EBDDB5" stroke-width="2.6" stroke-linecap="round" /><rect x="28" y="46" width="76" height="56" rx="4" fill="#FAF5E6" stroke="#B8934A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M28 46v-14M104 46v-14M28 32h76" fill="none" stroke="#B8934A" stroke-width="2.2" stroke-dasharray="4 4" stroke-linecap="round" /><rect x="36" y="52" width="12" height="9" rx="2" fill="#EBDDB5" /><rect x="58" y="52" width="12" height="9" rx="2" fill="#EBDDB5" /><rect x="80" y="52" width="12" height="9" rx="2" fill="#EBDDB5" /><rect x="36" y="70" width="12" height="9" rx="2" fill="#EBDDB5" /><rect x="58" y="70" width="12" height="9" rx="2" fill="#EBDDB5" /><rect x="80" y="70" width="12" height="9" rx="2" fill="#EBDDB5" /><rect x="58" y="86" width="16" height="16" rx="2" fill="#F0E4C2" /><path d="M122 102V16" stroke="#B8934A" stroke-width="5" stroke-linecap="round" /><path d="M84 16h92M122 6v10" stroke="#B8934A" stroke-width="3.6" stroke-linecap="round" fill="none" /><path d="M160 16v22" stroke="#B8934A" stroke-width="2" stroke-linecap="round" /><rect x="153" y="38" width="14" height="10" rx="2" fill="#F0E4C2" stroke="#B8934A" stroke-width="2" /><circle cx="162" cy="80" r="22" fill="#F0E4C2" /><path d="M148 84a14 14 0 0 1 28 0z" fill="#FAF5E6" stroke="#B8934A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /><rect x="145" y="84" width="34" height="6" rx="3" fill="#FAF5E6" stroke="#B8934A" stroke-width="2.4" /><path d="M162 70v14" stroke="#B8934A" stroke-width="2.4" stroke-linecap="round" /></svg></span><h3>নির্মাণে যত্ন</h3><p>নির্মাণসামগ্রী, কাজের মান এবং প্রতিদিনের ব্যবহারে গুরুত্বপূর্ণ বিষয়গুলোর প্রতি নজর।</p></div></div></div>
+</div>
+</section>
+<section class="ab-sec ab-vision" style="background:#F4F6F8;padding-top:clamp(72px,9cqw,128px);padding-bottom:clamp(72px,9cqw,128px)">
+<div class="wrap" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px">
+<span class="ab-qm" aria-hidden="true">“</span><h2 style="margin:0;font-size:16px;line-height:1.4;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#D4AD60">আমাদের লক্ষ্য</h2>
+<p class="v" style="max-width:900px">আমরা সারা বাংলাদেশে বাড়ি নির্মাণ করতে চাই, যাতে আরও পরিবার স্বাচ্ছন্দ্যে থাকতে পারে।</p>
+<span aria-hidden="true" style="width:56px;height:2px;background:#D4AD60;display:block"></span>
+<p class="t">একসঙ্গে গড়ি আমাদের দেশ</p>
+</div>
+</section>
+<section class="ab-sec" style="background:#FBF8F1;">
+<div class="wrap">
+<div style="display:flex;flex-direction:column;gap:56px"><div class="hdr-va" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px 32px"><div style="display:flex;flex-direction:column;gap:16px;max-width:640px"><h2 class="ab-h2">আমাদের সম্পন্ন প্রকল্প</h2><p style="margin:0;font-size:clamp(16px,1.25cqw,18px);line-height:1.65;color:#5D5A54">আমাদের শেষ করা কিছু কাজ দেখে নিন।</p></div><a class="btn btn-primary" href="projects.html?status=completed">সম্পন্ন প্রকল্প দেখুন</a></div><div class="ab-hgrid"><article class="ab-hp"><div class="im"><img src="../images/ar-rahman-view.webp" alt="সূর্যাস্তের আলোয় আর রহমান ভিউ আবাসিক ভবন" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;object-position:52% 50%"><span style="position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;gap:8px;background:#FFFFFF;color:#242221;border:1px solid #E6E0D5;border-radius:999px;padding:6px 14px 6px 12px;font-size:14px;line-height:1.5;font-weight:600"><i style="width:8px;height:8px;border-radius:50%;display:block;background:#6E9B72"></i>সম্পন্ন</span></div><div class="tx"><h3 style="margin:0;font-size:24px;line-height:1.3;font-weight:600;color:#242221"><a class="pj" href="ar-rahman-view.html">আর রহমান ভিউ</a></h3><div style="display:flex;align-items:center;gap:8px;font-size:16px;line-height:1.5;color:#5D5A54"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg><span>বসুন্ধরা</span></div><p style="margin:0;font-size:16px;line-height:1.65;color:#5D5A54">ওয়াহীর নির্মাণকাজ সম্পন্ন একটি আবাসিক প্রকল্প।</p></div></article><article class="ab-hp"><div class="im"><img src="../images/skyline-residence.webp" alt="আবাসিক ভবন" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;object-position:50% 50%"><span style="position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;gap:8px;background:#FFFFFF;color:#242221;border:1px solid #E6E0D5;border-radius:999px;padding:6px 14px 6px 12px;font-size:14px;line-height:1.5;font-weight:600"><i style="width:8px;height:8px;border-radius:50%;display:block;background:#6E9B72"></i>সম্পন্ন</span><span style="position:absolute;right:0;bottom:0;background:#FCE9E5;color:#8F3326;border-radius:8px 0 0 0;padding:8px 18px;font-size:14px;line-height:1.5;font-weight:600">সব বিক্রি হয়েছে</span></div><div class="tx"><h3 style="margin:0;font-size:24px;line-height:1.3;font-weight:600;color:#242221"><a class="pj" href="noor-mansion.html">নূর ম্যানশন</a></h3><div style="display:flex;align-items:center;gap:8px;font-size:16px;line-height:1.5;color:#5D5A54"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg><span>মিরপুর ডিওএইচএস</span></div><p style="margin:0;font-size:16px;line-height:1.65;color:#5D5A54">নির্মাণকাজ সম্পন্ন ভবন, প্রতি তলায় একটি ফ্ল্যাট।</p></div></article><article class="ab-hp"><div class="im"><img src="../images/bb-buriganga-view.webp" alt="নদীর পাশের আবাসিক ভবন" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;object-position:50% 60%"><span style="position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;gap:8px;background:#FFFFFF;color:#242221;border:1px solid #E6E0D5;border-radius:999px;padding:6px 14px 6px 12px;font-size:14px;line-height:1.5;font-weight:600"><i style="width:8px;height:8px;border-radius:50%;display:block;background:#6E9B72"></i>সম্পন্ন</span></div><div class="tx"><h3 style="margin:0;font-size:24px;line-height:1.3;font-weight:600;color:#242221"><a class="pj" href="hasan-tower.html">হাসান টাওয়ার</a></h3><div style="display:flex;align-items:center;gap:8px;font-size:16px;line-height:1.5;color:#5D5A54"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg><span>উত্তরা সেক্টর ৭</span></div><p style="margin:0;font-size:16px;line-height:1.65;color:#5D5A54">নির্মাণকাজ সম্পন্ন ভবন, যেখানে রয়েছে তিন বেডরুমের ফ্ল্যাট।</p></div></article></div></div>
+</div>
+</section>
+<section class="s-cta" style="position:relative;overflow:hidden;background:#F4F6F8;padding:clamp(72px,9cqw,136px) 0">
+<div style="position:absolute;left:0;top:0;right:0;bottom:0">
+<img src="../images/cta-towers.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;object-position:50% 20%"><div aria-hidden="true" style="position:absolute;inset:0;background:rgba(36,34,33,.35)"></div>
+</div>
+<div class="wrap" style="position:relative;display:flex;justify-content:center">
+<div style="background:#FFFFFF;border-radius:8px;padding:36px 24px;width:100%;max-width:760px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;box-shadow:0 24px 64px rgba(36,34,33,.18)">
+<h2 style="margin:0;font-size:clamp(30px,3.2cqw,44px);line-height:1.15;font-weight:600;color:#242221;max-width:560px;text-wrap:balance">আপনার পরিকল্পনা নিয়ে কথা বলুন</h2>
+<p style="margin:0;font-size:clamp(16px,1.25cqw,18px);line-height:1.65;color:#5D5A54;max-width:520px">ফ্ল্যাট খুঁজছেন বা নিজের জমিতে ভবন করার কথা ভাবছেন? আপনার পরিকল্পনা নিয়ে হোয়াটসঅ্যাপে আমাদের সঙ্গে কথা বলুন।</p>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:8px">
+<a class="btn btn-primary" href="https://wa.me/8801604363259">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="#3E3223" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>হোয়াটসঅ্যাপে কথা বলুন</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer style="background:#FFFFFF;padding:clamp(48px,6cqw,72px) 0 32px">
+<div class="wrap" style="display:flex;flex-direction:column;gap:48px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<a href="index.html" aria-label="ওয়াহী প্রপার্টিজ লিমিটেড, হোম" style="display:block;padding:12px 12px 12px 0"><img src="../images/logo.svg" alt="ওয়াহী প্রপার্টিজ লিমিটেড" style="display:block;width:180px;max-width:100%;height:auto"></a>
+<p style="margin:0;font-size:16px;line-height:1.65;color:#5D5A54;max-width:300px">৩০ বছরের অভিজ্ঞতায় ঢাকায় আবাসিক ফ্ল্যাট নির্মাণ ও জয়েন্ট ভেঞ্চার অংশীদারত্ব।</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<h3 style="margin:0;font-size:20px;line-height:1.3;font-weight:600;color:#242221">প্রয়োজনীয় লিংক</h3>
+<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:16px;line-height:1.5">
+<li><a class="fl" href="index.html">হোম</a></li>
+<li><a class="fl" href="about.html">আমাদের সম্পর্কে</a></li>
+<li><a class="fl" href="projects.html">প্রকল্প</a></li>
+<li><a class="fl" href="joint-venture.html">জয়েন্ট ভেঞ্চার</a></li>
+<li><a class="fl" href="buyers-guide.html">ফ্ল্যাট কেনার গাইড</a></li>
+<li><a class="fl" href="contact-us.html">যোগাযোগ</a></li>
+</ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<h3 style="margin:0;font-size:20px;line-height:1.3;font-weight:600;color:#242221">আমাদের প্রকল্প</h3>
+<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:16px;line-height:1.5">
+<li><a class="fl" href="the-skyline-residence.html">দ্য স্কাইলাইন রেসিডেন্স</a></li>
+<li><a class="fl" href="the-horizon.html">দ্য হরাইজন</a></li>
+<li><a class="fl" href="ar-rahman-view.html">আর রহমান ভিউ</a></li>
+<li><a class="fl" href="bb-buriganga-view.html">বিবি বুড়িগঙ্গা ভিউ</a></li>
+</ul>
+<div><a class="vall" href="projects.html">সব প্রকল্প দেখুন<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<h3 style="margin:0;font-size:20px;line-height:1.3;font-weight:600;color:#242221">যোগাযোগ করুন</h3>
+<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;font-size:16px;line-height:1.5;color:#5D5A54">
+<li style="display:flex;gap:12px;align-items:flex-start">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" /></svg>
+<span style="display:flex;flex-direction:column;gap:4px"><a class="fl" href="tel:01604363259">০১৬০৪ ৩৬৩২৫৯</a></span></li>
+<li style="display:flex;gap:12px;align-items:flex-start">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg>
+<span>ওয়াহী প্রপার্টিজ লিমিটেড, মীম টাওয়ার, কনটেইনার পোর্ট রোড, হাসনাবাদ ১৩১১</span></li>
+<li style="display:flex;gap:12px;align-items:flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>অফিসের সময়: শনিবার–বৃহস্পতিবার, সকাল ১০টা–বিকেল ৫টা।</li>
+<li style="display:flex;gap:12px;align-items:flex-start">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg>
+<a class="fl" href="mailto:wahiproperties.ltd@gmail.com" style="overflow-wrap:anywhere">wahiproperties.ltd@gmail.com</a></li>
+</ul>
+</div>
+</div>
+<div style="border-top:1px solid #EDE8DD;padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;font-size:16px;line-height:1.5;color:#5D5A54">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px"><span>© ২০২৬ ওয়াহী প্রপার্টিজ লিমিটেড</span><span aria-hidden="true" style="width:1px;height:16px;background:#EDE8DD"></span><a class="fl" href="privacy-terms.html">গোপনীয়তা ও শর্তাবলি</a></div>
+<span>ডিজাইন ও ডেভেলপমেন্ট: <a class="fl" href="https://zenticlab.com" style="font-weight:500">Zentic Lab</a></span>
+</div>
+</div>
+</footer>
+</div>
+
+</body>
+</html>

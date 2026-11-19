@@ -1,0 +1,50 @@
+'use strict';
+
+window.siteLocale = (() => {
+  const bangla = document.documentElement.lang === 'bn';
+  const digits = '০১২৩৪৫৬৭৮৯';
+  const formatter = new Intl.NumberFormat(bangla ? 'bn-BD' : 'en', { useGrouping: false });
+  const strings = {
+    'Filters': 'ফিল্টার',
+    'active': 'চালু',
+    'Zoom in': 'বড় করুন',
+    'Zoom out': 'ছোট করুন',
+    'Close': 'বন্ধ করুন',
+    'Enlarge image': 'ছবি বড় করে দেখুন',
+    'Expand plan': 'ফ্লোর প্ল্যান বড় করে দেখুন',
+  };
+
+  document.querySelectorAll('[data-language]').forEach((link) => {
+    const target = new URL(link.href);
+    target.search = location.search;
+    target.hash = location.hash;
+    link.href = target.href;
+    link.addEventListener('click', () => {
+      if (!history.state?.wahiProjects) return;
+      try {
+        sessionStorage.setItem('wahi-language-projects', JSON.stringify({
+          target: target.pathname + target.search,
+          state: history.state.wahiProjects,
+        }));
+      } catch { /* Navigation still works when storage is unavailable. */ }
+    });
+  });
+
+  try {
+    const saved = JSON.parse(sessionStorage.getItem('wahi-language-projects') || 'null');
+    if (saved?.target === location.pathname + location.search) {
+      history.replaceState({ ...history.state, wahiProjects: saved.state }, '');
+    }
+    sessionStorage.removeItem('wahi-language-projects');
+  } catch { /* Project filters can still be used without storage. */ }
+
+  return {
+    bangla,
+    number: (value) => formatter.format(value),
+    parseNumber: (value) => Number(String(value).replace(/[০-৯]/g, (digit) => digits.indexOf(digit)).replace(/,/g, '')),
+    t: (value) => bangla ? strings[value] || value : value,
+    results: (shown, total) => bangla
+      ? formatter.format(total) + 'টি প্রকল্পের মধ্যে ' + formatter.format(shown) + 'টি দেখানো হচ্ছে'
+      : shown + ' of ' + total + (total === 1 ? ' project' : ' projects'),
+  };
+})();

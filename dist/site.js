@@ -214,7 +214,7 @@ if (projectGrid) {
   }
 
   function menuValue(menu) {
-    return menu.index ? menu.options[menu.index].querySelector('.t').textContent : '';
+    return menu.index ? menu.options[menu.index].dataset.value || menu.options[menu.index].querySelector('.t').textContent : '';
   }
 
   function resetProjects() {
@@ -225,8 +225,9 @@ if (projectGrid) {
   function renderProjects() {
     const tokens = normalize(search.value).split(' ').filter(Boolean);
     const statusIndex = statusInputs.findIndex((input) => input.checked);
-    const status = statusIndex > 0 ? statusInputs[statusIndex].parentElement.textContent.trim() : '';
-    const bedroom = bedrooms.find((chip) => chip.classList.contains('on')).textContent.trim();
+    const status = statusIndex > 0 ? ['', 'Completed', 'Ongoing', 'Upcoming'][statusIndex] : '';
+    const selectedBedroom = bedrooms.find((chip) => chip.classList.contains('on'));
+    const bedroom = selectedBedroom.dataset.value || selectedBedroom.textContent.trim();
     const selectedArea = menuValue(area);
     const selectedType = menuValue(type);
     const sizeBand = sizeBands[size.index - 1];
@@ -235,7 +236,7 @@ if (projectGrid) {
     for (const card of cards) {
       const name = card.querySelector('.pj').textContent;
       const location = card.querySelector('.loc span').textContent;
-      const searchable = normalize(name + ' ' + location);
+      const searchable = normalize(name + ' ' + location + ' ' + (card.dataset.name || '') + ' ' + (card.dataset.location || '') + ' ' + (card.dataset.search || ''));
       const matchesSize = !sizeBand || (card.dataset.sizes || '').split(',').some((size) => (
         size && Number(size) >= sizeBand[0] && Number(size) <= sizeBand[1]
       ));
@@ -253,7 +254,7 @@ if (projectGrid) {
     const ordered = [...cards];
     if (sort.index) {
       const direction = sort.index === 1 ? 1 : -1;
-      ordered.sort((a, b) => direction * a.querySelector('.pj').textContent.localeCompare(b.querySelector('.pj').textContent, 'en'));
+      ordered.sort((a, b) => direction * (a.dataset.name || a.querySelector('.pj').textContent).localeCompare(b.dataset.name || b.querySelector('.pj').textContent, 'en'));
     }
     let shown = 0;
     ordered.forEach((card, index) => {
@@ -265,14 +266,13 @@ if (projectGrid) {
 
     projectGrid.hidden = count === 0;
     emptyState.hidden = count > 0;
-    resultCount.querySelector('b').textContent = shown;
-    resultCount.lastChild.textContent = ' of ' + count + (count === 1 ? ' project' : ' projects');
+    resultCount.textContent = siteLocale.results(shown, count);
     loadMoreContainer.hidden = shown === count;
 
     const activeFilters = [status, selectedType, selectedArea, bedroom !== 'Any', sizeBand].filter(Boolean).length;
-    filterBadge.textContent = activeFilters;
+    filterBadge.textContent = siteLocale.number(activeFilters);
     filterBadge.hidden = activeFilters === 0;
-    filterToggle.setAttribute('aria-label', activeFilters ? 'Filters, ' + activeFilters + ' active' : 'Filters');
+    filterToggle.setAttribute('aria-label', activeFilters ? siteLocale.t('Filters') + ', ' + siteLocale.number(activeFilters) + ' ' + siteLocale.t('active') : siteLocale.t('Filters'));
     history.replaceState({
       ...history.state,
       wahiProjects: {
@@ -318,8 +318,8 @@ if (projectGrid) {
 
   const params = new URLSearchParams(window.location.search);
   search.value = params.get('q') || '';
-  const initialStatus = statusInputs.find((input) => urlValue(input.parentElement.textContent) === params.get('status'));
-  const initialType = type.options.findIndex((option) => urlValue(option.querySelector('.t').textContent) === params.get('type'));
+  const initialStatus = statusInputs.find((input, index) => urlValue(['All projects', 'Completed', 'Ongoing', 'Upcoming'][index]) === params.get('status'));
+  const initialType = type.options.findIndex((option) => urlValue(option.dataset.value || option.querySelector('.t').textContent) === params.get('type'));
   if (initialStatus) initialStatus.checked = true;
   if (initialType > 0) type.select(initialType);
   const savedProjects = history.state?.wahiProjects;
@@ -395,8 +395,8 @@ if (galleryTiles.length || planButtons.length) {
   viewer.innerHTML = `
     <div class="image-viewer-bar">
       <strong id="image-viewer-title"></strong>
-      <button type="button" data-viewer-zoom aria-pressed="false">Zoom in</button>
-      <button type="button" data-viewer-close autofocus>Close</button>
+      <button type="button" data-viewer-zoom aria-pressed="false">${siteLocale.t('Zoom in')}</button>
+      <button type="button" data-viewer-close autofocus>${siteLocale.t('Close')}</button>
     </div>
     <div class="image-viewer-frame" tabindex="0"><img alt=""></div>
   `;
@@ -411,7 +411,7 @@ if (galleryTiles.length || planButtons.length) {
 
   function setZoom(active) {
     frame.classList.toggle('is-zoomed', active);
-    zoom.textContent = active ? 'Zoom out' : 'Zoom in';
+    zoom.textContent = siteLocale.t(active ? 'Zoom out' : 'Zoom in');
     zoom.setAttribute('aria-pressed', String(active));
     if (!active) frame.scrollTo(0, 0);
   }
@@ -442,7 +442,7 @@ if (galleryTiles.length || planButtons.length) {
     const caption = tile.querySelector('.sp-cap').textContent.trim();
     button.type = 'button';
     button.className = 'g gallery-button';
-    button.setAttribute('aria-label', 'Enlarge image, ' + caption);
+    button.setAttribute('aria-label', siteLocale.t('Enlarge image') + ', ' + caption);
     button.append(...tile.childNodes);
     tile.replaceWith(button);
     button.addEventListener('click', () => openImage(button, original, caption));
@@ -451,7 +451,7 @@ if (galleryTiles.length || planButtons.length) {
   planButtons.forEach((button) => {
     const original = button.parentElement.querySelector('img');
     const caption = button.closest('.sp-card').querySelector('h3').textContent.trim();
-    button.setAttribute('aria-label', 'Expand plan, ' + caption);
+    button.setAttribute('aria-label', siteLocale.t('Expand plan') + ', ' + caption);
     button.addEventListener('click', () => openImage(button, original, caption));
   });
 }
