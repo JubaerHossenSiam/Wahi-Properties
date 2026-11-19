@@ -52,7 +52,7 @@
     '.s-expect .wrap > div > div',
     '.s-buy .wrap > div',
     '.s-buy .stp',
-    '.s-jv .wrap > div',
+    '.s-jv .wrap > div > div:first-child',
     '.s-cta .wrap > div',
   ];
   for (const selector of groups) {

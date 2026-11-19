@@ -22,14 +22,110 @@ if (menuToggle) {
 
 const reviewTrack = document.querySelector('.cust-track');
 if (reviewTrack) {
-  const behavior = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
-  document.querySelectorAll('.cbtn').forEach((button, index) => {
-    button.addEventListener('click', () => {
-      const gap = parseFloat(getComputedStyle(reviewTrack).columnGap) || 0;
-      const left = (reviewTrack.firstElementChild.getBoundingClientRect().width + gap) * (index === 0 ? -1 : 1);
-      reviewTrack.scrollBy({ left, behavior });
+  const section = reviewTrack.closest('.s-cust');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const cards = Array.from(reviewTrack.children);
+  const cloneCard = (card) => {
+    const clone = card.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.inert = true;
+    return clone;
+  };
+  // Copies on either side allow a one-card slide across both loop boundaries.
+  reviewTrack.prepend(...cards.map(cloneCard));
+  reviewTrack.append(...cards.map(cloneCard));
+  let step = 0;
+  let cycleWidth = 0;
+  let timer;
+  let settleTimer;
+  let visible = !('IntersectionObserver' in window);
+  let hovered = reviewTrack.matches(':hover');
+  let focused = section.contains(document.activeElement);
+  let interacting = false;
+
+  function scheduleAutoplay() {
+    clearTimeout(timer);
+    if (!visible || hovered || focused || interacting || document.hidden || reducedMotion.matches) return;
+    timer = setTimeout(() => moveReview(1), 4500);
+  }
+
+  function layoutReviews() {
+    const current = step ? Math.round(reviewTrack.scrollLeft / step) - cards.length : 0;
+    const index = ((current % cards.length) + cards.length) % cards.length;
+    const gap = parseFloat(getComputedStyle(reviewTrack).columnGap) || 0;
+    step = cards[0].getBoundingClientRect().width + gap;
+    cycleWidth = step * cards.length;
+    reviewTrack.scrollLeft = cycleWidth + index * step;
+    scheduleAutoplay();
+  }
+
+  function moveReview(direction) {
+    clearTimeout(timer);
+    const target = (Math.round(reviewTrack.scrollLeft / step) + direction) * step;
+    reviewTrack.scrollTo({
+      left: target,
+      behavior: reducedMotion.matches ? 'auto' : 'smooth',
     });
+  }
+
+  reviewTrack.addEventListener('scroll', () => {
+    clearTimeout(timer);
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(() => {
+      // Rebase onto the identical middle group after scrolling has stopped.
+      if (reviewTrack.scrollLeft < cycleWidth - 1) reviewTrack.scrollLeft += cycleWidth;
+      else if (reviewTrack.scrollLeft >= 2 * cycleWidth - 1) reviewTrack.scrollLeft -= cycleWidth;
+      scheduleAutoplay();
+    }, 160);
+  }, { passive: true });
+
+  document.querySelectorAll('.cbtn').forEach((button, index) => {
+    button.addEventListener('click', () => moveReview(index === 0 ? -1 : 1));
   });
+  reviewTrack.addEventListener('pointerenter', (event) => {
+    if (event.pointerType === 'touch') return;
+    hovered = true;
+    scheduleAutoplay();
+  });
+  reviewTrack.addEventListener('pointerleave', (event) => {
+    if (event.pointerType === 'touch') return;
+    hovered = false;
+    scheduleAutoplay();
+  });
+  section.addEventListener('focusin', () => {
+    focused = true;
+    scheduleAutoplay();
+  });
+  section.addEventListener('focusout', (event) => {
+    focused = section.contains(event.relatedTarget);
+    scheduleAutoplay();
+  });
+  reviewTrack.addEventListener('pointerdown', () => {
+    interacting = true;
+    scheduleAutoplay();
+  });
+  const endInteraction = () => {
+    interacting = false;
+    scheduleAutoplay();
+  };
+  window.addEventListener('pointerup', endInteraction);
+  window.addEventListener('pointercancel', endInteraction);
+  document.addEventListener('visibilitychange', scheduleAutoplay);
+  reducedMotion.addEventListener('change', scheduleAutoplay);
+  window.addEventListener('resize', layoutReviews);
+  window.addEventListener('pageshow', scheduleAutoplay);
+  window.addEventListener('pagehide', () => {
+    clearTimeout(timer);
+    clearTimeout(settleTimer);
+  });
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      scheduleAutoplay();
+    }, { threshold: .2 }).observe(reviewTrack);
+  }
+  layoutReviews();
 }
 
 const projectGrid = document.querySelector('.pj-grid');
