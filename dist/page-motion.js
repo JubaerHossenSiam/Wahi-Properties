@@ -115,8 +115,9 @@
       finishCounters.push(finish);
       const start = performance.now();
       const tick = (now) => {
-        const progress = Math.min(1, (now - start) / 1500);
-        visual.textContent = Math.round(finalValue * (1 - (1 - progress) ** 3));
+        const progress = Math.min(1, (now - start) / 3000);
+        const easedProgress = (1 - Math.cos(Math.PI * progress)) / 2;
+        visual.textContent = Math.round(finalValue * easedProgress);
         if (progress < 1) frame = requestAnimationFrame(tick);
       };
       frame = requestAnimationFrame(tick);
