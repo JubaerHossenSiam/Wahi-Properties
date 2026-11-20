@@ -32,6 +32,13 @@ function switcher(document, file, bangla, mobile) {
 }
 
 function shared(document, file, bangla) {
+  const creditLink = document.querySelector('footer a[href^="https://zenticlab.com"]');
+  creditLink.href = 'https://zenticlab.com/';
+  creditLink.style.fontWeight = '700';
+  const credit = creditLink.parentElement;
+  credit.setAttribute('lang', 'en');
+  credit.setAttribute('translate', 'no');
+  credit.replaceChildren(document.createTextNode('Designed & Developed by '), creditLink);
   document.querySelectorAll('.lang,[data-locale-resource]').forEach((node) => node.remove());
   document.querySelector('.hd-nav').append(switcher(document, file, bangla, true));
   document.querySelector('.hdr-r').prepend(switcher(document, file, bangla, false));
@@ -96,7 +103,7 @@ function translate(document, map) {
       if (target) node.textContent = node.textContent.replace(/\S[\s\S]*\S|\S/, target);
       return;
     }
-    if (node.nodeType !== 1 || node.matches('script,style,svg')) return;
+    if (node.nodeType !== 1 || node.matches('script,style,svg,[translate="no"]')) return;
     const text = normalize(node.textContent);
     const target = map[text];
     // Match complete authored phrases before translating individual text nodes.
