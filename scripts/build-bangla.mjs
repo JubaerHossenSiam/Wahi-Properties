@@ -34,11 +34,12 @@ function switcher(document, file, bangla, mobile) {
 function shared(document, file, bangla) {
   const creditLink = document.querySelector('footer a[href^="https://zenticlab.com"]');
   creditLink.href = 'https://zenticlab.com/';
+  creditLink.setAttribute('lang', 'en');
   creditLink.style.fontWeight = '700';
   const credit = creditLink.parentElement;
-  credit.setAttribute('lang', 'en');
+  credit.setAttribute('lang', bangla ? 'bn' : 'en');
   credit.setAttribute('translate', 'no');
-  credit.replaceChildren(document.createTextNode('Designed & Developed by '), creditLink);
+  credit.replaceChildren(document.createTextNode(bangla ? 'ডিজাইন ও ডেভেলপমেন্ট: ' : 'Designed & Developed by '), creditLink);
   document.querySelectorAll('.lang,[data-locale-resource]').forEach((node) => node.remove());
   document.querySelector('.hd-nav').append(switcher(document, file, bangla, true));
   document.querySelector('.hdr-r').prepend(switcher(document, file, bangla, false));
