@@ -32,6 +32,15 @@ function switcher(document, file, bangla, mobile) {
 }
 
 function shared(document, file, bangla) {
+  // Both languages have authored content, so opt out of browser translation offers.
+  document.documentElement.setAttribute('translate', 'no');
+  let translationPolicy = document.querySelector('meta[name="google"][content="notranslate"]');
+  if (!translationPolicy) {
+    translationPolicy = document.createElement('meta');
+    translationPolicy.name = 'google';
+    translationPolicy.content = 'notranslate';
+    document.head.insertBefore(translationPolicy, document.head.querySelector('title'));
+  }
   const creditLink = document.querySelector('footer a[href^="https://zenticlab.com"]');
   creditLink.href = 'https://zenticlab.com/';
   creditLink.setAttribute('lang', 'en');
