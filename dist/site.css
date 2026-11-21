@@ -2,6 +2,42 @@
   display: none !important;
 }
 
+.home-page .s-stats .wrap { padding: 36px 0 !important; }
+.home-page .s-stats .stx {
+  min-width: 0;
+  padding: 8px clamp(16px, 3vw, 40px);
+}
+.home-page .s-stats .stn2 {
+  display: inline-flex;
+  justify-content: flex-start;
+}
+@media (max-width: 899px) {
+  .home-page .s-stats .wrap { padding: 28px 24px !important; }
+  .home-page .s-stats .stx { padding: 0; }
+  .home-page .s-stats .stx2 { padding-top: 24px; }
+}
+
+@media (max-width: 1099px) {
+  header.hd {
+    position: relative;
+    z-index: 30;
+  }
+
+  header.hd .hd-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: calc(100dvh - var(--header-height, 96px));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 8px 32px 24px;
+    border-top: 1px solid #ede8dd;
+    border-bottom: 1px solid #ede8dd;
+    background: #fff;
+  }
+}
+
 .skip-link {
   position: fixed;
   z-index: 100;

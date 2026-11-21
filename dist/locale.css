@@ -16,6 +16,17 @@
 .lang a:hover { color: #242221; background: #f3f0e9; }
 .lang a.on { color: #3e3223; background: #e6bf62; }
 .lang a[lang="bn"] { font-family: "Noto Sans Bengali", sans-serif; }
+.language-switching .home-page .hero-panel > * { animation: none !important; }
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation-duration: 0s; }
+  html.language-switching::view-transition-old(root),
+  html.language-switching::view-transition-new(root) {
+    animation-duration: 180ms;
+    animation-timing-function: ease-out;
+  }
+}
 html[lang="bn"] body { font-family: "Noto Sans Bengali", "Onest", sans-serif; }
 html[lang="bn"] h1,
 html[lang="bn"] h2,
@@ -28,13 +39,6 @@ html[lang="bn"] .stn2 { line-height: 1.25; letter-spacing: 0; }
 html[lang="bn"] .sp-gl .v { white-space: normal; }
 html[lang="bn"] .pj-opt { line-height: 1.6; }
 html[lang="bn"] .pj-chip { min-height: 40px; }
-@media (max-width: 899px) {
-  html[lang="bn"] .hero-bg img {
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center bottom !important;
-  }
-}
 @media (min-width: 1100px) {
   .hd-nav { gap: 8px 18px; }
   .hdr-r { gap: 12px; }

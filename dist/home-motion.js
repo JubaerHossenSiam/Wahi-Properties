@@ -2,7 +2,7 @@
 
 (() => {
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  if (reducedMotion.matches || !('IntersectionObserver' in window)) return;
+  if (siteLocale.switchedLanguage || reducedMotion.matches || !('IntersectionObserver' in window)) return;
 
   const easing = 'cubic-bezier(.22, 1, .36, 1)';
   const animations = new Set();
@@ -81,7 +81,7 @@
     if (reducedMotion.matches) return;
 
     stats.querySelectorAll('.stn2').forEach((number, index) => {
-      const finalText = number.textContent;
+      const finalText = number.textContent.trim();
       const finalValue = siteLocale.parseNumber(finalText);
       const label = document.createElement('span');
       const visual = document.createElement('span');

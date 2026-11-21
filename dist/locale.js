@@ -2,6 +2,14 @@
 
 window.siteLocale = (() => {
   const bangla = document.documentElement.lang === 'bn';
+  let switchedLanguage = false;
+  try {
+    const navigation = JSON.parse(sessionStorage.getItem('wahi-language-navigation') || 'null');
+    switchedLanguage = navigation?.target === location.pathname + location.search
+      && Date.now() - navigation.createdAt < 15000;
+    sessionStorage.removeItem('wahi-language-navigation');
+  } catch { /* Language links also work without session storage. */ }
+  if (switchedLanguage) document.documentElement.classList.add('language-switching');
   const digits = '০১২৩৪৫৬৭৮৯';
   const formatter = new Intl.NumberFormat(bangla ? 'bn-BD' : 'en', { useGrouping: false });
   const strings = {
@@ -19,10 +27,19 @@ window.siteLocale = (() => {
     target.search = location.search;
     target.hash = location.hash;
     link.href = target.href;
-    link.addEventListener('click', () => {
-      if (!history.state?.wahiProjects) return;
+    link.addEventListener('click', (event) => {
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      if (link.dataset.language === document.documentElement.lang) {
+        event.preventDefault();
+        return;
+      }
+      document.documentElement.classList.add('language-switching');
       try {
-        sessionStorage.setItem('wahi-language-projects', JSON.stringify({
+        sessionStorage.setItem('wahi-language-navigation', JSON.stringify({
+          target: target.pathname + target.search,
+          createdAt: Date.now(),
+        }));
+        if (history.state?.wahiProjects) sessionStorage.setItem('wahi-language-projects', JSON.stringify({
           target: target.pathname + target.search,
           state: history.state.wahiProjects,
         }));
@@ -40,6 +57,7 @@ window.siteLocale = (() => {
 
   return {
     bangla,
+    switchedLanguage,
     number: (value) => formatter.format(value),
     parseNumber: (value) => Number(String(value).replace(/[০-৯]/g, (digit) => digits.indexOf(digit)).replace(/,/g, '')),
     t: (value) => bangla ? strings[value] || value : value,

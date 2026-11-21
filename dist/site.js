@@ -4,6 +4,7 @@ const menuToggle = document.querySelector('.hd-tgl');
 if (menuToggle) {
   const header = menuToggle.closest('header');
   const showMenu = (open) => {
+    header.style.setProperty('--header-height', header.getBoundingClientRect().height + 'px');
     header.classList.toggle('hd-open', open);
     menuToggle.setAttribute('aria-expanded', String(open));
   };
@@ -11,6 +12,13 @@ if (menuToggle) {
   menuToggle.addEventListener('click', () => showMenu(!header.classList.contains('hd-open')));
   header.querySelector('.hd-nav').addEventListener('click', (event) => {
     if (event.target.closest('a')) showMenu(false);
+  });
+  document.addEventListener('click', (event) => {
+    if (header.classList.contains('hd-open') && !header.contains(event.target)) showMenu(false);
+  });
+  window.addEventListener('resize', () => {
+    if (!header.classList.contains('hd-open')) return;
+    showMenu(matchMedia('(max-width: 1099px)').matches);
   });
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && header.classList.contains('hd-open')) {

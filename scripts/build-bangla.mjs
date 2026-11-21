@@ -58,6 +58,11 @@ function shared(document, file, bangla) {
   css.href = prefix + 'locale.css';
   css.dataset.localeResource = '';
   document.head.append(css);
+  const font = document.createElement('link');
+  font.rel = 'stylesheet';
+  font.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap';
+  font.dataset.localeResource = '';
+  document.head.append(font);
   const js = document.createElement('script');
   js.src = prefix + 'locale.js';
   js.defer = true;
@@ -71,6 +76,11 @@ function shared(document, file, bangla) {
     link.dataset.localeResource = '';
     document.head.append(link);
   }
+  const prefetch = document.createElement('link');
+  prefetch.rel = 'prefetch';
+  prefetch.href = (bangla ? '../' : 'bn/') + file;
+  prefetch.dataset.localeResource = '';
+  document.head.append(prefetch);
 }
 
 function translatedContent(node, target, map) {
@@ -170,10 +180,6 @@ for (const file of files) {
       return [(relative ? '../' : '') + url, ...descriptor].join(' ');
     }).join(', '));
   }
-  const font = document.createElement('link');
-  font.rel = 'stylesheet';
-  font.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap';
-  document.head.append(font);
   shared(document, file, true);
   await writeFile(dist + 'bn/' + file, '<!doctype html>\n' + document.documentElement.outerHTML + '\n');
 }
