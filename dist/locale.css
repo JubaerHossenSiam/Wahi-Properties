@@ -39,7 +39,7 @@ html[lang="bn"] .stn2 { line-height: 1.25; letter-spacing: 0; }
 html[lang="bn"] .sp-gl .v { white-space: normal; }
 html[lang="bn"] .pj-opt { line-height: 1.6; }
 html[lang="bn"] .pj-chip { min-height: 40px; }
-@media (min-width: 600px) and (max-width: 1099px) {
+@media (min-width: 768px) and (max-width: 1099px) {
   .hdr-r > .lang-d { display: flex; }
   .hd-nav > .lang-m { display: none; }
 }
