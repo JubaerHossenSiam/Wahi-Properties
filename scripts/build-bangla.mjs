@@ -101,7 +101,9 @@ function translatedContent(node, target, map) {
   let remainder = target;
   for (const child of inline) {
     const original = normalize(child.textContent);
-    let label = map[original] || original.replace(/\d/g, (digit) => '০১২৩৪৫৬৭৮৯'[digit]);
+    const href = child.getAttribute('href');
+    const linkLabel = href && map[href];
+    let label = linkLabel || map[original] || original.replace(/\d/g, (digit) => '০১২৩৪৫৬৭৮৯'[digit]);
     if (child.matches('b,strong') && original.endsWith(':') && target.includes(':')) label = target.split(':')[0] + ':';
     const index = remainder.lastIndexOf(label);
     if (index < 0) throw new Error('Missing inline translation for ' + original);
