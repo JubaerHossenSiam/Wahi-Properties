@@ -2,6 +2,10 @@
   display: none !important;
 }
 
+.footer-phone-numbers a {
+  white-space: nowrap;
+}
+
 .home-page .s-stats .wrap { padding: 36px 0 !important; }
 .home-page .s-stats .stx {
   min-width: 0;
