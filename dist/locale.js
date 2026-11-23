@@ -61,8 +61,10 @@ window.siteLocale = (() => {
     number: (value) => formatter.format(value),
     parseNumber: (value) => Number(String(value).replace(/[০-৯]/g, (digit) => digits.indexOf(digit)).replace(/,/g, '')),
     t: (value) => bangla ? strings[value] || value : value,
-    results: (shown, total) => bangla
-      ? formatter.format(total) + 'টি প্রকল্পের মধ্যে ' + formatter.format(shown) + 'টি দেখানো হচ্ছে'
-      : shown + ' of ' + total + (total === 1 ? ' project' : ' projects'),
+    results(shown, total) {
+      if (!bangla) return shown + ' of ' + total + (total === 1 ? ' project' : ' projects');
+      if (total === 0) return '০টি প্রকল্প পাওয়া গেছে';
+      return formatter.format(total) + 'টি প্রকল্পের মধ্যে ' + formatter.format(shown) + 'টি দেখানো হচ্ছে';
+    },
   };
 })();

@@ -167,6 +167,13 @@ for (const file of files) {
     card.dataset.location = card.querySelector('.loc span').textContent;
   }
   translate(document, map);
+  if (file === 'index.html') {
+    const completedStat = document.querySelector('.s-stats .stx:nth-child(2)');
+    const unit = completedStat.querySelector('.stu');
+    const caption = completedStat.querySelector('.stl');
+    // Bangla reads “completed projects” in the opposite word order.
+    [unit.textContent, caption.textContent] = [caption.textContent, unit.textContent];
+  }
   // Source files contain an obsolete address. Keep the current office location.
   for (const node of document.querySelectorAll('img[src],script[src],link[href]')) {
     const attr = node.localName === 'link' ? 'href' : 'src';
