@@ -44,11 +44,12 @@ function shared(document, file, bangla) {
   const creditLink = document.querySelector('footer a[href^="https://zenticlab.com"]');
   creditLink.href = 'https://zenticlab.com/';
   creditLink.setAttribute('lang', 'en');
-  creditLink.style.fontWeight = '700';
+  creditLink.removeAttribute('style');
   const credit = creditLink.parentElement;
+  credit.classList.add('footer-credit');
   credit.setAttribute('lang', bangla ? 'bn' : 'en');
   credit.setAttribute('translate', 'no');
-  credit.replaceChildren(document.createTextNode(bangla ? 'ডিজাইন ও ডেভেলপমেন্ট: ' : 'Designed & Developed by '), creditLink);
+  credit.replaceChildren(document.createTextNode(bangla ? 'ডেভেলপমেন্টে ' : 'Developed by '), creditLink);
   document.querySelectorAll('.lang,[data-locale-resource]').forEach((node) => node.remove());
   document.querySelector('.hd-nav').append(switcher(document, file, bangla, true));
   document.querySelector('.hdr-r').prepend(switcher(document, file, bangla, false));
@@ -169,13 +170,6 @@ for (const file of files) {
     card.dataset.location = card.querySelector('.loc span').textContent;
   }
   translate(document, map);
-  if (file === 'index.html') {
-    const completedStat = document.querySelector('.s-stats .stx:nth-child(2)');
-    const unit = completedStat.querySelector('.stu');
-    const caption = completedStat.querySelector('.stl');
-    // Bangla reads “completed projects” in the opposite word order.
-    [unit.textContent, caption.textContent] = [caption.textContent, unit.textContent];
-  }
   // Source files contain an obsolete address. Keep the current office location.
   for (const node of document.querySelectorAll('img[src],script[src],link[href]')) {
     const attr = node.localName === 'link' ? 'href' : 'src';

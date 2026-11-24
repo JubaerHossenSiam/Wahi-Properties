@@ -139,9 +139,6 @@ if (reviewTrack) {
 const projectGrid = document.querySelector('.pj-grid');
 if (projectGrid) {
   const sidebar = document.querySelector('.pj-side');
-  const filterPanel = sidebar.querySelector('.pj-panel');
-  const filterToggle = sidebar.querySelector('.pj-fbtn');
-  const filterBadge = sidebar.querySelector('.pj-fbadge');
   const search = sidebar.querySelector('input[type="search"]');
   const statusInputs = Array.from(sidebar.querySelectorAll('input[name="status"]'));
   const dropdowns = Array.from(document.querySelectorAll('.pj-dd'));
@@ -211,16 +208,6 @@ if (projectGrid) {
     });
   }
 
-  function showFilters(open) {
-    sidebar.classList.toggle('pj-fo', open);
-    filterToggle.setAttribute('aria-expanded', String(open));
-    if (open) filterPanel.querySelector('.pj-x').focus();
-    else {
-      filterPanel.querySelectorAll('details[open]').forEach((item) => { item.open = false; });
-      filterToggle.focus();
-    }
-  }
-
   function menuValue(menu) {
     return menu.index ? menu.options[menu.index].dataset.value || menu.options[menu.index].querySelector('.t').textContent : '';
   }
@@ -277,10 +264,6 @@ if (projectGrid) {
     resultCount.textContent = siteLocale.results(shown, count);
     loadMoreContainer.hidden = shown === count;
 
-    const activeFilters = [status, selectedType, selectedArea, bedroom !== 'Any', sizeBand].filter(Boolean).length;
-    filterBadge.textContent = siteLocale.number(activeFilters);
-    filterBadge.hidden = activeFilters === 0;
-    filterToggle.setAttribute('aria-label', activeFilters ? siteLocale.t('Filters') + ', ' + siteLocale.number(activeFilters) + ' ' + siteLocale.t('active') : siteLocale.t('Filters'));
     history.replaceState({
       ...history.state,
       wahiProjects: {
@@ -303,15 +286,6 @@ if (projectGrid) {
       selectBedrooms(index);
       resetProjects();
     });
-  });
-  filterToggle.setAttribute('aria-controls', 'project-filters');
-  filterPanel.id = 'project-filters';
-  filterToggle.addEventListener('click', () => showFilters(true));
-  sidebar.querySelectorAll('.pj-x, .pj-show').forEach((button) => {
-    button.addEventListener('click', () => showFilters(false));
-  });
-  filterPanel.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && sidebar.classList.contains('pj-fo')) showFilters(false);
   });
   document.querySelectorAll('[data-clear-projects]').forEach((button) => {
     button.addEventListener('click', () => {
@@ -394,9 +368,9 @@ document.querySelectorAll('.sp-plans').forEach((plans, index) => {
   activateTab(0);
 });
 
-const galleryTiles = document.querySelectorAll('.sp-gal .g');
+const galleries = document.querySelectorAll('.sp-gal');
 const planButtons = document.querySelectorAll('.sp-xp');
-if (galleryTiles.length || planButtons.length) {
+if (galleries.length || planButtons.length) {
   const viewer = document.createElement('dialog');
   viewer.className = 'image-viewer';
   viewer.setAttribute('aria-labelledby', 'image-viewer-title');
@@ -444,16 +418,44 @@ if (galleryTiles.length || planButtons.length) {
   });
   viewer.addEventListener('close', () => opener?.focus());
 
-  galleryTiles.forEach((tile) => {
-    const button = document.createElement('button');
-    const original = tile.querySelector('img');
-    const caption = tile.querySelector('.sp-cap').textContent.trim();
-    button.type = 'button';
-    button.className = 'g gallery-button';
-    button.setAttribute('aria-label', siteLocale.t('Enlarge image') + ', ' + caption);
-    button.append(...tile.childNodes);
-    tile.replaceWith(button);
-    button.addEventListener('click', () => openImage(button, original, caption));
+  galleries.forEach((gallery, index) => {
+    const tiles = Array.from(gallery.querySelectorAll(':scope > .g'));
+    const batchSize = 6;
+    gallery.classList.toggle('many', tiles.length > 4);
+    const buttons = tiles.map((tile, position) => {
+      const button = document.createElement('button');
+      const original = tile.querySelector('img');
+      const caption = tile.querySelector('.sp-cap').textContent.trim();
+      button.type = 'button';
+      button.className = 'g gallery-button';
+      button.hidden = position >= batchSize;
+      button.setAttribute('aria-label', siteLocale.t('Enlarge image') + ', ' + caption);
+      button.append(...tile.childNodes);
+      tile.replaceWith(button);
+      button.addEventListener('click', () => openImage(button, original, caption));
+      return button;
+    });
+    if (buttons.length <= batchSize) return;
+
+    gallery.id ||= 'project-gallery-' + (index + 1);
+    const controls = document.createElement('div');
+    controls.className = 'sp-lm';
+    const showMore = document.createElement('button');
+    showMore.type = 'button';
+    showMore.className = 'btn btn-secondary';
+    showMore.textContent = siteLocale.t('Show more photos');
+    showMore.setAttribute('aria-controls', gallery.id);
+    controls.append(showMore);
+    gallery.after(controls);
+
+    let visible = batchSize;
+    showMore.addEventListener('click', () => {
+      const next = buttons.slice(visible, visible + batchSize);
+      next.forEach((button) => { button.hidden = false; });
+      visible += next.length;
+      controls.hidden = visible === buttons.length;
+      next[0].focus();
+    });
   });
 
   planButtons.forEach((button) => {

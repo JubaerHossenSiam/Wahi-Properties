@@ -33,12 +33,14 @@ html[lang="bn"] h2,
 html[lang="bn"] h3 { line-height: 1.45 !important; letter-spacing: 0 !important; }
 html[lang="bn"] .hero h1 { font-size: clamp(36px, 4.2vw, 60px) !important; line-height: 1.35 !important; }
 html[lang="bn"] .btn,
-html[lang="bn"] .nav,
-html[lang="bn"] .stu { line-height: 1.6; }
+html[lang="bn"] .nav { line-height: 1.6; }
 html[lang="bn"] .stn2 { line-height: 1.25; letter-spacing: 0; }
 html[lang="bn"] .sp-gl .v { white-space: normal; }
 html[lang="bn"] .pj-opt { line-height: 1.6; }
 html[lang="bn"] .pj-chip { min-height: 40px; }
+@media (max-width: 599px) {
+  html[lang="bn"] .stx .stn2 { line-height: 1.25; }
+}
 @media (min-width: 768px) and (max-width: 1099px) {
   .hdr-r > .lang-d { display: flex; }
   .hd-nav > .lang-m { display: none; }

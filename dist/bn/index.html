@@ -100,10 +100,8 @@ section h2{text-wrap:balance;font-size:clamp(32px,3.4vw,48px)!important;line-hei
 .s-stats .wrap{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))}
 .stx{display:flex;align-items:center;padding:8px 16px 8px 0}
 .stx2{border-left:1px solid rgba(62,50,35,.2);padding-left:40px}
-.stv{display:flex;align-items:baseline;gap:8px;flex-wrap:nowrap}
 .stn2{font-size:clamp(48px,5vw,72px);line-height:1;font-weight:500;color:#242221;letter-spacing:-0.02em}
-.stu{font-size:clamp(18px,1.6vw,22px);line-height:1.2;font-weight:600;color:#3E3223}
-.stl{margin-top:10px;font-size:16px;line-height:1.4;color:#5D5A54}
+.stl{display:block;margin-top:10px;font-size:clamp(18px,1.6vw,22px);line-height:1.3;font-weight:600;color:#242221}
 .s-who,.s-proj,.s-cust,.s-buy,.s-jv{padding-top:clamp(60px,7vw,100px)!important;padding-bottom:clamp(60px,7vw,100px)!important}
 .s-who .wrap > div:first-child{overflow:visible!important;z-index:0;border-radius:12px!important;background:transparent!important}
 .s-who .wrap > div:first-child svg{display:none!important}
@@ -250,7 +248,7 @@ a.pj::after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;z-index:1
 <div class="hero-panel">
 <h1 style="margin:0;font-size:clamp(36px,4vw,56px);line-height:1.12;font-weight:600;color:#242221;letter-spacing:-0.015em;text-wrap:balance">ঢাকায় হোক আপনার স্বপ্নের ঠিকানা</h1>
 <p style="margin:0;font-size:clamp(16px,1.25vw,18px);line-height:1.65;color:#5D5A54;max-width:480px">আমরা আবাসিক ফ্ল্যাট নির্মাণ করি। পাশাপাশি জমির মালিকদের সঙ্গে জয়েন্ট ভেঞ্চারে গড়ে তুলি নতুন আবাসন প্রকল্প।</p>
-<div style="display:flex;flex-wrap:wrap;gap:16px">
+<div class="btn-row" style="display:flex;flex-wrap:wrap;gap:16px">
 <a class="btn btn-primary" href="projects.html">সব প্রকল্প দেখুন</a>
 <a class="btn btn-secondary" href="https://wa.me/8801604363259">
 <svg width="22" height="22" viewBox="0 0 24 24" fill="#242221" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>হোয়াটসঅ্যাপে কথা বলুন</a>
@@ -265,9 +263,9 @@ a.pj::after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;z-index:1
 <!-- ============ STATS (ivory) ============ -->
 <section class="s-stats" style="background:#FBF8F1;padding:clamp(40px,5vw,64px) 0">
 <div class="wrap">
-<div class="stx"><div><div class="stv"><span class="stn2">৩০</span><span class="stu">বছরের</span></div><div class="stl">অভিজ্ঞতা</div></div></div>
-<div class="stx stx2"><div><div class="stv"><span class="stn2">১৭</span><span class="stu">সম্পন্ন</span></div><div class="stl">প্রকল্প</div></div></div>
-<div class="stx stx2"><div><div class="stv"><span class="stn2">১৫০</span><span class="stu">ফ্ল্যাট</span></div><div class="stl">হস্তান্তর</div></div></div>
+<div class="stx"><div><span class="stn2">৩০</span><span class="stl">বছরের অভিজ্ঞতা</span></div></div>
+<div class="stx stx2"><div><span class="stn2">১৭</span><span class="stl">সম্পন্ন প্রকল্প</span></div></div>
+<div class="stx stx2"><div><span class="stn2">১৫০</span><span class="stl">ফ্ল্যাট হস্তান্তর</span></div></div>
 </div>
 </section>
 <!-- ============ 1.2 WHO WE ARE (ivory) ============ -->
@@ -388,7 +386,7 @@ a.pj::after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;z-index:1
 <blockquote style="margin:0;font-size:20px;line-height:1.55;font-weight:500;color:#242221">প্রথম আলাপ থেকেই ওয়াহীর টিম আমাদের সঙ্গে খোলামেলা কথা বলেছে। প্রতিটি ধাপে কী হবে, তা আগেই জানতাম।</blockquote>
 </div>
 <figcaption style="display:flex;align-items:center;gap:14px;border-top:1px solid #EDE8DD;padding-top:24px">
-<img src="../images/avatar-1.jpg" alt="মাহবুব আলম" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid #E6E0D5;flex-shrink:0;display:block">
+<img src="../images/avatar-1.webp" alt="মাহবুব আলম" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid #E6E0D5;flex-shrink:0;display:block">
 <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;line-height:1.4;font-weight:500;color:#242221">মাহবুব আলম</span><span style="font-size:16px;line-height:1.4;color:#5D5A54">স্কাইলাইন রেসিডেন্স</span></div>
 </figcaption>
 </figure>
@@ -398,7 +396,7 @@ a.pj::after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;z-index:1
 <blockquote style="margin:0;font-size:20px;line-height:1.55;font-weight:500;color:#242221">যেদিন ফ্ল্যাট বুঝিয়ে দেওয়ার কথা ছিল, ঠিক সেদিনই পেয়েছি। ফিনিশিংয়ের কাজ সুন্দর হয়েছে, ভবনটিও ভালোভাবে দেখাশোনা করা হয়।</blockquote>
 </div>
 <figcaption style="display:flex;align-items:center;gap:14px;border-top:1px solid #EDE8DD;padding-top:24px">
-<img src="../images/avatar-2.jpg" alt="নুসরাত জাহান" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid #E6E0D5;flex-shrink:0;display:block">
+<img src="../images/avatar-2.webp" alt="নুসরাত জাহান" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid #E6E0D5;flex-shrink:0;display:block">
 <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;line-height:1.4;font-weight:500;color:#242221">নুসরাত জাহান</span><span style="font-size:16px;line-height:1.4;color:#5D5A54">হরাইজন</span></div>
 </figcaption>
 </figure>
@@ -408,7 +406,7 @@ a.pj::after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;z-index:1
 <blockquote style="margin:0;font-size:20px;line-height:1.55;font-weight:500;color:#242221">টাকা দেওয়া আর কাগজপত্র নিয়ে আমাদের যত প্রশ্ন ছিল, সবগুলোর উত্তর পেয়েছি। ওয়াহীর কাছ থেকে ফ্ল্যাট কিনতে তাই ভরসা পেয়েছিলাম।</blockquote>
 </div>
 <figcaption style="display:flex;align-items:center;gap:14px;border-top:1px solid #EDE8DD;padding-top:24px">
-<img src="../images/avatar-3.jpg" alt="রফিকুল ইসলাম" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid #E6E0D5;flex-shrink:0;display:block">
+<img src="../images/avatar-3.webp" alt="রফিকুল ইসলাম" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid #E6E0D5;flex-shrink:0;display:block">
 <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;line-height:1.4;font-weight:500;color:#242221">রফিকুল ইসলাম</span><span style="font-size:16px;line-height:1.4;color:#5D5A54">আর রহমান ভিউ</span></div>
 </figcaption>
 </figure>
@@ -418,7 +416,7 @@ a.pj::after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;z-index:1
 <blockquote style="margin:0;font-size:20px;line-height:1.55;font-weight:500;color:#242221">সাইট দেখতে যেতে কোনো ঝামেলা হয়নি। সবার ব্যবহার ভালো ছিল। পুরো প্রক্রিয়াটাই সহজ মনে হয়েছে।</blockquote>
 </div>
 <figcaption style="display:flex;align-items:center;gap:14px;border-top:1px solid #EDE8DD;padding-top:24px">
-<img src="../images/avatar-2.jpg" alt="শারমিন আক্তার" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid #E6E0D5;flex-shrink:0;display:block">
+<img src="../images/avatar-2.webp" alt="শারমিন আক্তার" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid #E6E0D5;flex-shrink:0;display:block">
 <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;line-height:1.4;font-weight:500;color:#242221">শারমিন আক্তার</span><span style="font-size:16px;line-height:1.4;color:#5D5A54">বিবি বুড়িগঙ্গা ভিউ</span></div>
 </figcaption>
 </figure>
@@ -428,7 +426,7 @@ a.pj::after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;z-index:1
 <blockquote style="margin:0;font-size:20px;line-height:1.55;font-weight:500;color:#242221">এলাকায় ওয়াহীর সুনাম আছে। এখানে ফ্ল্যাট কেনার সিদ্ধান্ত নিয়ে আমরা খুশি।</blockquote>
 </div>
 <figcaption style="display:flex;align-items:center;gap:14px;border-top:1px solid #EDE8DD;padding-top:24px">
-<img src="../images/avatar-1.jpg" alt="কামরুল হাসান" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid #E6E0D5;flex-shrink:0;display:block">
+<img src="../images/avatar-1.webp" alt="কামরুল হাসান" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid #E6E0D5;flex-shrink:0;display:block">
 <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;line-height:1.4;font-weight:500;color:#242221">কামরুল হাসান</span><span style="font-size:16px;line-height:1.4;color:#5D5A54">স্কাইলাইন রেসিডেন্স</span></div>
 </figcaption>
 </figure>
@@ -438,7 +436,7 @@ a.pj::after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;z-index:1
 <blockquote style="margin:0;font-size:20px;line-height:1.55;font-weight:500;color:#242221">এলাকাটা ভালো। ফ্ল্যাট বুঝে পাওয়ার পরও ওয়াহীর সহযোগিতা পেয়েছি। পরিবারের কেউ ফ্ল্যাট কিনতে চাইলে ওয়াহীর কথাই বলব।</blockquote>
 </div>
 <figcaption style="display:flex;align-items:center;gap:14px;border-top:1px solid #EDE8DD;padding-top:24px">
-<img src="../images/avatar-2.jpg" alt="ফারহানা রহমান" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid #E6E0D5;flex-shrink:0;display:block">
+<img src="../images/avatar-2.webp" alt="ফারহানা রহমান" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid #E6E0D5;flex-shrink:0;display:block">
 <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;line-height:1.4;font-weight:500;color:#242221">ফারহানা রহমান</span><span style="font-size:16px;line-height:1.4;color:#5D5A54">হরাইজন</span></div>
 </figcaption>
 </figure>
@@ -487,7 +485,7 @@ a.pj::after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;z-index:1
 <li style="display:flex;gap:12px;align-items:flex-start;font-size:clamp(16px,1.25vw,18px);line-height:1.6;color:#5D5A54"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#242221" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg><b style="font-weight:600;color:#242221">আমাদের জয়েন্ট ভেঞ্চার প্রকল্প:</b> দ্য হরাইজন, আর রহমান ভিউ ও দ্য স্কাইলাইন রেসিডেন্স।</li>
 </ul>
 <p style="margin:0;font-size:clamp(16px,1.25vw,18px);line-height:1.65;color:#5D5A54">আলোচনা শুরু করতে আপনার জমির অবস্থান ও আয়তন আমাদের জানান।</p>
-<div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:8px">
+<div class="btn-row" style="display:flex;flex-wrap:wrap;gap:16px;margin-top:8px">
 <a class="btn btn-primary" href="joint-venture.html">জয়েন্ট ভেঞ্চার সম্পর্কে জানুন</a>
 <a class="btn btn-secondary" href="tel:01604363259">কল করুন</a>
 </div>
@@ -569,7 +567,7 @@ a.pj::after{content:"";position:absolute;left:0;top:0;right:0;bottom:0;z-index:1
 </div>
 <div style="border-top:1px solid #EDE8DD;padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;font-size:16px;line-height:1.5;color:#5D5A54">
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px"><span>© ২০২৬ ওয়াহী প্রপার্টিজ লিমিটেড</span><span aria-hidden="true" style="width:1px;height:16px;background:#EDE8DD"></span><a class="fl" href="privacy-terms.html">গোপনীয়তা ও শর্তাবলি</a></div>
-<span translate="no" lang="bn">ডিজাইন ও ডেভেলপমেন্ট: <a lang="en" class="fl" href="https://zenticlab.com/" style="font-weight:700">Zentic Lab</a></span>
+<span class="footer-credit" translate="no" lang="bn">ডেভেলপমেন্টে <a lang="en" class="fl" href="https://zenticlab.com/">Zentic Lab</a></span>
 </div>
 </div>
 </footer>
