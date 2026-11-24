@@ -199,7 +199,7 @@ footer .footer-credit a:hover {
   .wrap { padding-inline: 20px; }
   header.hd .hd-nav { padding-inline: 20px; }
   main div:has(> h2 + p):not(.wrap) { gap: 16px !important; }
-  .btn { max-width: 280px; }
+  .btn { max-width: 270px; }
   h1.ab-h1 { font-size: clamp(40px, 12.3vw, 48px) !important; }
   .hdr-va .btn,
   .sp-mh .btn { width: 100%; align-self: center; }
