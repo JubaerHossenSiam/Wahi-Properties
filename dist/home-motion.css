@@ -29,7 +29,7 @@
 @media (max-width: 599px) {
   .home-page .hero {
     padding-top: 64px;
-    padding-bottom: 300px;
+    padding-bottom: 264px;
   }
 
   .home-page .hero-bg { background: #74aff5; }
@@ -58,6 +58,7 @@
     align-self: stretch;
   }
 
+  .home-page .hero-panel > .btn-row { margin-top: 12px; }
   .home-page .btn-row .btn { width: 100%; }
 
   .home-page .s-stats { height: 0; margin-top: 0; }
