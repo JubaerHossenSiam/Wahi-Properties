@@ -3,8 +3,12 @@
 const menuToggle = document.querySelector('.hd-tgl');
 if (menuToggle) {
   const header = menuToggle.closest('header');
+  const updateHeaderHeight = () => {
+    document.documentElement.style.setProperty('--header-height', Math.ceil(header.getBoundingClientRect().height) + 'px');
+  };
+  updateHeaderHeight();
+  new ResizeObserver(updateHeaderHeight).observe(header);
   const showMenu = (open) => {
-    header.style.setProperty('--header-height', header.getBoundingClientRect().height + 'px');
     header.classList.toggle('hd-open', open);
     menuToggle.setAttribute('aria-expanded', String(open));
   };
@@ -421,7 +425,6 @@ if (galleries.length || planButtons.length) {
   galleries.forEach((gallery, index) => {
     const tiles = Array.from(gallery.querySelectorAll(':scope > .g'));
     const batchSize = 6;
-    gallery.classList.toggle('many', tiles.length > 4);
     const buttons = tiles.map((tile, position) => {
       const button = document.createElement('button');
       const original = tile.querySelector('img');

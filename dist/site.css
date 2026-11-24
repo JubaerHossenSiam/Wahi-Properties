@@ -2,11 +2,19 @@
   display: none !important;
 }
 
+:root {
+  --header-height: 88px;
+  scroll-padding-top: var(--header-height);
+}
+
 .footer-phone-numbers a {
   white-space: nowrap;
 }
 
 header.hd {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   border-bottom: 1px solid #ede8dd;
 }
 
@@ -34,18 +42,20 @@ footer .footer-credit a:hover {
   .home-page .s-stats .stx2 { padding-top: 24px; }
 }
 
-@media (max-width: 1099px) {
-  header.hd {
-    position: relative;
-    z-index: 30;
+@media (min-width: 900px) {
+  .pj-side {
+    top: calc(var(--header-height) + 24px);
+    max-height: calc(100dvh - var(--header-height) - 48px);
   }
+}
 
+@media (max-width: 1099px) {
   header.hd .hd-nav {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    max-height: calc(100dvh - var(--header-height, 96px));
+    max-height: calc(100dvh - var(--header-height));
     overflow-y: auto;
     overscroll-behavior: contain;
     padding: 8px 32px 24px;
@@ -56,7 +66,7 @@ footer .footer-credit a:hover {
 
 .skip-link {
   position: fixed;
-  z-index: 100;
+  z-index: 101;
   top: 12px;
   left: 12px;
   padding: 12px 18px;
@@ -92,13 +102,13 @@ footer .footer-credit a:hover {
   text-align: left;
 }
 
-.sp-gal.many {
+.sp-gal:has(> .g:nth-child(5)) {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: auto;
   aspect-ratio: auto;
 }
 
-.sp-gal.many > .g:nth-child(n) {
+.sp-gal:has(> .g:nth-child(5)) > .g:nth-child(n) {
   grid-column: auto;
   grid-row: auto;
   aspect-ratio: 4 / 3;
@@ -111,11 +121,13 @@ footer .footer-credit a:hover {
 }
 
 @media (max-width: 899px) {
-  .sp-gal.many { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sp-gal:has(> .g:nth-child(5)) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 .ab-statrow .stt { text-wrap: balance; }
 .dt-row a { overflow-wrap: anywhere; }
+.bg-acc summary svg,
+.sp-acc summary svg { stroke: currentColor; }
 
 @media (max-width: 599px) {
   .wrap { padding-inline: 20px; }
@@ -133,12 +145,16 @@ footer .footer-credit a:hover {
   .cr-hero,
   .pg-hero { padding-top: 64px; }
 
-  .ab-statrow { grid-template-columns: 80px minmax(0, 1fr); }
+  .ab-sec { padding-block: 60px; }
+  .ab-statrow { display: flex; align-items: center; gap: 16px; }
+  .ab-statrow .stn2 { flex: none; font-size: 40px; }
+  .ab-statrow .stt { flex: 1; min-width: 0; padding-top: 0; }
+  .ab-photo::before { left: -12px; bottom: -12px; }
   .ab-hp .im { aspect-ratio: 4 / 3; }
-  main:has(.ab-vision) .ab-sec:not([style*="padding"]) {
-    padding-block: 48px !important;
-  }
-  .ab-vision { padding-block: 56px !important; }
+  .ab-vision { padding-block: 60px !important; }
+  .ab-icard .tx, .bg-ic .tx { padding-top: 16px; }
+  .ab-cards { gap: 40px; }
+  .bg-cards.bg-icg { gap: 40px !important; }
   .ab-qm { font-size: 80px; height: 30px; }
   .ab-vision .wrap { gap: 24px !important; }
   .ab-vc { padding: 24px; }
@@ -149,13 +165,14 @@ footer .footer-credit a:hover {
   .bg-il, .jv-il { margin-bottom: 4px; }
   .bg-il svg, .jv-il svg { height: 64px; }
   .bg-step, .jv-step { grid-template-columns: 56px minmax(0, 1fr); }
+  .bg-steps, .jv-steps, .sp-fg li:last-child { border-bottom: 0; }
   .bg-n, .jv-n { font-size: 32px; }
   .df-cta { align-self: stretch; }
   .ct-im { order: -1; }
 
   .sp-gl { grid-template-columns: minmax(0, 1fr); }
   .sp-cards .pj-card .im { aspect-ratio: 4 / 3; }
-  .sp-gal.many { grid-template-columns: minmax(0, 1fr); }
+  .sp-gal:has(> .g:nth-child(5)) { grid-template-columns: minmax(0, 1fr); }
   .sp-lm .btn { width: 100%; }
 }
 
