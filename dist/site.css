@@ -11,6 +11,64 @@
   white-space: nowrap;
 }
 
+.footer-facebook {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-top: 4px;
+  line-height: 0;
+}
+
+.footer-facebook:hover {
+  opacity: .85;
+}
+
+.wa-float {
+  --wa-offset: 24px;
+  position: fixed;
+  right: calc(var(--wa-offset) + env(safe-area-inset-right, 0px));
+  bottom: calc(var(--wa-offset) + env(safe-area-inset-bottom, 0px));
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 4px 14px rgb(36 34 33 / 25%);
+  animation: none;
+  transition: none;
+}
+
+.wa-float:hover {
+  background: #1ebe5a;
+}
+
+.footer-facebook:focus-visible,
+.wa-float:focus-visible {
+  outline: 3px solid #242221;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1359px) {
+  footer .wrap > div:has(> .footer-credit) {
+    padding-inline-end: calc(60px + env(safe-area-inset-right, 0px));
+  }
+}
+
+@media (max-width: 599px) {
+  .wa-float {
+    --wa-offset: 16px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .wa-float svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
 header.hd {
   position: sticky;
   top: 0;
