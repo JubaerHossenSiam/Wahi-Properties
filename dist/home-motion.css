@@ -26,20 +26,25 @@
   font-variant-numeric: tabular-nums;
 }
 
-@media (max-width: 899px) {
-  .home-page .hero { padding-bottom: 96%; }
-}
-
 @media (max-width: 599px) {
   .home-page .hero {
-    --hero-image-offset: 144px;
     padding-top: 64px;
-    padding-bottom: calc(96% - 150px);
+    padding-bottom: 300px;
   }
 
-  .home-page .hero-bg img {
-    bottom: calc(-1 * var(--hero-image-offset)) !important;
-    height: calc(100% + var(--hero-image-offset)) !important;
+  .home-page .hero-bg { background: #74aff5; }
+  .home-page .hero-bg .hi-d { object-position: 68% 0; }
+  .home-page .hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    display: block;
+    background: linear-gradient(90deg,
+      rgb(116 175 245 / 92%) 0,
+      rgb(116 175 245 / 85%) 72%,
+      rgb(116 175 245 / 50%) 92%,
+      rgb(116 175 245 / 20%) 100%);
+    mask-image: linear-gradient(to bottom, #000 52%, transparent 70%);
   }
 
   .home-page .hero-panel { gap: 20px; }
@@ -86,7 +91,6 @@
   .home-page .s-jv { padding-block: 60px !important; }
 
   .home-page .s-who { padding-top: 164px !important; }
-  .home-page .s-who .wrap > .s-photo::before { bottom: -12px; }
   .home-page .s-expect .wrap { padding-block: 32px 60px; }
   .home-page .s-expect .wrap > div > div:last-child,
   .home-page .s-buy .stp:last-child { border-bottom: 0 !important; }

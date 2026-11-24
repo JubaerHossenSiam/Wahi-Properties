@@ -199,7 +199,7 @@ footer .footer-credit a:hover {
   .wrap { padding-inline: 20px; }
   header.hd .hd-nav { padding-inline: 20px; }
   main div:has(> h2 + p):not(.wrap) { gap: 16px !important; }
-  main .btn { max-width: 360px; }
+  .btn { max-width: 280px; }
   h1.ab-h1 { font-size: clamp(40px, 12.3vw, 48px) !important; }
   .hdr-va .btn,
   .sp-mh .btn { width: 100%; align-self: center; }
@@ -215,7 +215,10 @@ footer .footer-credit a:hover {
   .ab-statrow { display: flex; align-items: center; gap: 16px; }
   .ab-statrow .stn2 { flex: none; font-size: 40px; }
   .ab-statrow .stt { flex: 1; min-width: 0; padding-top: 0; }
-  .ab-photo::before { bottom: -12px; }
+  .s-whog > .s-photo,
+  #our-story .ab-photo { margin-left: 12px; }
+  .home-page .s-who .s-whog > .s-photo::before,
+  #our-story .ab-photo::before { left: -12px; bottom: -12px; }
   .ab-hp .im { aspect-ratio: 4 / 3; }
   .ab-vision { padding-block: 60px !important; }
   .ab-icard .tx, .bg-ic .tx { padding-top: 16px; }
