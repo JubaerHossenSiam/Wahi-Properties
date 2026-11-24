@@ -187,6 +187,14 @@ footer .footer-credit a:hover {
 .bg-acc summary svg,
 .sp-acc summary svg { stroke: currentColor; }
 
+@media (max-width: 767px) {
+  .s-whog,
+  #our-story > .wrap { padding-inline: 20px; }
+
+  .home-page .s-who .s-whog > .s-photo::before,
+  #our-story .ab-photo::before { left: 0; }
+}
+
 @media (max-width: 599px) {
   .wrap { padding-inline: 20px; }
   header.hd .hd-nav { padding-inline: 20px; }
@@ -207,7 +215,7 @@ footer .footer-credit a:hover {
   .ab-statrow { display: flex; align-items: center; gap: 16px; }
   .ab-statrow .stn2 { flex: none; font-size: 40px; }
   .ab-statrow .stt { flex: 1; min-width: 0; padding-top: 0; }
-  .ab-photo::before { left: -12px; bottom: -12px; }
+  .ab-photo::before { bottom: -12px; }
   .ab-hp .im { aspect-ratio: 4 / 3; }
   .ab-vision { padding-block: 60px !important; }
   .ab-icard .tx, .bg-ic .tx { padding-top: 16px; }

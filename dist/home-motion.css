@@ -86,7 +86,7 @@
   .home-page .s-jv { padding-block: 60px !important; }
 
   .home-page .s-who { padding-top: 164px !important; }
-  .home-page .s-who .wrap > .s-photo::before { left: -12px; bottom: -12px; }
+  .home-page .s-who .wrap > .s-photo::before { bottom: -12px; }
   .home-page .s-expect .wrap { padding-block: 32px 60px; }
   .home-page .s-expect .wrap > div > div:last-child,
   .home-page .s-buy .stp:last-child { border-bottom: 0 !important; }
