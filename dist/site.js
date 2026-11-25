@@ -143,6 +143,9 @@ if (reviewTrack) {
 const projectGrid = document.querySelector('.pj-grid');
 if (projectGrid) {
   const sidebar = document.querySelector('.pj-side');
+  const filterPanel = sidebar.querySelector('.pj-panel');
+  const filterToggle = sidebar.querySelector('.pj-fbtn');
+  const filterBadge = sidebar.querySelector('.pj-fbadge');
   const search = sidebar.querySelector('input[type="search"]');
   const statusInputs = Array.from(sidebar.querySelectorAll('input[name="status"]'));
   const dropdowns = Array.from(document.querySelectorAll('.pj-dd'));
@@ -212,6 +215,16 @@ if (projectGrid) {
     });
   }
 
+  function showFilters(open) {
+    sidebar.classList.toggle('pj-fo', open);
+    filterToggle.setAttribute('aria-expanded', String(open));
+    if (open) filterPanel.querySelector('.pj-x').focus();
+    else {
+      filterPanel.querySelectorAll('details[open]').forEach((item) => { item.open = false; });
+      filterToggle.focus();
+    }
+  }
+
   function menuValue(menu) {
     return menu.index ? menu.options[menu.index].dataset.value || menu.options[menu.index].querySelector('.t').textContent : '';
   }
@@ -268,6 +281,10 @@ if (projectGrid) {
     resultCount.textContent = siteLocale.results(shown, count);
     loadMoreContainer.hidden = shown === count;
 
+    const activeFilters = [status, selectedType, selectedArea, bedroom !== 'Any', sizeBand].filter(Boolean).length;
+    filterBadge.textContent = siteLocale.number(activeFilters);
+    filterBadge.hidden = activeFilters === 0;
+    filterToggle.setAttribute('aria-label', activeFilters ? siteLocale.t('Filters') + ', ' + siteLocale.number(activeFilters) + ' ' + siteLocale.t('active') : siteLocale.t('Filters'));
     history.replaceState({
       ...history.state,
       wahiProjects: {
@@ -290,6 +307,15 @@ if (projectGrid) {
       selectBedrooms(index);
       resetProjects();
     });
+  });
+  filterToggle.setAttribute('aria-controls', 'project-filters');
+  filterPanel.id = 'project-filters';
+  filterToggle.addEventListener('click', () => showFilters(true));
+  sidebar.querySelectorAll('.pj-x, .pj-show').forEach((button) => {
+    button.addEventListener('click', () => showFilters(false));
+  });
+  filterPanel.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && sidebar.classList.contains('pj-fo')) showFilters(false);
   });
   document.querySelectorAll('[data-clear-projects]').forEach((button) => {
     button.addEventListener('click', () => {

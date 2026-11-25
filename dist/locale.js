@@ -13,6 +13,8 @@ window.siteLocale = (() => {
   const digits = '০১২৩৪৫৬৭৮৯';
   const formatter = new Intl.NumberFormat(bangla ? 'bn-BD' : 'en', { useGrouping: false });
   const strings = {
+    'Filters': 'ফিল্টার',
+    'active': 'চালু',
     'Zoom in': 'বড় করুন',
     'Zoom out': 'ছোট করুন',
     'Close': 'বন্ধ করুন',
