@@ -50,7 +50,6 @@
   .home-page .hero-panel { gap: 20px; }
   .home-page .hero-panel h1 {
     font-size: clamp(40px, 12.3vw, 48px) !important;
-    margin-bottom: -8px !important;
   }
 
   .home-page .btn-row {
@@ -81,8 +80,8 @@
     padding-block: 20px;
   }
 
-  .home-page .s-stats .stx2 { padding-top: 0; }
-  .home-page .stx .stn2 { flex: none; font-size: 40px; }
+  .home-page .s-stats .stx { padding-block: 0; }
+  .home-page .stx .stn2 { flex: none; width: 72px; font-size: 40px; }
   .home-page .stx .stl { flex: 1; min-width: 0; margin: 0; font-size: 16px; }
 
   .home-page .s-who,
