@@ -13,6 +13,7 @@ const contentTypes = {
   '.svg': 'image/svg+xml',
   '.webp': 'image/webp',
   '.jpg': 'image/jpeg',
+  '.mp4': 'video/mp4',
 };
 
 const server = createServer(async (request, response) => {
@@ -33,6 +34,26 @@ const server = createServer(async (request, response) => {
     if (!metadata.isFile()) {
       response.writeHead(404).end();
       return;
+    }
+
+    if (contentType === 'video/mp4') {
+      response.setHeader('Accept-Ranges', 'bytes');
+      const range = request.method === 'GET' && /^bytes=(\d*)-(\d*)$/.exec(request.headers.range ?? '');
+      if (range && (range[1] || range[2])) {
+        const start = range[1] ? Number(range[1]) : Math.max(0, metadata.size - Number(range[2]));
+        const end = range[1] && range[2] ? Math.min(Number(range[2]), metadata.size - 1) : metadata.size - 1;
+        if (start > end) {
+          response.writeHead(416, { 'Content-Range': 'bytes */' + metadata.size }).end();
+          return;
+        }
+        response.writeHead(206, {
+          'Content-Type': contentType,
+          'Content-Length': end - start + 1,
+          'Content-Range': 'bytes ' + start + '-' + end + '/' + metadata.size,
+        });
+        createReadStream(file, { start, end }).pipe(response);
+        return;
+      }
     }
 
     response.writeHead(200, { 'Content-Type': contentType, 'Content-Length': metadata.size });

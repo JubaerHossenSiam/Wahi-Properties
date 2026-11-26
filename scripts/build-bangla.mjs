@@ -9,9 +9,9 @@ const normalize = (text) => text.replace(/\s+/g, ' ').trim();
 const files = (await readdir(dist)).filter((file) => file.endsWith('.html'));
 await mkdir(dist + 'bn', { recursive: true });
 
-function switcher(document, file, bangla, mobile) {
+function switcher(document, file, bangla) {
   const group = document.createElement('div');
-  group.className = 'lang ' + (mobile ? 'lang-m' : 'lang-d');
+  group.className = 'lang lang-d';
   group.setAttribute('role', 'group');
   group.setAttribute('aria-label', bangla ? 'ভাষা' : 'Language');
   for (const [lang, label, name] of [['en', 'EN', 'English'], ['bn', 'বাংলা', 'বাংলা']]) {
@@ -42,8 +42,10 @@ function addSocialLinks(document, bangla) {
   facebook.href = 'https://www.facebook.com/p/Wahi-Properties-Ltd-61573775531782/';
   facebook.setAttribute('target', '_blank');
   facebook.setAttribute('rel', 'noopener');
-  facebook.setAttribute('aria-label', bangla ? 'ফেসবুকে ওয়াহী প্রপার্টিজ লিমিটেড' : 'Wahi Properties Ltd on Facebook');
-  facebook.innerHTML = '<svg width="40" height="40" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>';
+  facebook.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>';
+  const label = document.createElement('span');
+  label.textContent = bangla ? 'ফেসবুকে আমাদের অনুসরণ করুন' : 'Follow us on Facebook';
+  facebook.append(label);
   brand.append(facebook);
 
   const whatsApp = document.createElement('a');
@@ -81,9 +83,11 @@ function shared(document, file, bangla) {
   credit.setAttribute('translate', 'no');
   credit.replaceChildren(document.createTextNode(bangla ? 'ডেভেলপমেন্টে ' : 'Developed by '), creditLink);
   addSocialLinks(document, bangla);
-  document.querySelectorAll('.lang,[data-locale-resource]').forEach((node) => node.remove());
-  document.querySelector('.hd-nav').append(switcher(document, file, bangla, true));
-  document.querySelector('.hdr-r').prepend(switcher(document, file, bangla, false));
+  document.querySelectorAll('.lang,.hd-mcall,[data-locale-resource]').forEach((node) => node.remove());
+  const mobileCall = document.querySelector('header .call').cloneNode(true);
+  mobileCall.className = 'btn btn-primary hd-mcall';
+  document.querySelector('.hd-nav').append(mobileCall);
+  document.querySelector('.hdr-r').prepend(switcher(document, file, bangla));
   const prefix = bangla ? '../' : '';
   const css = document.createElement('link');
   css.rel = 'stylesheet';

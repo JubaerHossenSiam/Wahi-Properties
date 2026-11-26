@@ -3,7 +3,74 @@
 }
 
 .home-page .hero-bg {
-  background: #78ade7;
+  background: #2b3a4a url('images/hero-desktop-poster.webp') center / cover no-repeat;
+}
+
+.home-page .hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgb(22 20 18 / 66%), rgb(22 20 18 / 46%) 45%, rgb(22 20 18 / 18%));
+}
+
+.hero-bg video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  visibility: hidden;
+}
+
+.hero-bg video.has-frame { visibility: visible; }
+
+.home-page .hero-panel h1 {
+  color: #fff !important;
+  text-shadow: 0 2px 16px rgb(0 0 0 / 25%);
+}
+
+.home-page .hero-panel p {
+  color: rgb(255 255 255 / 92%) !important;
+  text-shadow: 0 1px 10px rgb(0 0 0 / 25%);
+}
+
+.hero-video-toggle {
+  position: absolute;
+  top: 12px;
+  right: clamp(20px, 4vw, 40px);
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  cursor: pointer;
+  border: 1px solid rgb(255 255 255 / 65%);
+  border-radius: 50%;
+  color: #fff;
+  background: rgb(22 20 18 / 60%);
+}
+
+.hero-video-toggle:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.hero-video-toggle [data-pause-icon],
+.hero-video-toggle.is-playing [data-play-icon] { display: none; }
+.hero-video-toggle.is-playing [data-pause-icon] { display: block; }
+
+@media (width < 1280px) {
+  .home-page .hero-bg {
+    background-image: url('images/hero-tablet-poster.webp');
+    background-position: 50% 30%;
+  }
+  .hero-bg video { object-position: 50% 30%; }
+}
+
+@media (min-width: 900px) {
+  .home-page .hero { min-height: calc(100vw / 2.4); }
+}
+
+@media (max-width: 899px) {
+  .home-page .hero { padding-block: 64px 104px; }
+  .home-page .hero-bg::after { background: rgb(22 20 18 / 52%); }
 }
 
 .home-page .hero-panel > * {
@@ -26,26 +93,10 @@
   font-variant-numeric: tabular-nums;
 }
 
-@media (max-width: 599px) {
-  .home-page .hero {
-    padding-top: 64px;
-    padding-bottom: 264px;
-  }
-
-  .home-page .hero-bg { background: #74aff5; }
-  .home-page .hero-bg .hi-d { object-position: 68% 0; }
-  .home-page .hero-bg::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    display: block;
-    background: linear-gradient(90deg,
-      rgb(116 175 245 / 92%) 0,
-      rgb(116 175 245 / 85%) 72%,
-      rgb(116 175 245 / 50%) 92%,
-      rgb(116 175 245 / 20%) 100%);
-    mask-image: linear-gradient(to bottom, #000 52%, transparent 70%);
-  }
+@media (width < 600px) {
+  .home-page .hero { padding-bottom: 176px; }
+  .home-page .hero-bg { background-image: url('images/hero-phone-poster.webp'); background-position: center; }
+  .hero-bg video { object-position: center; }
 
   .home-page .hero-panel { gap: 20px; }
   .home-page .hero-panel h1 {
@@ -90,7 +141,7 @@
   .home-page .s-buy,
   .home-page .s-jv { padding-block: 60px !important; }
 
-  .home-page .s-who { padding-top: 185px !important; }
+  .home-page .s-proj { padding-top: 185px !important; }
   .home-page .s-expect .wrap { padding-block: 32px 60px; }
   .home-page .s-expect .wrap > div > div:last-child,
   .home-page .s-buy .stp:last-child { border-bottom: 0 !important; }

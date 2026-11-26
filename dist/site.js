@@ -401,6 +401,7 @@ document.querySelectorAll('.sp-plans').forEach((plans, index) => {
 const galleries = document.querySelectorAll('.sp-gal');
 const planButtons = document.querySelectorAll('.sp-xp');
 if (galleries.length || planButtons.length) {
+  const assetBase = document.currentScript.src;
   const viewer = document.createElement('dialog');
   viewer.className = 'image-viewer';
   viewer.setAttribute('aria-labelledby', 'image-viewer-title');
@@ -451,11 +452,37 @@ if (galleries.length || planButtons.length) {
   galleries.forEach((gallery, index) => {
     const tiles = Array.from(gallery.querySelectorAll(':scope > .g'));
     const batchSize = 6;
-    const buttons = tiles.map((tile, position) => {
+    const items = tiles.map((tile, position) => {
       const button = document.createElement('button');
       const original = tile.querySelector('img');
       const caption = tile.querySelector('.sp-cap').textContent.trim();
       button.type = 'button';
+      if (tile.dataset.video) {
+        tile.hidden = position >= batchSize;
+        for (const attribute of ['role', 'tabindex', 'aria-label', 'onclick']) tile.removeAttribute(attribute);
+        button.className = 'gallery-video-trigger';
+        button.setAttribute('aria-label', siteLocale.t('Play video') + ', ' + caption);
+        button.append(...tile.childNodes);
+        tile.append(button);
+        button.addEventListener('click', () => {
+          const video = document.createElement('video');
+          video.controls = true;
+          video.playsInline = true;
+          video.poster = original.currentSrc || original.src;
+          video.setAttribute('aria-label', caption);
+          video.addEventListener('error', () => {
+            video.remove();
+            button.hidden = false;
+            button.focus({ preventScroll: true });
+          }, { once: true });
+          video.src = new URL(tile.dataset.video, assetBase).href;
+          button.hidden = true;
+          tile.append(video);
+          video.focus({ preventScroll: true });
+          video.play().catch(() => {});
+        });
+        return tile;
+      }
       button.className = 'g gallery-button';
       button.hidden = position >= batchSize;
       button.setAttribute('aria-label', siteLocale.t('Enlarge image') + ', ' + caption);
@@ -464,7 +491,7 @@ if (galleries.length || planButtons.length) {
       button.addEventListener('click', () => openImage(button, original, caption));
       return button;
     });
-    if (buttons.length <= batchSize) return;
+    if (items.length <= batchSize) return;
 
     gallery.id ||= 'project-gallery-' + (index + 1);
     const controls = document.createElement('div');
@@ -479,11 +506,11 @@ if (galleries.length || planButtons.length) {
 
     let visible = batchSize;
     showMore.addEventListener('click', () => {
-      const next = buttons.slice(visible, visible + batchSize);
+      const next = items.slice(visible, visible + batchSize);
       next.forEach((button) => { button.hidden = false; });
       visible += next.length;
-      controls.hidden = visible === buttons.length;
-      next[0].focus();
+      controls.hidden = visible === items.length;
+      (next[0].querySelector('.gallery-video-trigger') || next[0]).focus();
     });
   });
 

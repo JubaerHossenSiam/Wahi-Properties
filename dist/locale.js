@@ -21,6 +21,9 @@ window.siteLocale = (() => {
     'Enlarge image': 'ছবি বড় করে দেখুন',
     'Show more photos': 'আরও ছবি দেখুন',
     'Expand plan': 'ফ্লোর প্ল্যান বড় করে দেখুন',
+    'Play background video': 'পেছনের ভিডিও চালান',
+    'Pause background video': 'পেছনের ভিডিও থামান',
+    'Play video': 'ভিডিও চালান',
   };
 
   document.querySelectorAll('[data-language]').forEach((link) => {
