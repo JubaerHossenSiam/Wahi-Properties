@@ -465,9 +465,11 @@ if (galleries.length || planButtons.length) {
     <div class="image-viewer-bar">
       <strong id="image-viewer-title"></strong>
       <button type="button" data-viewer-zoom aria-pressed="false">${siteLocale.t('Zoom in')}</button>
-      <button type="button" data-viewer-close autofocus>${siteLocale.t('Close')}</button>
+      <button type="button" data-viewer-close autofocus aria-label="${siteLocale.t('Close')}"><span class="viewer-close-text">${siteLocale.t('Close')}</span><span class="viewer-close-icon" aria-hidden="true">×</span></button>
     </div>
     <div class="image-viewer-frame" tabindex="0"><img alt=""></div>
+    <button type="button" class="lightbox-arrow lightbox-prev" aria-label="${siteLocale.t('Previous photo')}" hidden>‹</button>
+    <button type="button" class="lightbox-arrow lightbox-next" aria-label="${siteLocale.t('Next photo')}" hidden>›</button>
   `;
   document.body.append(viewer);
 
@@ -476,7 +478,11 @@ if (galleries.length || planButtons.length) {
   const image = frame.querySelector('img');
   const zoom = viewer.querySelector('[data-viewer-zoom]');
   const close = viewer.querySelector('[data-viewer-close]');
+  const previous = viewer.querySelector('.lightbox-prev');
+  const next = viewer.querySelector('.lightbox-next');
   let opener;
+  let photos = [];
+  let photoIndex = 0;
 
   function setZoom(active) {
     frame.classList.toggle('is-zoomed', active);
@@ -485,15 +491,41 @@ if (galleries.length || planButtons.length) {
     if (!active) frame.scrollTo(0, 0);
   }
 
-  function openImage(button, original, caption) {
-    opener = button;
+  function showImage(original, caption) {
     title.textContent = caption;
     image.src = original.currentSrc || original.src;
     image.alt = original.alt;
+  }
+
+  function openImage(button, original, caption, galleryPhotos = []) {
+    opener = button;
+    photos = galleryPhotos;
+    photoIndex = photos.findIndex((photo) => photo.original === original);
+    viewer.classList.toggle('gallery-lightbox', photos.length > 0);
+    frame.tabIndex = photos.length ? -1 : 0;
+    zoom.hidden = photos.length > 0;
+    previous.hidden = next.hidden = photos.length < 2;
+    showImage(original, caption);
     viewer.showModal();
     setZoom(false);
   }
 
+  function stepPhoto(direction) {
+    photoIndex = (photoIndex + direction + photos.length) % photos.length;
+    const { original, caption } = photos[photoIndex];
+    showImage(original, caption);
+  }
+
+  previous.addEventListener('click', () => stepPhoto(-1));
+  next.addEventListener('click', () => stepPhoto(1));
+  viewer.addEventListener('keydown', (event) => {
+    if (photos.length < 2 || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
+    stepPhoto(event.key === 'ArrowLeft' ? -1 : 1);
+  });
+  frame.addEventListener('click', (event) => {
+    if (photos.length && event.target === frame) viewer.close();
+  });
   zoom.addEventListener('click', () => setZoom(!frame.classList.contains('is-zoomed')));
   close.addEventListener('click', () => viewer.close());
   viewer.addEventListener('click', (event) => {
@@ -503,10 +535,11 @@ if (galleries.length || planButtons.length) {
       viewer.close();
     }
   });
-  viewer.addEventListener('close', () => opener?.focus());
+  viewer.addEventListener('close', () => opener?.focus({ preventScroll: true }));
 
   galleries.forEach((gallery, index) => {
     const tiles = Array.from(gallery.querySelectorAll(':scope > .g'));
+    const galleryPhotos = [];
     const batchSize = 6;
     const items = tiles.map((tile, position) => {
       const button = document.createElement('button');
@@ -544,7 +577,8 @@ if (galleries.length || planButtons.length) {
       button.setAttribute('aria-label', siteLocale.t('Enlarge image') + ', ' + caption);
       button.append(...tile.childNodes);
       tile.replaceWith(button);
-      button.addEventListener('click', () => openImage(button, original, caption));
+      galleryPhotos.push({ original, caption });
+      button.addEventListener('click', () => openImage(button, original, caption, galleryPhotos));
       return button;
     });
     if (items.length <= batchSize) return;

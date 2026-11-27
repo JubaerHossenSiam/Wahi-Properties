@@ -23,6 +23,8 @@ window.siteLocale = (() => {
     'active': 'চালু',
     'Zoom in': 'বড় করুন',
     'Zoom out': 'ছোট করুন',
+    'Previous photo': 'আগের ছবি',
+    'Next photo': 'পরের ছবি',
     'Close': 'বন্ধ করুন',
     'Enlarge image': 'ছবি বড় করে দেখুন',
     'Show more photos': 'আরও ছবি দেখুন',

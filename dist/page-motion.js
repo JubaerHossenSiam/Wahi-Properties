@@ -40,12 +40,12 @@
   }
 
   const groups = [
-    ['main h2:not(.ab-vision h2, .hdr-va:has(+ .ab-hgrid) h2)', 'rise'],
+    ['main h2:not(.ab-vision h2, .hdr-va:has(+ .ab-hgrid) h2, section:has(.sp-fg) h2)', 'rise'],
     ['.ab-who-p, .sp-p-l, .jv-p, .bg-p', 'rise'],
     ['.ab-icard, .ab-vc', 'rise'],
     ['.jv-step, .bg-step', 'rise'],
     ['.jv-card, .bg-card, .bg-ic, .jv-hp', 'rise'],
-    ['.sp-fi, .sp-hp', 'rise'],
+    ['.sp-hp', 'rise'],
     ['.sp-gal > .g', 'fade'],
     ['.dt-row', 'rise'],
     ['.ct-split > div:first-child > :not(h2)', 'rise'],
