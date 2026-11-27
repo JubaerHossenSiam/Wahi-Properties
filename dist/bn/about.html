@@ -1,6 +1,15 @@
 <!doctype html>
 <html translate="no" lang="bn">
-<head>
+<head><script data-locale-resource="" defer src="../locale.js"></script><script data-locale-resource="">
+    try {
+      const navigation = JSON.parse(sessionStorage.getItem('wahi-language-navigation') || 'null');
+      if (navigation?.target === location.pathname + location.search
+        && Date.now() - navigation.createdAt < 15000 && Number.isFinite(navigation.position?.y)) {
+        document.documentElement.classList.add('language-restoring');
+        setTimeout(() => document.documentElement.classList.remove('language-restoring'), 1500);
+      }
+    } catch {}
+  </script>
 <meta charset="utf-8">
 <meta content="notranslate" name="google"><title>আমাদের সম্পর্কে | ওয়াহী প্রপার্টিজ লিমিটেড</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -84,13 +93,13 @@ h2{text-wrap:balance}
 .ab-h2{margin:0;font-size:clamp(32px,3.4cqw,48px);line-height:1.12;letter-spacing:-0.02em;font-weight:600;color:#242221}
 .ab-lead{margin:0;font-size:clamp(17px,1.4cqw,20px);line-height:1.65;color:#242221}
 .ab-hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6cqw,96px);align-items:start}
-.ab-who-p{margin:0;font-size:clamp(18px,1.6cqw,22px);line-height:1.6;font-weight:400;color:#5D5A54;text-wrap:pretty}
+.ab-who-p{margin:0;font-size:clamp(16px,1.25vw,18px);line-height:1.6;font-weight:400;color:#5D5A54;text-wrap:pretty}
 .ab-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3cqw,40px)}
 .ab-card{background:#FFFFFF;border:1px solid #EDE6D6;border-radius:12px;padding:36px 24px;display:flex;flex-direction:column;gap:16px;transition:border-color .25s ease}
 .ab-card:hover{border-color:#E6BF62}
 .ab-card h3{margin:0;font-size:24px;line-height:1.3;font-weight:600;color:#242221}
 .ab-card p{margin:0;font-size:16px;line-height:1.65;color:#5D5A54}
-.ab-link{margin-top:auto;padding-top:8px;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;color:#242221;text-decoration:none}
+.ab-link{margin-top:auto;padding-top:4px;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;color:#242221;text-decoration:none}
 .ab-link:hover{color:#D4AD60}
 .ab-link:hover svg{transform:translateX(3px)}
 .ab-link svg{transition:transform .2s}
@@ -255,9 +264,9 @@ body{container-type:inline-size}
 <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../site.css">
 <link rel="stylesheet" href="../page-motion.css">
-<script data-locale-resource="" defer src="../locale.js"></script><script src="../site.js" defer></script>
+<script src="../site.js" defer></script>
 <script src="../page-motion.js" defer></script>
-<link data-locale-resource="" href="../locale.css" rel="stylesheet"><link data-locale-resource="" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet"><link data-locale-resource="" href="../about.html" hreflang="en" rel="alternate"><link data-locale-resource="" href="about.html" hreflang="bn" rel="alternate"><link data-locale-resource="" href="../about.html" rel="prefetch"></head>
+<link data-locale-resource="" href="../locale.css" rel="stylesheet"><link data-locale-resource="" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet"><link data-locale-resource="" href="../about.html" hreflang="en" rel="alternate"><link data-locale-resource="" href="about.html" hreflang="bn" rel="alternate"></head>
 <body class="inner-page">
 <a class="skip-link" href="#main-content">মূল বিষয়বস্তুতে যান</a>
 
@@ -272,7 +281,7 @@ body{container-type:inline-size}
 <a class="nav" href="joint-venture.html">জয়েন্ট ভেঞ্চার</a>
 <a class="nav" href="buyers-guide.html">ফ্ল্যাট কেনার গাইড</a>
 <a class="nav" href="contact-us.html">যোগাযোগ</a>
-<a class="btn btn-primary hd-mcall" href="tel:01604363259" aria-label="কল করুন">
+<a class="btn btn-secondary hd-mcall" href="tel:01604363259" aria-label="কল করুন">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E3223" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" /></svg>
 <span class="ct">কল করুন</span></a></nav>
 <div class="hdr-r"><div aria-label="ভাষা" role="group" class="lang lang-d"><a aria-label="English" data-language="en" hreflang="en" lang="en" href="../about.html">EN</a><a aria-current="true" class="on" aria-label="বাংলা" data-language="bn" hreflang="bn" lang="bn" href="about.html">বাংলা</a></div>
@@ -325,7 +334,7 @@ body{container-type:inline-size}
 <div class="wrap" style="position:relative;display:flex;justify-content:center">
 <div style="background:#FFFFFF;border-radius:8px;padding:36px 24px;width:100%;max-width:760px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;box-shadow:0 24px 64px rgba(36,34,33,.18)">
 <h2 style="margin:0;font-size:clamp(32px,3.2cqw,44px);line-height:1.15;font-weight:600;color:#242221;max-width:560px;text-wrap:balance">আপনার পরিকল্পনা আমাদের জানান</h2>
-<p style="margin:0;font-size:clamp(16px,1.25cqw,18px);line-height:1.65;color:#5D5A54;max-width:520px">ফ্ল্যাট খুঁজছেন, নাকি নিজের জমিতে ভবন গড়ার কথা ভাবছেন? আপনার পরিকল্পনা নিয়ে হোয়াটসঅ্যাপে আমাদের সঙ্গে কথা বলুন।</p>
+<p style="margin:0;font-size:clamp(16px,1.25cqw,18px);line-height:1.65;color:#5D5A54;max-width:520px">ফ্ল্যাট খুঁজছেন, নাকি নিজের জমিতে ভবন গড়ার কথা ভাবছেন? আপনার পরিকল্পনা নিয়ে আমাদের সঙ্গে কথা বলুন।</p>
 <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:8px">
 <a class="btn btn-primary" href="https://wa.me/8801604363259">
 <svg width="22" height="22" viewBox="0 0 24 24" fill="#3E3223" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>হোয়াটসঅ্যাপে কথা বলুন</a>
@@ -339,8 +348,8 @@ body{container-type:inline-size}
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:40px">
 <div style="display:flex;flex-direction:column;gap:16px">
 <a href="index.html" aria-label="ওয়াহী প্রপার্টিজ লিমিটেড, হোম" style="display:block;padding:12px 12px 12px 0"><img src="../images/logo.svg" alt="ওয়াহী প্রপার্টিজ লিমিটেড" style="display:block;width:180px;max-width:100%;height:auto"></a>
-<p style="margin:0;font-size:16px;line-height:1.65;color:#5D5A54;max-width:300px">ঢাকাভিত্তিক আবাসন প্রতিষ্ঠান।</p>
-<a rel="noopener" target="_blank" href="https://www.facebook.com/p/Wahi-Properties-Ltd-61573775531782/" class="footer-facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg><span>ফেসবুকে আমাদের অনুসরণ করুন</span></a></div>
+<p style="margin:0;font-size:16px;line-height:1.65;color:#5D5A54;max-width:300px">ঢাকাভিত্তিক আবাসন নির্মাতা। আমরা ফ্ল্যাট নির্মাণ করি এবং জমির মালিকদের সঙ্গে জয়েন্ট ভেঞ্চারে কাজ করি।</p>
+<a rel="noopener" target="_blank" href="https://www.facebook.com/p/Wahi-Properties-Ltd-61573775531782/" class="footer-facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg><span>আমাদের অনুসরণ করুন</span></a></div>
 <div style="display:flex;flex-direction:column;gap:16px">
 <h3 style="margin:0;font-size:20px;line-height:1.3;font-weight:600;color:#242221">গুরুত্বপূর্ণ লিংক</h3>
 <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:16px;line-height:1.5">

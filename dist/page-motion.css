@@ -2,11 +2,6 @@
   --page-ease: cubic-bezier(.22, 1, .36, 1);
 }
 
-.inner-page .page-intro {
-  animation: page-entrance .9s var(--page-ease) both;
-  animation-delay: var(--page-delay, 0ms);
-}
-
 .inner-page .page-reveal-pending {
   opacity: 0;
 }
@@ -21,7 +16,7 @@
 }
 
 .inner-page :is(.pj-card, .ab-hp, .jv-hp, .sp-hp) {
-  transition: top .45s var(--page-ease), border-color .35s ease;
+  transition: top .45s var(--page-ease), border-color .35s ease, box-shadow .25s ease;
 }
 
 .inner-page :is(.pj-card, .ab-hp, .jv-hp, .sp-hp) .im img {
@@ -56,24 +51,12 @@
   }
 }
 
-@keyframes page-entrance {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes page-fade {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .inner-page .page-intro,
   .inner-page :is(.bg-acc, .sp-acc) details[open] > :not(summary),
   .inner-page .sp-panel:not([hidden]) .tx {
     animation: none;
@@ -100,7 +83,15 @@
     opacity: 1;
   }
 
-  .inner-page .page-intro {
-    animation: none;
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  .vision-word { white-space: nowrap; }
+  .vision-letter { opacity: 0; }
+  .vision-typing-active .vision-letter {
+    animation: vision-letter-in 1ms step-end var(--vision-delay) both;
   }
+}
+
+@keyframes vision-letter-in {
+  to { opacity: 1; }
 }

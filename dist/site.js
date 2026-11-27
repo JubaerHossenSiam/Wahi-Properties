@@ -1,5 +1,32 @@
 'use strict';
 
+const featuredProjects = document.querySelector('.s-proj, section:has(.ab-hgrid)');
+if (featuredProjects && !siteLocale.switchedLanguage && 'IntersectionObserver' in window
+    && matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    for (const { target, isIntersecting } of entries) {
+      if (!isIntersecting) continue;
+      revealObserver.unobserve(target);
+      target.classList.replace('project-reveal-pending', 'project-reveal');
+    }
+  }, { rootMargin: '0px 0px -28px 0px', threshold: .08 });
+
+  for (const selector of ['.hdr-va h2', '.hdr-va p', '.hdr-va .btn', 'article']) {
+    featuredProjects.querySelectorAll(selector).forEach((element, index) => {
+      element.style.setProperty('--project-reveal-delay', Math.min(index * 90, 270) + 'ms');
+      element.classList.add('project-reveal-pending');
+      revealObserver.observe(element);
+    });
+  }
+
+  featuredProjects.addEventListener('focusin', (event) => {
+    const element = event.target.closest('.project-reveal-pending, .project-reveal');
+    if (!element) return;
+    revealObserver.unobserve(element);
+    element.classList.remove('project-reveal-pending', 'project-reveal');
+  });
+}
+
 const menuToggle = document.querySelector('.hd-tgl');
 if (menuToggle) {
   const header = menuToggle.closest('header');
@@ -146,6 +173,11 @@ if (projectGrid) {
   const filterPanel = sidebar.querySelector('.pj-panel');
   const filterToggle = sidebar.querySelector('.pj-fbtn');
   const filterBadge = sidebar.querySelector('.pj-fbadge');
+  const filterDialog = document.createElement('dialog');
+  filterDialog.className = 'pj-filter-dialog';
+  filterDialog.id = 'project-filters';
+  filterDialog.setAttribute('aria-label', filterPanel.getAttribute('aria-label'));
+  document.body.append(filterDialog);
   const search = sidebar.querySelector('input[type="search"]');
   const statusInputs = Array.from(sidebar.querySelectorAll('input[name="status"]'));
   const dropdowns = Array.from(document.querySelectorAll('.pj-dd'));
@@ -197,7 +229,17 @@ if (projectGrid) {
     });
 
     dropdown.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        dropdown.open = true;
+        const focused = options.indexOf(document.activeElement);
+        const step = event.key === 'ArrowDown' ? 1 : -1;
+        const next = focused < 0 ? menu.index : Math.max(0, Math.min(options.length - 1, focused + step));
+        options[next].focus();
+        return;
+      }
       if (event.key !== 'Escape' || !dropdown.open) return;
+      event.preventDefault();
       event.stopPropagation();
       dropdown.open = false;
       summary.focus();
@@ -207,6 +249,12 @@ if (projectGrid) {
   });
   const [type, area, size, sort] = menus;
 
+  document.addEventListener('click', (event) => {
+    for (const dropdown of dropdowns) {
+      if (dropdown.open && !dropdown.contains(event.target)) dropdown.open = false;
+    }
+  });
+
   function selectBedrooms(index) {
     bedrooms.forEach((chip, position) => {
       const selected = position === index;
@@ -215,18 +263,9 @@ if (projectGrid) {
     });
   }
 
-  function showFilters(open) {
-    sidebar.classList.toggle('pj-fo', open);
-    filterToggle.setAttribute('aria-expanded', String(open));
-    if (open) filterPanel.querySelector('.pj-x').focus();
-    else {
-      filterPanel.querySelectorAll('details[open]').forEach((item) => { item.open = false; });
-      filterToggle.focus();
-    }
-  }
-
   function menuValue(menu) {
-    return menu.index ? menu.options[menu.index].dataset.value || menu.options[menu.index].querySelector('.t').textContent : '';
+    const option = menu.options[menu.index];
+    return menu.index ? option.dataset.value || option.querySelector('.t').textContent : '';
   }
 
   function resetProjects() {
@@ -308,14 +347,31 @@ if (projectGrid) {
       resetProjects();
     });
   });
-  filterToggle.setAttribute('aria-controls', 'project-filters');
-  filterPanel.id = 'project-filters';
-  filterToggle.addEventListener('click', () => showFilters(true));
-  sidebar.querySelectorAll('.pj-x, .pj-show').forEach((button) => {
-    button.addEventListener('click', () => showFilters(false));
+  const compactFilters = matchMedia('(width < 900px)');
+  filterToggle.setAttribute('aria-controls', filterDialog.id);
+  filterToggle.setAttribute('aria-haspopup', 'dialog');
+  filterToggle.addEventListener('click', () => {
+    filterDialog.append(filterPanel);
+    filterDialog.showModal();
+    filterToggle.setAttribute('aria-expanded', 'true');
+    filterPanel.querySelector('.pj-x').focus();
   });
-  filterPanel.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && sidebar.classList.contains('pj-fo')) showFilters(false);
+  filterPanel.querySelectorAll('.pj-x, .pj-show').forEach((button) => {
+    button.addEventListener('click', () => filterDialog.close());
+  });
+  filterDialog.addEventListener('close', () => {
+    filterPanel.querySelectorAll('details[open]').forEach((item) => { item.open = false; });
+    sidebar.append(filterPanel);
+    filterToggle.setAttribute('aria-expanded', 'false');
+    if (compactFilters.matches) filterToggle.focus({ preventScroll: true });
+  });
+  filterDialog.addEventListener('click', (event) => {
+    if (event.target !== filterDialog) return;
+    const box = filterDialog.getBoundingClientRect();
+    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) filterDialog.close();
+  });
+  compactFilters.addEventListener('change', (event) => {
+    if (!event.matches && filterDialog.open) filterDialog.close();
   });
   document.querySelectorAll('[data-clear-projects]').forEach((button) => {
     button.addEventListener('click', () => {

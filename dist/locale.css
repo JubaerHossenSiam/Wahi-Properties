@@ -1,3 +1,4 @@
+html.language-restoring body { visibility: hidden; }
 .lang a {
   box-sizing: border-box;
   display: flex;
@@ -16,7 +17,6 @@
 .lang a:hover { color: #242221; background: #f3f0e9; }
 .lang a.on { color: #3e3223; background: #e6bf62; }
 .lang a[lang="bn"] { font-family: "Noto Sans Bengali", sans-serif; }
-.language-switching .home-page .hero-panel > * { animation: none !important; }
 @media (prefers-reduced-motion: no-preference) {
   @view-transition { navigation: auto; }
   ::view-transition-old(root),

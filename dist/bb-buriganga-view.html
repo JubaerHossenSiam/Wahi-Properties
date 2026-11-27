@@ -1,6 +1,15 @@
 <!doctype html>
 <html translate="no" lang="en">
-<head>
+<head><script data-locale-resource="" defer src="locale.js"></script><script data-locale-resource="">
+    try {
+      const navigation = JSON.parse(sessionStorage.getItem('wahi-language-navigation') || 'null');
+      if (navigation?.target === location.pathname + location.search
+        && Date.now() - navigation.createdAt < 15000 && Number.isFinite(navigation.position?.y)) {
+        document.documentElement.classList.add('language-restoring');
+        setTimeout(() => document.documentElement.classList.remove('language-restoring'), 1500);
+      }
+    } catch {}
+  </script>
 <meta charset="utf-8">
 <meta content="notranslate" name="google"><title>BB Buriganga View | Wahi Properties Ltd</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -377,9 +386,9 @@ header{border-bottom:1px solid #EDE8DD}
 <link rel="icon" href="images/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="site.css">
 <link rel="stylesheet" href="page-motion.css">
-<script data-locale-resource="" defer src="locale.js"></script><script src="site.js" defer></script>
+<script src="site.js" defer></script>
 <script src="page-motion.js" defer></script>
-<link data-locale-resource="" href="locale.css" rel="stylesheet"><link data-locale-resource="" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet"><link data-locale-resource="" href="bb-buriganga-view.html" hreflang="en" rel="alternate"><link data-locale-resource="" href="bn/bb-buriganga-view.html" hreflang="bn" rel="alternate"><link data-locale-resource="" href="bn/bb-buriganga-view.html" rel="prefetch"></head>
+<link data-locale-resource="" href="locale.css" rel="stylesheet"><link data-locale-resource="" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet"><link data-locale-resource="" href="bb-buriganga-view.html" hreflang="en" rel="alternate"><link data-locale-resource="" href="bn/bb-buriganga-view.html" hreflang="bn" rel="alternate"></head>
 <body class="inner-page">
 <a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -394,7 +403,7 @@ header{border-bottom:1px solid #EDE8DD}
 <a class="nav" href="joint-venture.html">Joint Venture</a>
 <a class="nav" href="buyers-guide.html">Buyer's Guide</a>
 <a class="nav" href="contact-us.html">Contact Us</a>
-<a class="btn btn-primary hd-mcall" href="tel:01604363259" aria-label="Call Us">
+<a class="btn btn-secondary hd-mcall" href="tel:01604363259" aria-label="Call Us">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3E3223" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" /></svg>
 <span class="ct">Call Us</span></a></nav>
 <div class="hdr-r"><div aria-label="Language" role="group" class="lang lang-d"><a aria-current="true" class="on" aria-label="English" data-language="en" hreflang="en" lang="en" href="bb-buriganga-view.html">EN</a><a aria-label="বাংলা" data-language="bn" hreflang="bn" lang="bn" href="bn/bb-buriganga-view.html">বাংলা</a></div>
@@ -424,7 +433,7 @@ header{border-bottom:1px solid #EDE8DD}
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:40px">
 <div style="display:flex;flex-direction:column;gap:16px">
 <a href="index.html" aria-label="Wahi Properties Ltd, home" style="display:block;padding:12px 12px 12px 0"><img src="images/logo.svg" alt="Wahi Properties Ltd" style="display:block;width:180px;max-width:100%;height:auto"></a>
-<p style="margin:0;font-size:16px;line-height:1.65;color:#5D5A54;max-width:300px">Residential apartments and joint venture partnerships in Dhaka, backed by 30 years of experience.</p>
+<p style="margin:0;font-size:16px;line-height:1.65;color:#5D5A54;max-width:300px">Dhaka-based developer building apartments and partnering with landowners on joint ventures.</p>
 <a rel="noopener" target="_blank" href="https://www.facebook.com/p/Wahi-Properties-Ltd-61573775531782/" class="footer-facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg><span>Follow us on Facebook</span></a></div>
 <div style="display:flex;flex-direction:column;gap:16px">
 <h3 style="margin:0;font-size:20px;line-height:1.3;font-weight:600;color:#242221">Quick Links</h3>

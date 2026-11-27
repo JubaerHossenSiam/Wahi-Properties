@@ -15,6 +15,7 @@ const contentTypes = {
   '.webp': 'image/webp',
   '.jpg': 'image/jpeg',
   '.mp4': 'video/mp4',
+  '.pdf': 'application/pdf',
 };
 
 const server = createServer(async (request, response) => {

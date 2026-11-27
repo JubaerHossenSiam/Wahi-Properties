@@ -47,7 +47,8 @@ window.siteLocale = (() => {
   }
 
   function restorePosition(position) {
-    const box = sections()[position.index]?.getBoundingClientRect();
+    const section = (position.anchor && document.getElementById(position.anchor)) || sections()[position.index];
+    const box = section?.getBoundingClientRect();
     const top = box && Number.isFinite(position.progress)
       ? window.scrollY + box.top + position.progress * box.height - headerHeight()
       : position.y;
@@ -55,26 +56,22 @@ window.siteLocale = (() => {
   }
 
   if (Number.isFinite(savedPosition?.y)) {
-    const pending = new AbortController();
-    for (const event of ['wheel', 'touchstart', 'pointerdown', 'keydown']) {
-      window.addEventListener(event, () => pending.abort(), { passive: true, signal: pending.signal });
-    }
+    let restored = false;
     const restore = () => {
-      if (pending.signal.aborted) return;
+      if (restored) return;
+      restored = true;
       restorePosition(savedPosition);
-    };
-    requestAnimationFrame(restore);
-    const loaded = document.readyState === 'complete' ? Promise.resolve()
-      : new Promise((resolve) => window.addEventListener('load', resolve, { once: true }));
-    Promise.all([loaded, document.fonts?.ready]).then(() => requestAnimationFrame(() => {
-      restore();
       const url = new URL(location.href);
       url.hash = savedHash || '';
       if (url.href !== location.href) history.replaceState(history.state, '', url.href);
-      pending.abort();
-    }));
+      document.documentElement.classList.remove('language-restoring');
+    };
+    // Restore before the new document is revealed, including before its view-transition snapshot.
+    window.addEventListener('pagereveal', restore, { once: true });
+    requestAnimationFrame(restore);
   }
 
+  let switching = false;
   document.querySelectorAll('[data-language]').forEach((link) => {
     const target = new URL(link.href);
     target.search = location.search;
@@ -87,7 +84,9 @@ window.siteLocale = (() => {
         return;
       }
       document.documentElement.classList.add('language-switching');
+      switching = true;
       const position = capturePosition();
+      let saved = false;
       try {
         sessionStorage.setItem('wahi-language-navigation', JSON.stringify({
           target: target.pathname + target.search,
@@ -95,14 +94,15 @@ window.siteLocale = (() => {
           position,
           hash: location.hash,
         }));
+        saved = true;
         if (history.state?.wahiProjects) sessionStorage.setItem('wahi-language-projects', JSON.stringify({
           target: target.pathname + target.search,
           state: history.state.wahiProjects,
         }));
       } catch { /* Navigation still works when storage is unavailable. */ }
-      // Let the browser open at the matching section even if storage is unavailable.
+      // Use a fragment only when the browser cannot restore the exact reading position.
       const destination = new URL(target);
-      destination.hash = position.anchor || '';
+      destination.hash = saved ? '' : position.anchor || target.hash;
       link.href = destination.href;
     });
   });
@@ -114,6 +114,26 @@ window.siteLocale = (() => {
     }
     sessionStorage.removeItem('wahi-language-projects');
   } catch { /* Project filters can still be used without storage. */ }
+
+  const prefetchAlternate = () => {
+    if (switching || navigator.connection?.saveData || document.visibilityState !== 'visible') return;
+    const language = bangla ? 'en' : 'bn';
+    const alternate = document.querySelector('link[rel="alternate"][hreflang="' + language + '"]');
+    if (!alternate) return;
+    const url = new URL(alternate.href);
+    url.search = location.search;
+    const hint = document.createElement('link');
+    hint.rel = 'prefetch';
+    hint.href = url.href;
+    document.head.append(hint);
+  };
+
+  const schedulePrefetch = () => {
+    if ('requestIdleCallback' in window) window.requestIdleCallback(prefetchAlternate);
+    else setTimeout(prefetchAlternate, 500);
+  };
+  if (document.readyState === 'complete') schedulePrefetch();
+  else window.addEventListener('load', schedulePrefetch, { once: true });
 
   return {
     bangla,

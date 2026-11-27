@@ -39,18 +39,10 @@
     });
   }
 
-  const hero = document.querySelector('main > section:first-of-type');
-  const intro = hero.querySelector('.sp-hero-t, .bg-hero-t, .jv-hero-t, .cr-t, .pg-hero-t, .pj-hero-t')
-    || hero.querySelector('.ab-h1').parentElement;
-  Array.from(intro.children).forEach((element, index) => {
-    element.classList.add('page-intro');
-    element.style.setProperty('--page-delay', Math.min(index * 100, 300) + 'ms');
-  });
-
   const groups = [
-    ['main h2', 'rise'],
+    ['main h2:not(.ab-vision h2, .hdr-va:has(+ .ab-hgrid) h2)', 'rise'],
     ['.ab-who-p, .sp-p-l, .jv-p, .bg-p', 'rise'],
-    ['.ab-icard, .ab-vc, .ab-hp', 'rise'],
+    ['.ab-icard, .ab-vc', 'rise'],
     ['.jv-step, .bg-step', 'rise'],
     ['.jv-card, .bg-card, .bg-ic, .jv-hp', 'rise'],
     ['.sp-fi, .sp-hp', 'rise'],
@@ -115,6 +107,35 @@
     }
   }, { threshold: .2 });
   document.querySelectorAll('.ab-statrow .stn2').forEach((number) => counterObserver.observe(number));
+
+  const vision = document.querySelector('.ab-vision p.v');
+  if (vision && typeof Intl.Segmenter === 'function') {
+    const words = vision.textContent.trim().split(/\s+/);
+    const lastWords = words.splice(-3);
+    const characters = new Intl.Segmenter(document.documentElement.lang, { granularity: 'grapheme' });
+    let delay = 0;
+    vision.textContent = words.join(' ') + ' ';
+    for (const [index, word] of lastWords.entries()) {
+      const group = document.createElement('span');
+      group.className = 'vision-word';
+      for (const { segment } of characters.segment(word)) {
+        const letter = document.createElement('span');
+        letter.className = 'vision-letter';
+        letter.style.setProperty('--vision-delay', delay + 'ms');
+        letter.textContent = segment;
+        group.append(letter);
+        delay += 45;
+      }
+      if (index) vision.append(' ');
+      vision.append(group);
+    }
+    const visionObserver = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      visionObserver.disconnect();
+      vision.classList.add('vision-typing-active');
+    }, { threshold: .25 });
+    visionObserver.observe(vision);
+  }
 
   const finishMotion = () => {
     observer.disconnect();

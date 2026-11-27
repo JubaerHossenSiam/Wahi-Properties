@@ -65,8 +65,6 @@
   const groups = [
     '.s-who .s-photo',
     '.s-who .s-whog > div:last-child > *',
-    '.s-proj .hdr-va > *',
-    '.s-proj article',
     '.s-expect h2',
     '.s-expect .wrap > div > div',
     '.s-buy .wrap > div',

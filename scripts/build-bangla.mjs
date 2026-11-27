@@ -35,6 +35,10 @@ function addSocialLinks(document, bangla) {
   document.querySelectorAll('.footer-facebook, .wa-float').forEach((link) => link.remove());
   const footer = document.querySelector('footer');
   const brand = footer.querySelector('.wrap > div:first-child > div:first-child');
+  brand.querySelector('p').textContent = bangla
+    ? 'ঢাকাভিত্তিক আবাসন নির্মাতা। আমরা ফ্ল্যাট নির্মাণ করি এবং জমির মালিকদের সঙ্গে জয়েন্ট ভেঞ্চারে কাজ করি।'
+    : 'Dhaka-based developer building apartments and partnering with landowners on joint ventures.';
+
   const footerWhatsApp = footer.querySelector('a[href^="https://wa.me/"]');
 
   const facebook = document.createElement('a');
@@ -44,7 +48,7 @@ function addSocialLinks(document, bangla) {
   facebook.setAttribute('rel', 'noopener');
   facebook.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>';
   const label = document.createElement('span');
-  label.textContent = bangla ? 'ফেসবুকে আমাদের অনুসরণ করুন' : 'Follow us on Facebook';
+  label.textContent = bangla ? 'আমাদের অনুসরণ করুন' : 'Follow us on Facebook';
   facebook.append(label);
   brand.append(facebook);
 
@@ -90,7 +94,7 @@ function shared(document, file, bangla) {
   addSocialLinks(document, bangla);
   document.querySelectorAll('.lang,.hd-mcall,[data-locale-resource]').forEach((node) => node.remove());
   const mobileCall = document.querySelector('header .call').cloneNode(true);
-  mobileCall.className = 'btn btn-primary hd-mcall';
+  mobileCall.className = 'btn btn-secondary hd-mcall';
   document.querySelector('.hd-nav').append(mobileCall);
   document.querySelector('.hdr-r').prepend(switcher(document, file, bangla));
   const prefix = bangla ? '../' : '';
@@ -104,6 +108,19 @@ function shared(document, file, bangla) {
   font.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap';
   font.dataset.localeResource = '';
   document.head.append(font);
+  const guard = document.createElement('script');
+  guard.dataset.localeResource = '';
+  guard.textContent = `
+    try {
+      const navigation = JSON.parse(sessionStorage.getItem('wahi-language-navigation') || 'null');
+      if (navigation?.target === location.pathname + location.search
+        && Date.now() - navigation.createdAt < 15000 && Number.isFinite(navigation.position?.y)) {
+        document.documentElement.classList.add('language-restoring');
+        setTimeout(() => document.documentElement.classList.remove('language-restoring'), 1500);
+      }
+    } catch {}
+  `;
+  document.head.prepend(guard);
   const js = document.createElement('script');
   js.src = prefix + 'locale.js';
   js.defer = true;
@@ -117,11 +134,6 @@ function shared(document, file, bangla) {
     link.dataset.localeResource = '';
     document.head.append(link);
   }
-  const prefetch = document.createElement('link');
-  prefetch.rel = 'prefetch';
-  prefetch.href = (bangla ? '../' : 'bn/') + file;
-  prefetch.dataset.localeResource = '';
-  document.head.append(prefetch);
 }
 
 function translatedContent(node, target, map) {
@@ -196,7 +208,6 @@ for (const file of files) {
   }
   shared(english, file, false);
   await writeFile(dist + file, '<!doctype html>\n' + english.documentElement.outerHTML + '\n');
-
   const document = parseHTML(english.documentElement.outerHTML).document;
   document.documentElement.lang = 'bn';
   document.title = file === 'index.html'
@@ -209,6 +220,8 @@ for (const file of files) {
     card.dataset.name = card.querySelector('.pj').textContent;
     card.dataset.location = card.querySelector('.loc span').textContent;
   }
+
+
   translate(document, map);
   // Source files contain an obsolete address. Keep the current office location.
   for (const node of document.querySelectorAll('img[src],script[src],link[href]')) {
