@@ -40,6 +40,9 @@ function addSocialLinks(document, bangla) {
     : 'Residential apartments and joint venture projects in Dhaka.';
 
   const footerWhatsApp = footer.querySelector('a[href^="https://wa.me/"]');
+  const whatsappNumber = bangla ? '০১৬০৪ ৩৬৩২৫৯' : '01604 363259';
+  footerWhatsApp.textContent = whatsappNumber;
+  footerWhatsApp.setAttribute('aria-label', (bangla ? 'হোয়াটসঅ্যাপ ' : 'WhatsApp ') + whatsappNumber);
 
   const facebook = document.createElement('a');
   facebook.className = 'footer-facebook';

@@ -72,11 +72,8 @@ html[lang="bn"] .home-page { --home-hero-heading-size: clamp(36px, 4.2vw, 60px);
   transition: opacity 250ms ease;
 }
 
-.home-page .hero-panel .btn-primary:hover { transform: none; }
 .home-page .hero-panel .btn-primary:hover::before { border-color: transparent; }
 .home-page .hero-panel .btn-primary:hover::after { opacity: 1; }
-
-.home-page .hero-panel .btn-secondary:hover { transform: none; }
 
 .home-page .hero-panel .btn-secondary {
   background: rgb(22 20 18 / 32%);

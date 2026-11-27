@@ -144,7 +144,7 @@ window.siteLocale = (() => {
     results(shown, total) {
       if (!bangla) return shown + ' of ' + total + (total === 1 ? ' project' : ' projects');
       if (total === 0) return '০টি প্রকল্প পাওয়া গেছে';
-      return formatter.format(total) + 'টি প্রকল্পের মধ্যে ' + formatter.format(shown) + 'টি দেখানো হচ্ছে';
+      return formatter.format(total) + 'টির মধ্যে ' + formatter.format(shown) + 'টি প্রকল্প';
     },
   };
 })();
