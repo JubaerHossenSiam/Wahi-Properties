@@ -42,14 +42,14 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #25d366;
+  background: #1ebe5a;
   box-shadow: 0 4px 14px rgb(36 34 33 / 25%);
   animation: none;
   transition: none;
 }
 
 .wa-float:hover {
-  background: #1ebe5a;
+  background: #25d366;
 }
 
 .footer-facebook:focus-visible,
