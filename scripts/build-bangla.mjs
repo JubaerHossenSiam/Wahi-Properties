@@ -64,6 +64,9 @@ function addSocialLinks(document, bangla) {
 }
 
 function shared(document, file, bangla) {
+  [...document.querySelectorAll('main section, footer')].forEach((section, index) => {
+    if (!section.id || /^wahi-section-\d+$/.test(section.id)) section.id = 'wahi-section-' + (index + 1);
+  });
   // Both languages have authored content, so opt out of browser translation offers.
   document.documentElement.setAttribute('translate', 'no');
   let translationPolicy = document.querySelector('meta[name="google"][content="notranslate"]');
@@ -79,6 +82,8 @@ function shared(document, file, bangla) {
   creditLink.removeAttribute('style');
   const credit = creditLink.parentElement;
   credit.classList.add('footer-credit');
+  const legal = document.querySelector('footer a[href="privacy-terms.html"]');
+  legal.parentElement.classList.add('footer-legal');
   credit.setAttribute('lang', bangla ? 'bn' : 'en');
   credit.setAttribute('translate', 'no');
   credit.replaceChildren(document.createTextNode(bangla ? 'ডেভেলপমেন্টে ' : 'Developed by '), creditLink);

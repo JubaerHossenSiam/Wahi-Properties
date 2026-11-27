@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const siteDirectory = fileURLToPath(new URL('./dist/', import.meta.url));
 const port = Number(process.argv[2] ?? 4173);
+const host = process.argv[3] ?? '127.0.0.1';
 const contentTypes = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
@@ -68,6 +69,6 @@ const server = createServer(async (request, response) => {
   }
 });
 
-server.listen(port, '127.0.0.1', () => {
-  console.log('Local: http://127.0.0.1:' + server.address().port + '/');
+server.listen(port, host, () => {
+  console.log('Preview listening on ' + host + ':' + server.address().port);
 });

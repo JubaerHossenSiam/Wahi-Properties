@@ -17,7 +17,6 @@
   align-self: flex-start;
   gap: 10px;
   padding: 8px 0;
-  margin-top: -8px;
   color: #242221;
   font-size: 16px;
   font-weight: 500;
@@ -91,6 +90,23 @@ footer .footer-credit a {
 
 footer .footer-credit a:hover {
   color: #8a6a1e;
+}
+
+.footer-legal > a { color: inherit; }
+
+@media (width < 600px) {
+  footer .wrap > div:has(> .footer-credit) { flex-direction: column; align-items: flex-start; }
+  footer .footer-legal {
+    flex-direction: column;
+    align-items: flex-start !important;
+    row-gap: inherit !important;
+  }
+  .footer-legal > [aria-hidden="true"] { display: none; }
+}
+
+@media (min-width: 600px) {
+  .footer-legal { flex-wrap: nowrap !important; white-space: nowrap; }
+  .footer-legal > [aria-hidden="true"] { flex: none; }
 }
 
 .home-page .s-stats .stx { min-width: 0; }
@@ -243,6 +259,14 @@ footer .footer-credit a:hover {
 
 .sp-gal .g-vid > video { object-fit: cover; background: #000; }
 
+.s-proj article > div:first-child,
+.ab-hp .im,
+.jv-hp .im,
+.sp-hp .im,
+.sp-cards .pj-card .im {
+  aspect-ratio: 4 / 3;
+}
+
 .sp-gal:has(> .g:nth-child(5)) {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: auto;
@@ -316,11 +340,12 @@ footer .footer-credit a:hover {
   .ab-statrow { display: flex; align-items: center; gap: 16px; }
   .ab-statrow .stn2 { flex: none; font-size: 40px; }
   .ab-statrow .stt { flex: 1; min-width: 0; padding-top: 0; }
+  .s-whog,
+  #our-story .ab-split { row-gap: 28px; }
   .s-whog > .s-photo,
-  #our-story .ab-photo { margin-left: 12px; }
+  #our-story .ab-photo { margin-left: 12px; margin-bottom: 12px; }
   .home-page .s-who .s-whog > .s-photo::before,
   #our-story .ab-photo::before { left: -12px; bottom: -12px; }
-  .ab-hp .im { aspect-ratio: 4 / 3; }
   .ab-vision { padding-block: 60px !important; }
   .ab-icard .tx, .bg-ic .tx { padding-top: 16px; }
   .ab-cards { gap: 40px; }
@@ -341,7 +366,6 @@ footer .footer-credit a:hover {
   .ct-im { order: -1; }
 
   .sp-gl { grid-template-columns: minmax(0, 1fr); }
-  .sp-cards .pj-card .im { aspect-ratio: 4 / 3; }
   .sp-gal:has(> .g:nth-child(5)) { grid-template-columns: minmax(0, 1fr); }
   .gallery-video-trigger .g-play { width: 56px; height: 56px; }
   .sp-lm .btn { width: 100%; }

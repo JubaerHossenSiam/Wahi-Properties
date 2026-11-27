@@ -2,43 +2,22 @@
 
 (() => {
   const video = document.querySelector('.hero-bg video');
-  const button = document.querySelector('.hero-video-toggle');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   // Select once per page, before giving the browser a URL it can download.
   const format = matchMedia('(width < 600px)').matches ? 'phone'
     : matchMedia('(width < 1280px)').matches ? 'tablet' : 'desktop';
   const source = new URL('videos/hero-' + format + '.mp4', document.currentScript.src);
 
-  function updateButton(playing) {
-    button.classList.toggle('is-playing', playing);
-    button.setAttribute('aria-label', siteLocale.t(playing ? 'Pause background video' : 'Play background video'));
-  }
-
-  function playVideo() {
-    if (!video.hasAttribute('src')) video.src = source.href;
-    video.play().catch(() => updateButton(false));
-  }
-
   video.muted = true;
-  video.addEventListener('playing', () => {
-    video.classList.add('has-frame');
-    updateButton(true);
-  });
-  video.addEventListener('pause', () => updateButton(false));
-  video.addEventListener('error', () => {
-    video.classList.remove('has-frame');
-    button.hidden = true;
-  });
-  button.addEventListener('click', () => {
-    if (video.paused) playVideo();
-    else video.pause();
-  });
+  video.addEventListener('playing', () => video.classList.add('has-frame'));
+  video.addEventListener('error', () => video.classList.remove('has-frame'));
   reducedMotion.addEventListener('change', (event) => {
     if (event.matches) video.pause();
   });
-  updateButton(false);
-  button.hidden = false;
-  if (!reducedMotion.matches && !navigator.connection?.saveData) playVideo();
+  if (!reducedMotion.matches && !navigator.connection?.saveData) {
+    video.src = source.href;
+    video.play().catch(() => {});
+  }
 })();
 
 (() => {
