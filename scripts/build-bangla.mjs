@@ -36,8 +36,8 @@ function addSocialLinks(document, bangla) {
   const footer = document.querySelector('footer');
   const brand = footer.querySelector('.wrap > div:first-child > div:first-child');
   brand.querySelector('p').textContent = bangla
-    ? 'ঢাকাভিত্তিক আবাসন নির্মাতা। আমরা ফ্ল্যাট নির্মাণ করি এবং জমির মালিকদের সঙ্গে জয়েন্ট ভেঞ্চারে কাজ করি।'
-    : 'Dhaka-based developer building apartments and partnering with landowners on joint ventures.';
+    ? 'ঢাকায় আবাসিক ফ্ল্যাট ও জয়েন্ট ভেঞ্চার প্রকল্প।'
+    : 'Residential apartments and joint venture projects in Dhaka.';
 
   const footerWhatsApp = footer.querySelector('a[href^="https://wa.me/"]');
 
